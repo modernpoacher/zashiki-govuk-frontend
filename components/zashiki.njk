@@ -1,0 +1,56 @@
+{% from "accordion/macro.njk" import accordion %}
+{% from "back-link/macro.njk" import backLink %}
+{% from "breadcrumbs/macro.njk" import breadcrumbs %}
+{% from "button/macro.njk" import button %}
+{% from "character-count/macro.njk" import characterCount %}
+{% from "checkboxes/macro.njk" import checkboxes %}
+{% from "date-input/macro.njk" import dateInput %}
+{% from "details/macro.njk" import details %}
+{% from "error-message/macro.njk" import errorMessage %}
+{% from "error-summary/macro.njk" import errorSummary %}
+{% from "fieldset/macro.njk" import fieldset %}
+{% from "file-upload/macro.njk" import fileUpload %}
+{% from "footer/macro.njk" import footer %}
+{% from "header/macro.njk" import header %}
+{% from "hint/macro.njk" import hint %}
+{% from "input/macro.njk" import input %}
+{% from "inset-text/macro.njk" import insetText %}
+{% from "label/macro.njk" import label %}
+{% from "panel/macro.njk" import panel %}
+{% from "phase-banner/macro.njk" import phaseBanner %}
+{% from "radios/macro.njk" import radios %}
+{% from "select/macro.njk" import select %}
+{% from "skip-link/macro.njk" import skipLink %}
+{% from "summary-list/macro.njk" import summaryList %}
+{% from "table/macro.njk" import table %}
+{% from "tabs/macro.njk" import tabs %}
+{% from "tag/macro.njk" import tag %}
+{% from "textarea/macro.njk" import textarea %}
+{% from "warning-text/macro.njk" import warningText %}
+{% macro zashiki(params) %}
+  {% if params.meta.component %}
+
+  {% elif params.meta.type === 'string' %}
+    {% set field = params.field %}
+{%- include "./string.njk" -%}
+
+  {% elif params.meta.type === 'number' %}
+    {% set field = params.field %}
+{%- include "./number.njk" -%}
+
+  {% elif params.meta.type === 'object' %}
+{%- include "./object.njk" -%}
+
+  {% elif params.meta.type === 'array' %}
+{%- include "./array.njk" -%}
+
+  {% elif params.meta.type === 'boolean' %}
+    {% set field = params.field %}
+{%- include "./boolean.njk" -%}
+
+  {% elif params.meta.type === 'null' %}
+    {% set field = params.field %}
+{%- include "./null.njk" -%}
+
+  {% endif %}
+{% endmacro %}

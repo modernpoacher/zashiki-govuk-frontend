@@ -1,0 +1,13 @@
+  {% if field.enum %}
+
+  {% else %}
+    {% if field.anyOf %}
+
+    {% else %}
+      {% if field.oneOf %}
+
+      {% else %}
+        {{ input(field) }}
+      {% endif %}
+    {% endif %}
+  {% endif %}

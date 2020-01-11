@@ -1,0 +1,13 @@
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% set p = {
+    label: {
+      text: params.elements.title
+    },
+    hint: {
+      text: params.elements.description
+    },
+    name: params.elements.field.name,
+    value: params.elements.field.value
+  }
+%}
+{{ govukInput(p) }}

@@ -1,0 +1,11 @@
+{% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
+{%
+  set p = {
+    legend: {
+      text: params.elements.title
+    }
+  }
+%}
+{% call govukFieldset(p) %}
+  {{ caller() if caller }} {#- if statement allows usage of `call` to be optional -#}
+{% endcall %}
