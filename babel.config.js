@@ -13,6 +13,7 @@ module.exports = {
     ]
   ],
   plugins: [
+    '@babel/proposal-export-default-from',
     [
       'module-resolver', {
         alias: {

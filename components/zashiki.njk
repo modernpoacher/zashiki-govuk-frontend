@@ -28,28 +28,28 @@
 {% from "textarea/macro.njk" import textarea %}
 {% from "warning-text/macro.njk" import warningText %}
 {% macro zashiki(params) %}
-  {% if params.meta.component %}
+  {% if params.component %}
 
-  {% elif params.meta.type === 'string' %}
-    {% set field = params.field %}
+  {% elif params.type === 'string' %}
+    {% set field = params %}
 {%- include "./string.njk" -%}
 
-  {% elif params.meta.type === 'number' %}
-    {% set field = params.field %}
+  {% elif params.type === 'number' %}
+    {% set field = params %}
 {%- include "./number.njk" -%}
 
-  {% elif params.meta.type === 'object' %}
+  {% elif params.type === 'object' %}
 {%- include "./object.njk" -%}
 
-  {% elif params.meta.type === 'array' %}
+  {% elif params.type === 'array' %}
 {%- include "./array.njk" -%}
 
-  {% elif params.meta.type === 'boolean' %}
-    {% set field = params.field %}
+  {% elif params.type === 'boolean' %}
+    {% set field = params %}
 {%- include "./boolean.njk" -%}
 
-  {% elif params.meta.type === 'null' %}
-    {% set field = params.field %}
+  {% elif params.type === 'null' %}
+    {% set field = params %}
 {%- include "./null.njk" -%}
 
   {% endif %}

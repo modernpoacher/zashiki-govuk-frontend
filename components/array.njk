@@ -1,25 +1,25 @@
-    {% call fieldset (params) %}
-      {% for field in params.elements.fields %}
-        {% if field.meta.component %}
+  {% call fieldset (params) %}
+    {% for field in params.fields %}
+      {% if field.component %}
 
-        {% elif field.meta.type === 'string' %}
+      {% elif field.type === 'string' %}
 {%- include "./string.njk" -%}
 
-        {% elif field.meta.type === 'number' %}
+      {% elif field.type === 'number' %}
 {%- include "./number.njk" -%}
 
-        {% elif field.meta.type === 'object' %}
+      {% elif field.type === 'object' %}
 {{ zashiki(field) }}
 
-        {% elif field.meta.type === 'array' %}
+      {% elif field.type === 'array' %}
 {{ zashiki(field) }}
 
-        {% elif field.meta.type === 'boolean' %}
+      {% elif field.type === 'boolean' %}
 {%- include "./boolean.njk" -%}
 
-        {% elif field.meta.type === 'null' %}
+      {% elif field.type === 'null' %}
 {%- include "./null.njk" -%}
 
-        {% endif %}
-      {% endfor %}
-    {% endcall %}
+      {% endif %}
+    {% endfor %}
+  {% endcall %}
