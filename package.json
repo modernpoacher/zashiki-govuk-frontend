@@ -58,6 +58,6 @@
   },
   "dependencies": {
     "govuk-frontend": "^3.4.0",
-    "shinkansen-transmission": "^1.0.0"
+    "shinkansen-transmission": "^1.0.1"
   }
 }

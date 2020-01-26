@@ -1,4 +1,5 @@
 import transformFromSchema from 'shinkansen-transmission/lib/transmission/from-schema'
+import transformIntoValues from 'shinkansen-transmission/lib/transmission/into-values'
 
 export const getType = ({ type } = {}) => (type ? { type } : {})
 
@@ -56,4 +57,4 @@ const transform = (schema = {}) => {
     : transformOne(schema)
 }
 
-export default (schema, ...args) => transform(transformFromSchema(schema, ...args))
+export default (definition, response, components) => transform(transformFromSchema(definition, transformIntoValues(response), components))
