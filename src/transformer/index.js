@@ -24,7 +24,21 @@ export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(tex
 
 export const transformEnum = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
   ...field,
-  items: items.map((text, value) => ({ text, value, selected: value === selectedIndex })),
+  items: items.map((text, index) => ({ text, value: index, selected: selectedIndex === index })),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {})
+})
+
+export const transformAnyOf = ({ items = [], selected = [], name, id = name, ...field }) => ({
+  ...field,
+  items: items.map(({ elements: { title, field: { value, name, id = name } } }) => ({ text: title, value, name, id, checked: selected.includes(value) })),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {})
+})
+
+export const transformOneOf = ({ items = [], selected, name, id = name, ...field }) => ({
+  ...field,
+  items: items.map(({ elements: { title, field: { value, name, id = name } } }) => ({ text: title, value, name, id, checked: selected === value })),
   ...(name ? { name } : {}),
   ...(id ? { id } : {})
 })
@@ -38,6 +52,22 @@ export const transformElementsForEnum = ({
     ...field
   }
 } = {}) => transformDescriptionToHint(transformTitleToLabel(transformEnum(field), title), description)
+
+export const transformElementsForAnyOf = ({
+  title,
+  description,
+  anyOf: {
+    ...field
+  }
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformAnyOf(field), title), description)
+
+export const transformElementsForOneOf = ({
+  title,
+  description,
+  oneOf: {
+    ...field
+  }
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformOneOf(field), title), description)
 
 export const transformElementsForField = ({
   title,
@@ -53,11 +83,15 @@ export const transformElements = (elements) => {
       enum: transformElementsForEnum(elements)
     }
   } else {
-    if (hasOneOf(elements)) {
-
+    if (hasAnyOf(elements)) {
+      return {
+        anyOf: transformElementsForAnyOf(elements)
+      }
     } else {
-      if (hasAnyOf(elements)) {
-
+      if (hasOneOf(elements)) {
+        return {
+          oneOf: transformElementsForOneOf(elements)
+        }
       } else {
         return {
           params: transformElementsForField(elements)
