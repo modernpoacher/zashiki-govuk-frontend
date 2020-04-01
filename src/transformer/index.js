@@ -1,5 +1,5 @@
-import fromSchema from 'shinkansen-transmission/lib/transmission/from-schema'
-import fromDocument from 'shinkansen-transmission/lib/transmission/from-document'
+import toZashiki from 'shinkansen-transmission/lib/transmission/to-zashiki'
+import fromDocumentToHash from 'shinkansen-transmission/lib/transmission/from-document-to-hash'
 
 export const hasEnum = (field = {}) => Reflect.has(field, 'enum')
 export const getEnum = (field = {}) => Reflect.get(field, 'enum')
@@ -137,4 +137,4 @@ const transform = (schema = {}) => {
     : transformOne(schema)
 }
 
-export default (definition, response, components) => transform(fromSchema(definition, fromDocument(response, definition), components))
+export default (definition, response, components) => transform(toZashiki(definition, fromDocumentToHash(response, definition), components))
