@@ -22,6 +22,8 @@ export const transformTitleToLabel = (field = {}, text) => ({ ...field, ...(text
 
 export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(text ? { legend: { text } } : {}) })
 
+export const transformTitleToFieldsetLegend = (field = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
+
 export const transformEnum = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
   ...field,
   items: items.map((text, index) => ({ text, value: index, selected: selectedIndex === index })),
@@ -29,19 +31,23 @@ export const transformEnum = ({ items = [], selectedIndex, name, id = name, ...f
   ...(id ? { id } : {})
 })
 
-export const transformAnyOf = ({ items = [], selected = [], name, id = name, ...field }) => ({
-  ...field,
-  items: items.map(({ elements: { title, field: { value, name, id = name } } }) => ({ text: title, value, name, id, checked: selected.includes(value) })),
-  ...(name ? { name } : {}),
-  ...(id ? { id } : {})
-})
+export const transformAnyOf = ({ items = [], selected = [], name, id = name, ...field }) => {
+  return ({
+    ...field,
+    items: items.map(({ elements: { title, description, field: { value, name, id = name } = {} } }) => transformDescriptionToHint({ text: title, value, name, id, checked: selected.includes(value) }, description)),
+    ...(name ? { name } : {}),
+    ...(id ? { id } : {})
+  })
+}
 
-export const transformOneOf = ({ items = [], selected, name, id = name, ...field }) => ({
-  ...field,
-  items: items.map(({ elements: { title, field: { value, name, id = name } } }) => ({ text: title, value, name, id, checked: selected === value })),
-  ...(name ? { name } : {}),
-  ...(id ? { id } : {})
-})
+export const transformOneOf = ({ items = [], selected, name, id = name, ...field }) => {
+  return ({
+    ...field,
+    items: items.map(({ elements: { title, description, field: { value, name, id = name } = {} } }) => transformDescriptionToHint({ text: title, value, name, id, checked: selected === value }, description)),
+    ...(name ? { name } : {}),
+    ...(id ? { id } : {})
+  })
+}
 
 export const transformField = ({ name, id = name, ...field } = {}) => ({ ...field, ...(name ? { name } : {}), ...(id ? { id } : {}) })
 
@@ -59,7 +65,7 @@ export const transformElementsForAnyOf = ({
   anyOf: {
     ...field
   }
-} = {}) => transformDescriptionToHint(transformTitleToLabel(transformAnyOf(field), title), description)
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformAnyOf(field), title), description)
 
 export const transformElementsForOneOf = ({
   title,
@@ -67,7 +73,7 @@ export const transformElementsForOneOf = ({
   oneOf: {
     ...field
   }
-} = {}) => transformDescriptionToHint(transformTitleToLabel(transformOneOf(field), title), description)
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformOneOf(field), title), description)
 
 export const transformElementsForField = ({
   title,

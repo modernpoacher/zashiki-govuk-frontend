@@ -2,10 +2,10 @@
     {{ select(field) }}
   {% else %}
     {% if field.anyOf %}
-
+      {{ checkboxes(field) }}
     {% else %}
       {% if field.oneOf %}
-
+        {{ radios(field) }}
       {% else %}
         {{ input(field) }}
       {% endif %}
