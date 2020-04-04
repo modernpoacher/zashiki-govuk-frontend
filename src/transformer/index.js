@@ -1,5 +1,19 @@
+import debug from 'debug'
+
 import toZashiki from 'shinkansen-transmission/lib/transmission/to-zashiki'
 import fromDocumentToHash from 'shinkansen-transmission/lib/transmission/from-document-to-hash'
+
+const {
+  env: {
+    DEBUG = 'zashiki:*'
+  }
+} = process
+
+debug.enable(DEBUG)
+
+console.log(DEBUG)
+
+const log = debug('zashiki:transform')
 
 export const hasEnum = (field = {}) => Reflect.has(field, 'enum')
 export const getEnum = (field = {}) => Reflect.get(field, 'enum')
@@ -26,24 +40,24 @@ export const transformTitleToFieldsetLegend = (field = {}, text) => ({ ...field,
 
 export const transformEnum = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
   ...field,
-  items: items.map((text, index) => ({ text, value: index, selected: selectedIndex === index })),
+  items: items.map((value, index) => ({ text: String(value), value: String(index), selected: selectedIndex === index })),
   ...(name ? { name } : {}),
   ...(id ? { id } : {})
 })
 
-export const transformAnyOf = ({ items = [], selected = [], name, id = name, ...field }) => {
+export const transformAnyOf = ({ items = [], selectedIndex, name, id = name, ...field }) => {
   return ({
     ...field,
-    items: items.map(({ elements: { title, description, field: { value, name, id = name } = {} } }) => transformDescriptionToHint({ text: title, value, name, id, checked: selected.includes(value) }, description)),
+    items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint({ text: title, value: String(index), name, id, checked: selectedIndex === index }, description)),
     ...(name ? { name } : {}),
     ...(id ? { id } : {})
   })
 }
 
-export const transformOneOf = ({ items = [], selected, name, id = name, ...field }) => {
+export const transformOneOf = ({ items = [], selectedIndex, name, id = name, ...field }) => {
   return ({
     ...field,
-    items: items.map(({ elements: { title, description, field: { value, name, id = name } = {} } }) => transformDescriptionToHint({ text: title, value, name, id, checked: selected === value }, description)),
+    items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint({ text: title, value: String(index), name, id, checked: selectedIndex === index }, description)),
     ...(name ? { name } : {}),
     ...(id ? { id } : {})
   })
@@ -143,4 +157,4 @@ const transform = (schema = {}) => {
     : transformOne(schema)
 }
 
-export default (definition, response, components) => transform(toZashiki(definition, fromDocumentToHash(response, definition), components))
+export default (definition, response, components) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))

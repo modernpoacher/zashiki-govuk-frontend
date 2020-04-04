@@ -1,13 +1,13 @@
   {% if field.enum %}
-    {{ select(field) }}
+    {{ select(field.enum) }}
   {% else %}
     {% if field.anyOf %}
-      {{ checkboxes(field) }}
+      {{ radios(field.anyOf) }}
     {% else %}
       {% if field.oneOf %}
-        {{ radios(field) }}
+        {{ radios(field.oneOf) }}
       {% else %}
-        {{ input(field) }}
+        {{ input(field.params) }}
       {% endif %}
     {% endif %}
   {% endif %}
