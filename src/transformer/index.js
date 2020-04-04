@@ -1,19 +1,5 @@
-import debug from 'debug'
-
 import toZashiki from 'shinkansen-transmission/lib/transmission/to-zashiki'
 import fromDocumentToHash from 'shinkansen-transmission/lib/transmission/from-document-to-hash'
-
-const {
-  env: {
-    DEBUG = 'zashiki:*'
-  }
-} = process
-
-debug.enable(DEBUG)
-
-console.log(DEBUG)
-
-const log = debug('zashiki:transform')
 
 export const hasEnum = (field = {}) => Reflect.has(field, 'enum')
 export const getEnum = (field = {}) => Reflect.get(field, 'enum')
