@@ -18,6 +18,8 @@ export const getName = ({ name } = {}) => (name ? { name } : {})
 
 export const transformDescriptionToHint = (field = {}, text) => ({ ...field, ...(text ? { hint: { text } } : {}) })
 
+export const transformTitleToText = (field = {}, text) => ({ ...field, ...(text ? { text } : {}) })
+
 export const transformTitleToLabel = (field = {}, text) => ({ ...field, ...(text ? { label: { text } } : {}) })
 
 export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(text ? { legend: { text } } : {}) })
@@ -31,23 +33,21 @@ export const transformEnum = ({ items = [], selectedIndex, name, id = name, ...f
   ...(id ? { id } : {})
 })
 
-export const transformAnyOf = ({ items = [], selectedIndex, name, id = name, ...field }) => {
-  return ({
-    ...field,
-    items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint({ text: title, value: String(index), name, id, checked: selectedIndex === index }, description)),
-    ...(name ? { name } : {}),
-    ...(id ? { id } : {})
-  })
-}
+export const transformAnyOf = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
+  ...field,
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedIndex === index }, title), description)),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {})
+})
 
-export const transformOneOf = ({ items = [], selectedIndex, name, id = name, ...field }) => {
-  return ({
-    ...field,
-    items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint({ text: title, value: String(index), name, id, checked: selectedIndex === index }, description)),
-    ...(name ? { name } : {}),
-    ...(id ? { id } : {})
-  })
-}
+export const transformOneOf = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
+  ...field,
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedIndex === index }, title), description)),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {})
+})
+
+export const transformFields = (fields = []) => fields.map(transform)
 
 export const transformField = ({ name, id = name, ...field } = {}) => ({ ...field, ...(name ? { name } : {}), ...(id ? { id } : {}) })
 
@@ -81,9 +81,31 @@ export const transformElementsForField = ({
   field
 } = {}) => transformDescriptionToHint(transformTitleToLabel(transformField(field), title), description)
 
-export const transformFields = (fields = []) => fields.map(transform)
+export function transformToCheckboxes (meta, elements) {
 
-export const transformElements = (elements) => {
+}
+
+export function transformToDateInput (meta, elements) {
+
+}
+
+export function transformToFieldset (meta, elements) {
+
+}
+
+export function transformToFileUpload (meta, elements) {
+
+}
+
+export function transformToRadios (meta, elements) {
+
+}
+
+export function transformToSelect (meta, elements) {
+
+}
+
+export function transformToInput (meta, elements) {
   if (hasEnum(elements)) {
     return {
       enum: transformElementsForEnum(elements)
@@ -107,13 +129,34 @@ export const transformElements = (elements) => {
   }
 }
 
+export function transformToComponent (meta, elements) {
+  const { component } = meta
+
+  switch (component) {
+    case 'checkboxes':
+      return transformToCheckboxes(meta, elements)
+    case 'date-input':
+      return transformToDateInput(meta, elements)
+    case 'fieldset':
+      return transformToFieldset(meta, elements)
+    case 'file-upload':
+      return transformToFileUpload(meta, elements)
+    case 'radios':
+      return transformToRadios(meta, elements)
+    case 'select':
+      return transformToSelect(meta, elements)
+    default:
+      return transformToInput(meta, elements)
+  }
+}
+
 export const transformOne = ({
   meta = {},
   elements = {}
 } = {}) => ({
   ...getType(meta),
   ...getComponent(meta),
-  ...transformElements(elements)
+  ...transformToComponent(meta, elements)
 })
 
 export const transformAll = ({
