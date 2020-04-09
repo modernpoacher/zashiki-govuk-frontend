@@ -10,9 +10,17 @@ export const getOneOf = (field = {}) => Reflect.get(field, 'oneOf')
 export const hasAnyOf = (field = {}) => Reflect.has(field, 'anyOf')
 export const getAnyOf = (field = {}) => Reflect.get(field, 'anyOf')
 
-export const getType = ({ type } = {}) => (type ? { type } : {})
+export const hasType = (meta = {}) => Reflect.has(meta, 'type')
+export const getType = (meta = {}) => Reflect.get(meta, 'type')
 
-export const getComponent = ({ component } = {}) => (component ? { component } : {})
+export const hasComponent = (meta = {}) => Reflect.has(meta, 'component')
+export const getComponent = (meta = {}) => Reflect.get(meta, 'component')
+
+export const hasRequired = (field) => Reflect.has(field, 'required')
+export const getRequired = (field) => Reflect.get(field, 'required')
+
+export const hasValue = (field) => Reflect.has(field, 'value')
+export const getValue = (field) => Reflect.get(field, 'value')
 
 export const getName = ({ name } = {}) => (name ? { name } : {})
 
@@ -26,164 +34,602 @@ export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(tex
 
 export const transformTitleToFieldsetLegend = (field = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
 
-export const transformEnum = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
-  ...field,
-  items: items.map((value, index) => ({ text: String(value), value: String(index), selected: selectedIndex === index })),
+export const transformElementsToCheckboxesEnum = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map((value, index) => ({ text: String(value), value: String(index), name, id, checked: selectedItems.includes(index) })),
   ...(name ? { name } : {}),
-  ...(id ? { id } : {})
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
 })
 
-export const transformAnyOf = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
-  ...field,
-  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedIndex === index }, title), description)),
+export const transformElementsToCheckboxesAnyOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedItems.includes(index) }, title), description)),
   ...(name ? { name } : {}),
-  ...(id ? { id } : {})
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
 })
 
-export const transformOneOf = ({ items = [], selectedIndex, name, id = name, ...field }) => ({
-  ...field,
-  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedIndex === index }, title), description)),
+export const transformElementsToCheckboxesOneOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedItems.includes(index) }, title), description)),
   ...(name ? { name } : {}),
-  ...(id ? { id } : {})
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
 })
 
-export const transformFields = (fields = []) => fields.map(transform)
+export const transformElementsToCheckboxesField = ({ value, selectedItems = [], name, id = name, ...field }) => ({
+  items: [
+    {
+      text: value,
+      value,
+      checked: selectedItems.includes(value)
+    }
+  ],
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
 
-export const transformField = ({ name, id = name, ...field } = {}) => ({ ...field, ...(name ? { name } : {}), ...(id ? { id } : {}) })
+export const transformElementsToRadiosEnum = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map((value, index) => ({ text: String(value), value: String(index), /* name, id, */ checked: selectedItems.includes(index) })),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
 
-export const transformElementsForEnum = ({
-  title,
-  description,
-  enum: {
-    ...field
+export const transformElementsToRadiosAnyOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedItems.includes(index) }, title), description)),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToRadiosOneOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedItems.includes(index) }, title), description)),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToRadiosField = ({ value, name, id = name, ...field }) => ({
+  items: [
+    {
+      text: value,
+      value,
+      checked: value !== undefined
+    }
+  ],
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToSelectEnum = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map((value, index) => ({ text: String(value), value: String(index), /* name, id, */ selected: selectedItems.includes(index) })),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToSelectAnyOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title } }, index) => {
+    const value = String(index)
+
+    return { ...(title ? { text: title } : { text: value }), value, selected: selectedItems.includes(index) }
+  }),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToSelectOneOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title } }, index) => {
+    const value = String(index)
+
+    return { ...(title ? { text: title } : { text: value }), value: value, selected: selectedItems.includes(index) }
+  }),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToSelectField = ({ value, name, id = name, ...field }) => ({
+  items: [
+    {
+      text: value,
+      value,
+      selected: value !== undefined
+    }
+  ],
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToInputEnum = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map((value, index) => ({ text: String(value), value: String(index), /* name, id, */ selected: selectedItems.includes(index) })),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToInputAnyOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedItems.includes(index) }, title), description)),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToInputOneOf = ({ items = [], selectedItems = [], name, id = name, ...field }) => ({
+  items: items.map(({ elements: { title, description, field: { name, id = name } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), name, id, checked: selectedItems.includes(index) }, title), description)),
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformElementsToInputField = ({ name, id = name, ...field }) => ({
+  ...(name ? { name } : {}),
+  ...(id ? { id } : {}),
+  ...(hasValue(field) ? { value: getValue(field) } : {}),
+  ...(hasRequired(field) ? { required: getRequired(field) } : {})
+})
+
+export const transformForFields = ({ name, id = name, fields = [], ...field } = {}) => ({ ...(name ? { name } : {}), ...(id ? { id } : {}), ...(hasRequired(field) ? { required: getRequired(field) } : {}), ...(hasValue(field) ? { value: getValue(field) } : {}), fields: fields.map(transform), ...field })
+
+export const transformForField = ({ name, id = name, ...field } = {}) => ({ ...(name ? { name } : {}), ...(id ? { id } : {}), ...(hasRequired(field) ? { required: getRequired(field) } : {}), ...(hasValue(field) ? { value: getValue(field) } : {}), ...field })
+
+export const transformFields = (elements) => {
+  const {
+    title,
+    description,
+    fields = []
+  } = elements
+
+  return {
+    ...transformDescriptionToHint(transformTitleToFieldsetLegend(transformForField(elements), title), description),
+    fields: fields.map(transform)
   }
-} = {}) => transformDescriptionToHint(transformTitleToLabel(transformEnum(field), title), description)
-
-export const transformElementsForAnyOf = ({
-  title,
-  description,
-  anyOf: {
-    ...field
-  }
-} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformAnyOf(field), title), description)
-
-export const transformElementsForOneOf = ({
-  title,
-  description,
-  oneOf: {
-    ...field
-  }
-} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformOneOf(field), title), description)
-
-export const transformElementsForField = ({
-  title,
-  description,
-  field
-} = {}) => transformDescriptionToHint(transformTitleToLabel(transformField(field), title), description)
-
-export function transformToCheckboxes (meta, elements) {
-
 }
 
-export function transformToDateInput (meta, elements) {
-
-}
-
-export function transformToFieldset (meta, elements) {
-
-}
-
-export function transformToFileUpload (meta, elements) {
-
-}
-
-export function transformToRadios (meta, elements) {
-
-}
-
-export function transformToSelect (meta, elements) {
-
-}
-
-export function transformToInput (meta, elements) {
+export function transformField (elements) {
   if (hasEnum(elements)) {
     return {
-      enum: transformElementsForEnum(elements)
+      enum: transformElementsToInputForEnum(elements)
     }
   } else {
     if (hasAnyOf(elements)) {
       return {
-        anyOf: transformElementsForAnyOf(elements)
+        anyOf: transformElementsToInputForAnyOf(elements)
       }
     } else {
       if (hasOneOf(elements)) {
         return {
-          oneOf: transformElementsForOneOf(elements)
+          oneOf: transformElementsToInputForOneOf(elements)
         }
       } else {
         return {
-          params: transformElementsForField(elements)
+          field: transformElementsToInputForField(elements)
         }
       }
     }
   }
 }
 
-export function transformToComponent (meta, elements) {
+export const transformElementsToCheckboxesForEnum = ({
+  enum: {
+    ...field
+  }
+} = {}, {
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesEnum(field), title), description)
+
+export const transformElementsToCheckboxesForAnyOf = ({
+  anyOf: {
+    ...field
+  }
+} = {}, {
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesAnyOf(field), title), description)
+
+export const transformElementsToCheckboxesForOneOf = ({
+  oneOf: {
+    ...field
+  }
+} = {}, {
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesOneOf(field), title), description)
+
+export const transformElementsToCheckboxesForField = ({
+  field
+} = {},
+{
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesField(field), title), description)
+
+export const transformElementsToRadiosForEnum = ({
+  enum: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosEnum(field), title), description)
+
+export const transformElementsToRadiosForAnyOf = ({
+  anyOf: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosAnyOf(field), title), description)
+
+export const transformElementsToRadiosForOneOf = ({
+  oneOf: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosOneOf(field), title), description)
+
+export const transformElementsToRadiosForField = ({
+  field,
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosField(field), title), description)
+
+export const transformElementsToSelectForEnum = ({
+  enum: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectEnum(field), title), description)
+
+export const transformElementsToSelectForAnyOf = ({
+  anyOf: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectOneOf(field), title), description)
+
+export const transformElementsToSelectForOneOf = ({
+  oneOf: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectOneOf(field), title), description)
+
+export const transformElementsToSelectForField = ({
+  field,
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectField(field), title), description)
+
+export const transformElementsToInputForEnum = ({
+  enum: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformElementsToInputEnum(field), title), description)
+
+export const transformElementsToInputForAnyOf = ({
+  anyOf: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToInputAnyOf(field), title), description)
+
+export const transformElementsToInputForOneOf = ({
+  oneOf: {
+    ...field
+  },
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToInputOneOf(field), title), description)
+
+export const transformElementsToInputForField = ({
+  field,
+  title,
+  description
+} = {}) => transformDescriptionToHint(transformTitleToLabel(transformElementsToInputField(field), title), description)
+
+export function transformFieldToCheckboxes (elements, parentElements) {
+  if (hasEnum(elements)) {
+    return {
+      enum: transformElementsToCheckboxesForEnum(elements, parentElements)
+    }
+  } else {
+    if (hasAnyOf(elements)) {
+      return {
+        anyOf: transformElementsToCheckboxesForAnyOf(elements, parentElements)
+      }
+    } else {
+      if (hasOneOf(elements)) {
+        return {
+          oneOf: transformElementsToCheckboxesForOneOf(elements, parentElements)
+        }
+      } else {
+        return {
+          field: transformElementsToCheckboxesForField(elements, parentElements)
+        }
+      }
+    }
+  }
+}
+
+export function transformFieldToDateInput (elements) {
+
+}
+
+export function transformFieldToFieldset (elements) {
+
+}
+
+export function transformFieldToFileUpload (elements) {
+
+}
+
+export function transformFieldToRadios (elements) {
+  if (hasEnum(elements)) {
+    return {
+      enum: transformElementsToRadiosForEnum(elements)
+    }
+  } else {
+    if (hasAnyOf(elements)) {
+      return {
+        anyOf: transformElementsToRadiosForAnyOf(elements)
+      }
+    } else {
+      if (hasOneOf(elements)) {
+        return {
+          oneOf: transformElementsToRadiosForOneOf(elements)
+        }
+      } else {
+        return {
+          field: transformElementsToRadiosForField(elements)
+        }
+      }
+    }
+  }
+}
+
+export function transformFieldToSelect (elements) {
+  if (hasEnum(elements)) {
+    return {
+      enum: transformElementsToSelectForEnum(elements)
+    }
+  } else {
+    if (hasAnyOf(elements)) {
+      return {
+        anyOf: transformElementsToSelectForAnyOf(elements)
+      }
+    } else {
+      if (hasOneOf(elements)) {
+        return {
+          oneOf: transformElementsToSelectForOneOf(elements)
+        }
+      } else {
+        return {
+          field: transformElementsToSelectForField(elements)
+        }
+      }
+    }
+  }
+}
+
+export function transformFieldToInput (elements) {
+  if (hasEnum(elements)) {
+    return {
+      enum: transformElementsToInputForEnum(elements)
+    }
+  } else {
+    if (hasAnyOf(elements)) {
+      return {
+        anyOf: transformElementsToInputForAnyOf(elements)
+      }
+    } else {
+      if (hasOneOf(elements)) {
+        return {
+          oneOf: transformElementsToInputForOneOf(elements)
+        }
+      } else {
+        return {
+          field: transformElementsToInputForField(elements)
+        }
+      }
+    }
+  }
+}
+
+export const transformFieldsToCheckboxes = ({
+  fields: [
+    {
+      elements
+    } = {}
+  ] = [],
+  title,
+  description
+} = {}) => transformFieldToCheckboxes(elements, { title, description })
+
+export function transformFieldsToDateInput (elements) {
+  const {
+    title,
+    description,
+    fields = []
+  } = elements
+
+  return {
+    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    fields: fields.map(transform)
+  }
+}
+
+export function transformFieldsToFieldset (elements) {
+  const {
+    title,
+    description,
+    fields = []
+  } = elements
+
+  return {
+    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    fields: fields.map(transform)
+  }
+}
+
+export function transformFieldsToFileUpload (elements) {
+  const {
+    title,
+    description,
+    fields = []
+  } = elements
+
+  return {
+    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    fields: fields.map(transform)
+  }
+}
+
+export function transformFieldsToRadios (elements) {
+  const {
+    title,
+    description,
+    fields = []
+  } = elements
+
+  return {
+    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    fields: fields.map(transform)
+  }
+}
+
+export function transformFieldsToSelect (elements) {
+  const {
+    title,
+    description,
+    fields = []
+  } = elements
+
+  return {
+    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    fields: fields.map(transform)
+  }
+}
+
+export function transformFieldsToInput (elements) {
+  const {
+    title,
+    description,
+    fields = []
+  } = elements
+
+  return {
+    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    fields: fields.map(transform)
+  }
+}
+
+export function transformFieldsToComponent (meta, elements) {
   const { component } = meta
 
   switch (component) {
     case 'checkboxes':
-      return transformToCheckboxes(meta, elements)
+      return transformFieldsToCheckboxes(elements)
     case 'date-input':
-      return transformToDateInput(meta, elements)
+      return transformFieldsToDateInput(elements)
     case 'fieldset':
-      return transformToFieldset(meta, elements)
+      return transformFieldsToFieldset(elements)
     case 'file-upload':
-      return transformToFileUpload(meta, elements)
+      return transformFieldsToFileUpload(elements)
     case 'radios':
-      return transformToRadios(meta, elements)
+      return transformFieldsToSelect(elements)
     case 'select':
-      return transformToSelect(meta, elements)
+      return transformFieldsToRadios(elements)
     default:
-      return transformToInput(meta, elements)
+      return transformFieldsToInput(elements)
+  }
+}
+
+export function transformFieldToComponent (meta, elements) {
+  const { component } = meta
+
+  switch (component) {
+    case 'checkboxes':
+      return transformFieldToCheckboxes(elements)
+    case 'date-input':
+      return transformFieldToDateInput(elements)
+    case 'fieldset':
+      return transformFieldToFieldset(elements)
+    case 'file-upload':
+      return transformFieldToFileUpload(elements)
+    case 'radios':
+      return transformFieldToRadios(elements)
+    case 'select':
+      return transformFieldToSelect(elements)
+    default:
+      return transformFieldToInput(elements)
   }
 }
 
 export const transformOne = ({
   meta = {},
   elements = {}
-} = {}) => ({
-  ...getType(meta),
-  ...getComponent(meta),
-  ...transformToComponent(meta, elements)
-})
+} = {}) => {
+  const type = getType(meta)
+
+  if (hasComponent(meta)) {
+    const component = getComponent(meta)
+
+    return {
+      type,
+      component,
+      ...transformFieldToComponent(meta, elements)
+    }
+  } else {
+    return {
+      type,
+      ...transformField(elements)
+    }
+  }
+}
 
 export const transformAll = ({
   meta = {},
-  elements: {
-    title,
-    description,
-    fields,
-    ...field
-  } = {}
-} = {}) => ({
-  ...getType(meta),
-  ...getComponent(meta),
-  params: transformDescriptionToHint(transformTitleToLegend(transformField(field), title), description),
-  fields: transformFields(fields)
-})
+  elements = {}
+} = {}) => {
+  const type = getType(meta)
 
-const transform = (schema = {}) => {
+  if (hasComponent(meta)) {
+    const component = getComponent(meta)
+
+    return {
+      type,
+      component,
+      ...transformFieldsToComponent(meta, elements)
+    }
+  } else {
+    return {
+      type,
+      ...transformFields(elements)
+    }
+  }
+}
+
+const transform = (zashiki = {}) => {
   const {
     meta: {
       type
     } = {}
-  } = schema
+  } = zashiki
 
   return (type === 'object' || type === 'array')
-    ? transformAll(schema)
-    : transformOne(schema)
+    ? transformAll(zashiki)
+    : transformOne(zashiki)
 }
 
 export default (definition, response, components) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))

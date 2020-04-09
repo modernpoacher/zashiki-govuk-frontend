@@ -7,7 +7,7 @@
       {% if field.oneOf %}
         {{ radios(field.oneOf) }}
       {% else %}
-        {{ input(field.params) }}
+        {{ input(field.field) }}
       {% endif %}
     {% endif %}
   {% endif %}
