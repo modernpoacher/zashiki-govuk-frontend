@@ -172,19 +172,16 @@ export const transformElementsToInputField = ({ name, id = name, ...field }) => 
   ...(hasRequired(field) ? { required: getRequired(field) } : {})
 })
 
-export const transformForFields = ({ name, id = name, fields = [], ...field } = {}) => ({ ...(name ? { name } : {}), ...(id ? { id } : {}), ...(hasRequired(field) ? { required: getRequired(field) } : {}), ...(hasValue(field) ? { value: getValue(field) } : {}), fields: fields.map(transform), ...field })
+export const transformElementsToGroup = ({ name, id = name, ...field } = {}) => ({ ...(name ? { name } : {}), ...(id ? { id } : {}), ...(hasRequired(field) ? { required: getRequired(field) } : {}), ...(hasValue(field) ? { value: getValue(field) } : {}) })
 
-export const transformForField = ({ name, id = name, ...field } = {}) => ({ ...(name ? { name } : {}), ...(id ? { id } : {}), ...(hasRequired(field) ? { required: getRequired(field) } : {}), ...(hasValue(field) ? { value: getValue(field) } : {}), ...field })
-
-export const transformFields = (elements) => {
+export function transformFields (elements) {
   const {
     title,
-    description,
     fields = []
   } = elements
 
   return {
-    ...transformDescriptionToHint(transformTitleToFieldsetLegend(transformForField(elements), title), description),
+    group: transformTitleToLegend(transformElementsToGroup(elements), title),
     fields: fields.map(transform)
   }
 }
@@ -459,12 +456,11 @@ export const transformFieldsToCheckboxes = ({
 export function transformFieldsToDateInput (elements) {
   const {
     title,
-    description,
     fields = []
   } = elements
 
   return {
-    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    group: transformTitleToLegend(transformElementsToGroup(elements), title),
     fields: fields.map(transform)
   }
 }
@@ -472,12 +468,11 @@ export function transformFieldsToDateInput (elements) {
 export function transformFieldsToFieldset (elements) {
   const {
     title,
-    description,
     fields = []
   } = elements
 
   return {
-    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    group: transformTitleToLegend(transformElementsToGroup(elements), title),
     fields: fields.map(transform)
   }
 }
@@ -485,12 +480,11 @@ export function transformFieldsToFieldset (elements) {
 export function transformFieldsToFileUpload (elements) {
   const {
     title,
-    description,
     fields = []
   } = elements
 
   return {
-    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    group: transformTitleToLegend(transformElementsToGroup(elements), title),
     fields: fields.map(transform)
   }
 }
@@ -498,12 +492,11 @@ export function transformFieldsToFileUpload (elements) {
 export function transformFieldsToRadios (elements) {
   const {
     title,
-    description,
     fields = []
   } = elements
 
   return {
-    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    group: transformTitleToLegend(transformElementsToGroup(elements), title),
     fields: fields.map(transform)
   }
 }
@@ -511,12 +504,11 @@ export function transformFieldsToRadios (elements) {
 export function transformFieldsToSelect (elements) {
   const {
     title,
-    description,
     fields = []
   } = elements
 
   return {
-    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    group: transformTitleToLegend(transformElementsToGroup(elements), title),
     fields: fields.map(transform)
   }
 }
@@ -524,12 +516,11 @@ export function transformFieldsToSelect (elements) {
 export function transformFieldsToInput (elements) {
   const {
     title,
-    description,
     fields = []
   } = elements
 
   return {
-    ...transformDescriptionToHint(transformTitleToLegend(transformForField(elements), title), description),
+    group: transformTitleToLegend(transformElementsToGroup(elements), title),
     fields: fields.map(transform)
   }
 }

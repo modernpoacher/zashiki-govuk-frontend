@@ -1,4 +1,4 @@
 {% from "govuk/components/fieldset/macro.njk" import govukFieldset %}
-{% call govukFieldset(params.params) %}
+{% call govukFieldset(params) %}
   {{ caller() if caller }} {#- if statement allows usage of `call` to be optional -#}
 {% endcall %}

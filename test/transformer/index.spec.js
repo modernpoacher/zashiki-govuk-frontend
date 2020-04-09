@@ -1629,6 +1629,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'number',
@@ -1652,6 +1653,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       enum: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             text: '1',
@@ -1685,6 +1691,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'boolean',
@@ -1707,6 +1714,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       enum: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             text: 'true',
@@ -1733,6 +1745,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'null',
@@ -1754,6 +1767,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       enum: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             text: 'null',
@@ -1773,6 +1791,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'string',
                       enum: [
@@ -1794,6 +1813,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       enum: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             text: 'string (1)',
@@ -1827,6 +1851,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'number',
                       enum: [
@@ -1847,8 +1872,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     .to.eql({
                       type: 'array',
                       component: 'checkboxes',
-
                       enum: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             text: '1',
@@ -1882,6 +1911,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'boolean',
                       enum: [
@@ -1901,8 +1931,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     .to.eql({
                       type: 'array',
                       component: 'checkboxes',
-
                       enum: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             text: 'true',
@@ -1929,6 +1963,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'null',
                       enum: [
@@ -1948,6 +1983,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       enum: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             text: 'null',
@@ -1969,6 +2009,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'string',
@@ -1991,8 +2032,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     .to.eql({
                       type: 'array',
                       component: 'checkboxes',
-
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2023,6 +2068,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'number',
@@ -2045,8 +2091,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     .to.eql({
                       type: 'array',
                       component: 'checkboxes',
-
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2078,6 +2128,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'boolean',
@@ -2100,6 +2151,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2124,6 +2180,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'null',
@@ -2145,6 +2202,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2163,6 +2225,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'string',
                       anyOf: [
@@ -2184,6 +2247,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2214,6 +2282,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'number',
                       anyOf: [
@@ -2235,6 +2304,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2265,6 +2339,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'boolean',
                       anyOf: [
@@ -2285,6 +2360,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2309,6 +2389,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'null',
                       anyOf: [
@@ -2328,6 +2409,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       anyOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2348,6 +2434,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'string',
@@ -2370,8 +2457,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     .to.eql({
                       type: 'array',
                       component: 'checkboxes',
-
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2402,6 +2493,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'number',
@@ -2424,8 +2516,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     .to.eql({
                       type: 'array',
                       component: 'checkboxes',
-
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2456,6 +2552,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'boolean',
@@ -2477,8 +2574,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     .to.eql({
                       type: 'array',
                       component: 'checkboxes',
-
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2503,6 +2604,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'null',
@@ -2524,6 +2626,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2542,6 +2649,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'string',
                       oneOf: [
@@ -2563,6 +2671,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2593,6 +2706,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'number',
                       oneOf: [
@@ -2614,6 +2728,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2644,6 +2763,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'boolean',
                       oneOf: [
@@ -2664,6 +2784,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2688,6 +2813,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'null',
                       oneOf: [
@@ -2707,6 +2833,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       oneOf: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         items: [
                           {
                             value: '0',
@@ -2730,6 +2861,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'string',
@@ -2753,6 +2885,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         id: '#/0',
                         name: '#/0',
                         required: false,
@@ -2770,6 +2907,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'number',
@@ -2793,6 +2931,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -2810,6 +2953,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'boolean',
@@ -2831,6 +2975,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -2848,6 +2997,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'null',
@@ -2869,6 +3019,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -2886,6 +3041,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'string',
                       allOf: [
@@ -2907,6 +3063,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -2924,6 +3085,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'number',
                       allOf: [
@@ -2945,6 +3107,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -2962,6 +3129,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'boolean',
                       allOf: [
@@ -2981,6 +3149,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -2998,6 +3171,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'null',
                       allOf: [
@@ -3017,6 +3191,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -3028,7 +3207,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                           }
                         ]
                       }
-
                     })
                 })
               })
@@ -3040,6 +3218,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'string',
@@ -3061,6 +3240,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         id: '#/0',
                         name: '#/0',
                         required: false,
@@ -3078,6 +3262,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'number',
@@ -3099,6 +3284,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -3116,6 +3306,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'boolean',
@@ -3135,6 +3326,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -3152,6 +3348,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: [
                       {
                         type: 'null',
@@ -3171,6 +3368,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -3188,6 +3390,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'string',
                       const: 'string',
@@ -3207,6 +3410,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -3224,6 +3432,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'number',
                       minimum: 1,
@@ -3243,6 +3452,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -3260,6 +3474,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'boolean',
                       const: false
@@ -3277,6 +3492,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -3294,6 +3514,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                   const schema = {
                     type: 'array',
+                    title: 'Checkboxes',
                     items: {
                       type: 'null',
                       const: null
@@ -3311,6 +3532,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                       type: 'array',
                       component: 'checkboxes',
                       field: {
+                        fieldset: {
+                          legend: {
+                            text: 'Checkboxes'
+                          }
+                        },
                         name: '#/0',
                         id: '#/0',
                         required: false,
@@ -5386,6 +5612,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'number',
@@ -5409,6 +5636,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     enum: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           text: '1',
@@ -5442,6 +5674,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'boolean',
@@ -5464,6 +5697,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     enum: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           text: 'true',
@@ -5490,6 +5728,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'null',
@@ -5511,6 +5750,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     enum: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           text: 'null',
@@ -5530,6 +5774,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'string',
                     enum: [
@@ -5551,6 +5796,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     enum: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           text: 'string (1)',
@@ -5584,6 +5834,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'number',
                     enum: [
@@ -5604,8 +5855,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'checkboxes',
-
                     enum: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           text: '1',
@@ -5639,6 +5894,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'boolean',
                     enum: [
@@ -5658,8 +5914,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'checkboxes',
-
                     enum: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           text: 'true',
@@ -5686,6 +5946,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'null',
                     enum: [
@@ -5705,6 +5966,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     enum: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           text: 'null',
@@ -5726,6 +5992,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'string',
@@ -5748,8 +6015,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'checkboxes',
-
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -5780,6 +6051,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'number',
@@ -5802,8 +6074,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'checkboxes',
-
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -5835,6 +6111,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'boolean',
@@ -5857,6 +6134,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -5881,6 +6163,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'null',
@@ -5902,6 +6185,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -5920,6 +6208,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'string',
                     anyOf: [
@@ -5941,6 +6230,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -5971,6 +6265,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'number',
                     anyOf: [
@@ -5992,6 +6287,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6022,6 +6322,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'boolean',
                     anyOf: [
@@ -6042,6 +6343,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6066,6 +6372,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'null',
                     anyOf: [
@@ -6085,6 +6392,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     anyOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6105,6 +6417,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'string',
@@ -6127,8 +6440,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'checkboxes',
-
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6159,6 +6476,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'number',
@@ -6181,8 +6499,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'checkboxes',
-
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6213,6 +6535,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'boolean',
@@ -6234,8 +6557,12 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'checkboxes',
-
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6260,6 +6587,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'null',
@@ -6281,6 +6609,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6299,6 +6632,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'string',
                     oneOf: [
@@ -6320,6 +6654,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6350,6 +6689,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'number',
                     oneOf: [
@@ -6371,6 +6711,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6401,6 +6746,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'boolean',
                     oneOf: [
@@ -6421,6 +6767,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6445,6 +6796,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'null',
                     oneOf: [
@@ -6464,6 +6816,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       items: [
                         {
                           value: '0',
@@ -6487,6 +6844,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'string',
@@ -6510,6 +6868,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       id: '#/0',
                       name: '#/0',
                       required: false,
@@ -6527,6 +6890,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'number',
@@ -6550,6 +6914,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6567,6 +6936,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'boolean',
@@ -6588,6 +6958,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6605,6 +6980,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'null',
@@ -6626,6 +7002,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6643,6 +7024,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'string',
                     allOf: [
@@ -6664,6 +7046,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6681,6 +7068,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'number',
                     allOf: [
@@ -6702,6 +7090,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6719,6 +7112,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'boolean',
                     allOf: [
@@ -6738,6 +7132,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6755,6 +7154,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'null',
                     allOf: [
@@ -6774,6 +7174,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6796,6 +7201,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'string',
@@ -6817,6 +7223,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       id: '#/0',
                       name: '#/0',
                       required: false,
@@ -6834,6 +7245,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'number',
@@ -6855,6 +7267,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6872,6 +7289,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'boolean',
@@ -6891,6 +7309,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6908,6 +7331,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: [
                     {
                       type: 'null',
@@ -6927,6 +7351,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6944,6 +7373,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'string',
                     const: 'string',
@@ -6963,6 +7393,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -6980,6 +7415,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'number',
                     minimum: 1,
@@ -6999,6 +7435,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -7016,6 +7457,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'boolean',
                     const: false
@@ -7033,6 +7475,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -7050,6 +7497,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Checkboxes',
                   items: {
                     type: 'null',
                     const: null
@@ -7067,6 +7515,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     type: 'array',
                     component: 'checkboxes',
                     field: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
                       name: '#/0',
                       id: '#/0',
                       required: false,
@@ -8020,8 +8473,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   '#/': { meta: { component: 'component' } }
                 }
 
-                // console.log(JSON.stringify(transform(schema, values, params), null, 2))
-
                 return expect(transform(schema, values, params))
                   .to.eql({
                     type: 'string',
@@ -8031,22 +8482,16 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                         {
                           text: 'string (1)',
                           value: '0',
-                          // name: '#/',
-                          // id: '#/',
                           selected: false
                         },
                         {
                           text: 'string (2)',
                           value: '1',
-                          // name: '#/',
-                          // id: '#/',
                           selected: true
                         },
                         {
                           text: 'string (3)',
                           value: '2',
-                          // name: '#/',
-                          // id: '#/',
                           selected: false
                         }
                       ],
@@ -8417,6 +8862,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -8435,12 +8881,15 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   '#/': { meta: { component: 'component' } }
                 }
 
-                // console.log(JSON.stringify(transform(schema, values, params), null, 2))
-
                 return expect(transform(schema, values, params))
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -8474,6 +8923,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -8496,6 +8946,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -8529,6 +8984,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -8550,6 +9006,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -8578,6 +9039,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -8598,6 +9060,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -8621,6 +9088,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     enum: [
@@ -8641,6 +9109,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -8674,6 +9147,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     enum: [
@@ -8694,6 +9168,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -8727,6 +9206,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     enum: [
@@ -8746,6 +9226,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -8774,6 +9259,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     enum: [
@@ -8792,6 +9278,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -8817,6 +9308,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -8839,6 +9331,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -8875,6 +9372,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -8897,6 +9395,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -8933,6 +9436,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -8954,6 +9458,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -8984,6 +9493,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -9004,6 +9514,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -9028,6 +9543,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     anyOf: [
@@ -9048,6 +9564,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -9084,6 +9605,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     anyOf: [
@@ -9104,6 +9626,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -9140,6 +9667,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     anyOf: [
@@ -9159,6 +9687,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -9189,6 +9722,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     anyOf: [
@@ -9207,6 +9741,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -9233,6 +9772,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -9255,6 +9795,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -9291,6 +9836,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -9313,6 +9859,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -9349,6 +9900,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -9370,6 +9922,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -9400,6 +9957,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -9420,6 +9978,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -9445,6 +10008,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     oneOf: [
@@ -9465,6 +10029,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -9501,6 +10070,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     oneOf: [
@@ -9521,6 +10091,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -9557,6 +10132,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     oneOf: [
@@ -9576,6 +10152,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -9606,6 +10187,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     oneOf: [
@@ -9624,6 +10206,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -9651,6 +10238,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -9673,6 +10261,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -9690,6 +10283,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -9712,6 +10306,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -9729,6 +10328,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -9749,6 +10349,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -9766,6 +10371,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -9786,6 +10392,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -9803,6 +10414,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     allOf: [
@@ -9823,6 +10435,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -9840,6 +10457,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     allOf: [
@@ -9860,6 +10478,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -9877,6 +10500,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     allOf: [
@@ -9895,6 +10519,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -9912,6 +10541,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     allOf: [
@@ -9930,6 +10560,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -9949,6 +10584,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'string' }
                   ]
@@ -9964,6 +10600,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -9981,6 +10622,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'number' }
                   ]
@@ -9996,6 +10638,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -10013,6 +10660,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'boolean' }
                   ]
@@ -10028,6 +10676,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -10045,6 +10698,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'null' }
                   ]
@@ -10060,6 +10714,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -10077,6 +10736,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string'
                   }
@@ -10092,6 +10752,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -10109,6 +10774,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number'
                   }
@@ -10124,6 +10790,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -10141,6 +10812,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean'
                   }
@@ -10156,6 +10828,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -10173,6 +10850,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null'
                   }
@@ -10188,6 +10866,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -10209,6 +10892,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -10231,6 +10915,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -10264,6 +10953,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -10286,6 +10976,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -10319,6 +11014,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -10340,6 +11036,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -10368,6 +11069,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -10388,6 +11090,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -10413,6 +11120,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -10435,6 +11143,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -10471,6 +11184,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -10493,6 +11207,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -10529,6 +11248,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -10550,6 +11270,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -10580,6 +11305,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -10599,6 +11325,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values, params))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     component: 'component',
                     fields: [
                       {
@@ -10626,6 +11357,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -10648,6 +11380,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -10684,6 +11421,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -10706,6 +11444,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -10742,6 +11485,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -10763,6 +11507,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -10793,6 +11542,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -10813,6 +11563,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -10839,6 +11594,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -10861,6 +11617,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -10878,6 +11639,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -10900,6 +11662,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -10917,6 +11684,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -10937,6 +11705,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -10954,6 +11727,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -10974,6 +11748,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -10993,6 +11772,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string'
@@ -11010,6 +11790,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -11027,6 +11812,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number'
@@ -11044,6 +11830,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -11061,6 +11852,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean'
@@ -11078,6 +11870,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -11095,6 +11892,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null'
@@ -11112,6 +11910,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -11825,6 +12628,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -11842,6 +12646,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -11875,6 +12684,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -11892,6 +12702,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -11925,6 +12740,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -11941,6 +12757,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -11969,6 +12790,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -11984,6 +12806,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -12007,6 +12834,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     enum: [
@@ -12022,6 +12850,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -12055,6 +12888,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     enum: [
@@ -12070,6 +12904,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -12103,6 +12942,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     enum: [
@@ -12117,6 +12957,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -12145,6 +12990,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     enum: [
@@ -12158,6 +13004,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -12183,6 +13034,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -12200,6 +13052,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -12236,6 +13093,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -12253,6 +13111,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -12289,6 +13152,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -12305,6 +13169,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -12335,6 +13204,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -12350,6 +13220,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -12374,6 +13249,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     anyOf: [
@@ -12389,6 +13265,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -12425,6 +13306,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     anyOf: [
@@ -12440,6 +13322,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -12476,6 +13363,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     anyOf: [
@@ -12490,6 +13378,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -12520,6 +13413,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     anyOf: [
@@ -12533,6 +13427,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -12559,6 +13458,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -12576,6 +13476,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -12612,6 +13517,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -12629,6 +13535,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -12665,6 +13576,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -12681,6 +13593,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -12711,6 +13628,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -12726,6 +13644,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -12750,6 +13673,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     oneOf: [
@@ -12765,6 +13689,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -12801,6 +13730,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     oneOf: [
@@ -12816,6 +13746,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -12852,6 +13787,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     oneOf: [
@@ -12866,6 +13802,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -12896,6 +13837,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     oneOf: [
@@ -12909,6 +13851,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -12935,6 +13882,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -12952,6 +13900,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -12969,6 +13922,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -12986,6 +13940,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -13003,6 +13962,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -13018,6 +13978,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -13035,6 +14000,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -13050,6 +14016,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -13067,6 +14038,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     allOf: [
@@ -13082,6 +14054,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -13099,6 +14076,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     allOf: [
@@ -13114,6 +14092,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -13131,6 +14114,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     allOf: [
@@ -13144,6 +14128,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -13161,6 +14150,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     allOf: [
@@ -13174,6 +14164,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -13193,6 +14188,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'string' }
                   ]
@@ -13203,6 +14199,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -13220,6 +14221,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'number' }
                   ]
@@ -13230,6 +14232,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -13247,6 +14254,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'boolean' }
                   ]
@@ -13257,6 +14265,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -13274,6 +14287,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'null' }
                   ]
@@ -13284,6 +14298,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -13301,6 +14320,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string'
                   }
@@ -13311,6 +14331,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -13328,6 +14353,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number'
                   }
@@ -13338,6 +14364,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -13355,6 +14386,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean'
                   }
@@ -13365,6 +14397,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -13382,6 +14419,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null'
                   }
@@ -13392,6 +14430,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -13413,6 +14456,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -13430,6 +14474,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -13463,6 +14512,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -13480,6 +14530,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -13513,6 +14568,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -13529,6 +14585,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -13557,6 +14618,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -13572,6 +14634,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -13597,6 +14664,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -13614,6 +14682,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -13650,6 +14723,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -13667,6 +14741,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -13703,6 +14782,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -13719,6 +14799,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -13749,6 +14834,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -13764,6 +14850,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -13790,6 +14881,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -13807,6 +14899,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -13843,6 +14940,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -13860,6 +14958,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -13896,6 +14999,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -13912,6 +15016,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -13942,6 +15051,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -13957,6 +15067,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -13983,6 +15098,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -14000,6 +15116,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -14017,6 +15138,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -14034,6 +15156,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -14051,6 +15178,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -14066,6 +15194,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -14083,6 +15216,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -14098,6 +15232,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -14117,6 +15256,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string'
@@ -14129,6 +15269,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -14146,6 +15291,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number'
@@ -14158,6 +15304,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -14175,6 +15326,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean'
@@ -14187,6 +15339,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -14204,6 +15361,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null'
@@ -14216,6 +15374,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 return expect(transform(schema, values))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -14929,6 +16092,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -14951,6 +16115,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -14984,6 +16153,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -15006,6 +16176,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -15039,6 +16214,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -15060,6 +16236,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -15088,6 +16269,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -15108,6 +16290,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -15131,6 +16318,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     enum: [
@@ -15151,6 +16339,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -15184,6 +16377,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     enum: [
@@ -15204,6 +16398,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -15237,6 +16436,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     enum: [
@@ -15256,6 +16456,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -15284,6 +16489,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     enum: [
@@ -15302,6 +16508,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -15327,6 +16538,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -15349,6 +16561,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -15385,6 +16602,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -15407,6 +16625,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -15443,6 +16666,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -15464,6 +16688,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -15494,6 +16723,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -15514,6 +16744,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -15538,6 +16773,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     anyOf: [
@@ -15558,6 +16794,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -15594,6 +16835,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     anyOf: [
@@ -15614,6 +16856,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -15650,6 +16897,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     anyOf: [
@@ -15669,6 +16917,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -15699,6 +16952,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     anyOf: [
@@ -15717,6 +16971,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -15743,6 +17002,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -15765,6 +17025,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -15801,6 +17066,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -15823,6 +17089,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -15859,6 +17130,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -15880,6 +17152,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -15910,6 +17187,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -15930,6 +17208,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -15955,6 +17238,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     oneOf: [
@@ -15975,6 +17259,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -16011,6 +17300,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     oneOf: [
@@ -16031,6 +17321,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -16067,6 +17362,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     oneOf: [
@@ -16086,6 +17382,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -16116,6 +17417,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     oneOf: [
@@ -16134,6 +17436,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -16161,6 +17468,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -16183,6 +17491,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -16200,6 +17513,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -16222,6 +17536,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -16239,6 +17558,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -16259,6 +17579,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -16276,6 +17601,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -16296,6 +17622,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -16313,6 +17644,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     allOf: [
@@ -16333,6 +17665,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -16350,6 +17687,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     allOf: [
@@ -16370,6 +17708,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -16387,6 +17730,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     allOf: [
@@ -16405,6 +17749,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -16422,6 +17771,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     allOf: [
@@ -16440,6 +17790,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -16459,6 +17814,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'string' }
                   ]
@@ -16474,6 +17830,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -16490,6 +17851,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'number' }
                   ]
@@ -16505,6 +17867,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -16521,6 +17888,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'boolean' }
                   ]
@@ -16536,6 +17904,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -16552,6 +17925,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'null' }
                   ]
@@ -16567,6 +17941,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -16583,6 +17962,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string'
                   }
@@ -16598,6 +17978,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -16614,6 +17999,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number'
                   }
@@ -16629,6 +18015,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -16645,6 +18036,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean'
                   }
@@ -16660,6 +18052,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -16676,6 +18073,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null'
                   }
@@ -16691,6 +18089,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'array',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -16711,6 +18114,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -16733,6 +18137,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -16766,6 +18175,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -16788,6 +18198,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -16821,6 +18236,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -16842,6 +18258,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -16870,6 +18291,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -16890,6 +18312,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -16915,6 +18342,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -16937,6 +18365,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -16973,6 +18406,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -16995,6 +18429,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -17031,6 +18470,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -17052,6 +18492,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -17082,6 +18527,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -17102,6 +18548,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -17128,6 +18579,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -17150,6 +18602,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -17186,6 +18643,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -17208,6 +18666,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -17244,6 +18707,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -17265,6 +18729,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -17295,6 +18764,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -17315,6 +18785,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -17341,6 +18816,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -17363,6 +18839,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -17380,6 +18861,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -17402,6 +18884,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -17419,6 +18906,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -17439,6 +18927,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -17456,6 +18949,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -17476,6 +18970,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -17495,6 +18994,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string'
@@ -17512,6 +19012,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -17528,6 +19033,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number'
@@ -17545,6 +19051,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -17561,6 +19072,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean'
@@ -17578,6 +19090,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -17594,6 +19111,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null'
@@ -17611,6 +19129,11 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   .to.eql({
                     type: 'object',
                     component: 'component',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -17976,8 +19499,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'string',
@@ -18016,8 +19537,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     { const: 'string (3)' }
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -18060,8 +19579,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     { const: 'string (3)' }
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -18105,8 +19622,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'string',
@@ -18124,8 +19639,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 const schema = {
                   type: 'string'
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -18150,8 +19663,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     3
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -18191,8 +19702,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     { const: 3 }
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -18235,8 +19744,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     { const: 3 }
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -18280,8 +19787,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'number',
@@ -18300,8 +19805,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   type: 'number'
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'number',
@@ -18319,6 +19822,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -18331,11 +19835,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -18369,6 +19876,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -18381,11 +19889,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -18419,6 +19930,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -18430,11 +19942,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -18463,6 +19978,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -18473,11 +19989,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -18501,6 +20020,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     enum: [
@@ -18511,11 +20031,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -18549,6 +20072,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     enum: [
@@ -18559,11 +20083,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -18597,6 +20124,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     enum: [
@@ -18606,11 +20134,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -18639,6 +20170,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     enum: [
@@ -18647,11 +20179,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -18677,6 +20212,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -18689,11 +20225,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -18730,6 +20269,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -18742,11 +20282,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -18783,6 +20326,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -18794,11 +20338,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -18829,6 +20376,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -18839,11 +20387,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -18868,6 +20419,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     anyOf: [
@@ -18878,11 +20430,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -18919,6 +20474,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     anyOf: [
@@ -18929,11 +20485,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -18970,6 +20529,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     anyOf: [
@@ -18979,11 +20539,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -19014,6 +20577,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     anyOf: [
@@ -19022,11 +20586,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -19053,6 +20620,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -19065,11 +20633,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -19106,6 +20677,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -19118,11 +20690,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -19159,6 +20734,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -19170,11 +20746,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -19205,6 +20784,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -19215,11 +20795,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -19245,6 +20828,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     oneOf: [
@@ -19255,11 +20839,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -19296,6 +20883,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     oneOf: [
@@ -19306,11 +20894,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -19347,6 +20938,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     oneOf: [
@@ -19356,11 +20948,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -19391,6 +20986,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     oneOf: [
@@ -19399,11 +20995,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -19431,6 +21030,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'string',
@@ -19443,11 +21043,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -19465,6 +21068,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'number',
@@ -19477,11 +21081,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -19499,6 +21106,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'boolean',
@@ -19509,11 +21117,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -19531,6 +21142,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     {
                       type: 'null',
@@ -19541,11 +21153,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -19563,6 +21178,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string',
                     allOf: [
@@ -19573,11 +21189,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -19595,6 +21214,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number',
                     allOf: [
@@ -19605,11 +21225,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -19627,6 +21250,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean',
                     allOf: [
@@ -19635,11 +21259,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -19657,6 +21284,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null',
                     allOf: [
@@ -19665,11 +21293,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -19689,16 +21320,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'string' }
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -19715,16 +21350,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'number' }
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -19741,16 +21380,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'boolean' }
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -19767,16 +21410,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: [
                     { type: 'null' }
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -19793,16 +21440,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'string'
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -19819,16 +21470,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'number'
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -19845,16 +21500,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'boolean'
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -19871,16 +21530,20 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `array` type schemas (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
+                  title: 'Array',
                   items: {
                     type: 'null'
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'array',
+                    group: {
+                      legend: {
+                        text: 'Array'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -19901,6 +21564,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -19913,11 +21577,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -19951,6 +21618,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -19963,11 +21631,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -20001,6 +21672,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -20012,11 +21684,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -20045,6 +21720,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -20055,11 +21731,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -20085,6 +21764,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -20097,11 +21777,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -20138,6 +21821,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -20150,11 +21834,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -20191,6 +21878,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -20202,11 +21890,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -20237,6 +21928,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -20247,11 +21939,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -20278,6 +21973,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -20290,11 +21986,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -20331,6 +22030,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -20343,11 +22043,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -20384,6 +22087,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -20395,11 +22099,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -20430,6 +22137,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -20440,11 +22148,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -20471,6 +22182,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string',
@@ -20483,11 +22195,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -20505,6 +22220,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number',
@@ -20517,11 +22233,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -20539,6 +22258,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean',
@@ -20549,11 +22269,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -20571,6 +22294,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null',
@@ -20581,11 +22305,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -20605,6 +22332,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `string` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     string: {
                       type: 'string'
@@ -20612,11 +22340,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'string',
@@ -20633,6 +22364,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `number` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     number: {
                       type: 'number'
@@ -20640,11 +22372,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'number',
@@ -20661,6 +22396,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `boolean` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     boolean: {
                       type: 'boolean'
@@ -20668,11 +22404,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'boolean',
@@ -20689,6 +22428,7 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
               it('transforms `object` type schemas of `null` type)', () => {
                 const schema = {
                   type: 'object',
+                  title: 'Object',
                   properties: {
                     null: {
                       type: 'null'
@@ -20696,11 +22436,14 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   }
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'object',
+                    group: {
+                      legend: {
+                        text: 'Object'
+                      }
+                    },
                     fields: [
                       {
                         type: 'null',
@@ -20726,8 +22469,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     false
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -20762,8 +22503,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'boolean',
@@ -20799,8 +22538,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'boolean',
@@ -20835,8 +22572,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'boolean',
@@ -20854,8 +22589,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 const schema = {
                   type: 'boolean'
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -20878,8 +22611,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     null
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -20907,8 +22638,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                     { const: null }
                   ]
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
@@ -20938,8 +22667,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'null',
@@ -20968,8 +22695,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                   ]
                 }
 
-                // log(JSON.stringify(transform(schema), null, 2))
-
                 return expect(transform(schema))
                   .to.eql({
                     type: 'null',
@@ -20987,8 +22712,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
                 const schema = {
                   type: 'null'
                 }
-
-                // log(JSON.stringify(transform(schema), null, 2))
 
                 return expect(transform(schema))
                   .to.eql({
