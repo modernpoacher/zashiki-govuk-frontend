@@ -1,6 +1,7 @@
   {% call fieldset (params.group) %}
     {% for field in params.fields %}
       {% if field.component %}
+{%- include "./component.njk" -%}
 
       {% elif field.type === 'string' %}
 {%- include "./string.njk" -%}
@@ -8,10 +9,10 @@
       {% elif field.type === 'number' %}
 {%- include "./number.njk" -%}
 
-      {% elif field.type === 'object' %}
+      {% elif field.type === 'array' %}
 {{ zashiki(field) }}
 
-      {% elif field.type === 'array' %}
+      {% elif field.type === 'object' %}
 {{ zashiki(field) }}
 
       {% elif field.type === 'boolean' %}

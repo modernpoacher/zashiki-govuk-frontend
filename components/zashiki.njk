@@ -29,6 +29,8 @@
 {% from "warning-text/macro.njk" import warningText %}
 {% macro zashiki(params) %}
   {% if params.component %}
+    {% set field = params %}
+{%- include "./component.njk" -%}
 
   {% elif params.type === 'string' %}
     {% set field = params %}
