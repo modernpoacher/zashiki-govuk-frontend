@@ -60,7 +60,7 @@
   },
   "peerDependencies": {
     "govuk-frontend": "^3.6.0",
-    "shinkansen-transmission": "^2.1.0"
+    "shinkansen-transmission": "^2.1.1"
   },
   "husky": {
     "hooks": {
