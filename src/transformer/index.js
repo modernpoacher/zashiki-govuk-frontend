@@ -36,7 +36,7 @@ export const transformTitleToLabel = (field = {}, text) => ({ ...field, ...(text
 
 export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(text ? { legend: { text } } : {}) })
 
-export const transformTitleToFieldsetLegend = ({ fieldset: { legend: { classes } = {} } = {}, ...field } = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text, classes } } } : {}) })
+export const transformTitleToFieldsetLegend = (field = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
 
 export function transformElementsToCheckboxesEnum ({ selectedItems = [] }, { enum: { items = [], id, name = id, ...field } }, { uri, parentUri = uri }) {
   log('transformElementsToCheckboxesEnum') // , selectedItems)
@@ -799,4 +799,4 @@ export function transformDebark (definition, response, components) {
   return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
 }
 
-export default (description, definition, response, components = {}) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
+export default (definition, response, components = {}) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
