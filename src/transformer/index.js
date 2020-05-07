@@ -36,7 +36,7 @@ export const transformTitleToLabel = (field = {}, text) => ({ ...field, ...(text
 
 export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(text ? { legend: { text } } : {}) })
 
-export const transformTitleToFieldsetLegend = (field = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
+export const transformTitleToFieldsetLegend = ({ fieldset: { legend: { classes } = {} } = {}, ...field } = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text, classes } } } : {}) })
 
 export function transformElementsToCheckboxesEnum ({ selectedItems = [] }, { enum: { items = [], id, name = id, ...field } }, { uri, parentUri = uri }) {
   log('transformElementsToCheckboxesEnum') // , selectedItems)
@@ -96,7 +96,7 @@ export function transformElementsToCheckboxesField ({ selectedItems = [] }, { fi
  *  `radios` item `id` is omitted (not provided by `toZashiki`)
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosEnum ({ uri, parentUri = uri, selectedItems = [] }, { enum: { id, name = id, items = [], ...field } }) {
+export function transformElementsToRadiosEnum ({ selectedItems = [] }, { enum: { id, name = id, items = [], ...field } }) {
   log('transformElementsToRadiosEnum') // , selectedItems)
 
   return {
@@ -119,7 +119,7 @@ export function transformElementsToRadiosEnum ({ uri, parentUri = uri, selectedI
  *  `radios` item `id` is the id
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosAnyOf ({ uri, parentUri = uri, selectedItems = [] }, { anyOf: { id, name = id, items = [], ...field } }) {
+export function transformElementsToRadiosAnyOf ({ selectedItems = [] }, { anyOf: { id, name = id, items = [], ...field } }) {
   log('transformElementsToRadiosAnyOf') // , selectedItems)
 
   return {
@@ -142,7 +142,7 @@ export function transformElementsToRadiosAnyOf ({ uri, parentUri = uri, selected
  *  `radios` item `id` is the id
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosOneOf ({ uri, parentUri = uri, selectedItems = [] }, { oneOf: { id, name = id, items = [], ...field } }) {
+export function transformElementsToRadiosOneOf ({ selectedItems = [] }, { oneOf: { id, name = id, items = [], ...field } }) {
   log('transformElementsToRadiosOneOf') // , selectedItems)
 
   return {
@@ -168,7 +168,7 @@ export function transformElementsToRadiosOneOf ({ uri, parentUri = uri, selected
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectEnum ({ uri, parentUri = uri, selectedItems = [] }, { enum: { id, name = id, items = [], ...field } }) {
+export function transformElementsToSelectEnum ({ selectedItems = [] }, { enum: { id, name = id, items = [], ...field } }) {
   log('transformElementsToSelectEnum') // , selectedItems)
 
   return {
@@ -191,7 +191,7 @@ export function transformElementsToSelectEnum ({ uri, parentUri = uri, selectedI
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectAnyOf ({ uri, parentUri = uri, selectedItems = [] }, { anyOf: { id, name = id, items = [], ...field } }) {
+export function transformElementsToSelectAnyOf ({ selectedItems = [] }, { anyOf: { id, name = id, items = [], ...field } }) {
   log('transformElementsToSelectAnyOf') // , selectedItems)
 
   return {
@@ -230,7 +230,7 @@ export function transformElementsToSelectOneOf ({ selectedItems = [] }, { oneOf:
   }
 }
 
-export const transformElementsToInputEnum = ({ uri, parentUri = uri }, { enum: { items = [], selectedItems = [], id, name = id, ...field } }) => {
+export const transformElementsToInputEnum = ({ items = [], selectedItems = [] }, { enum: { id, name = id, ...field } }) => {
   log('transformElementsToInputEnum') // , selectedItems)
 
   return {
@@ -241,7 +241,7 @@ export const transformElementsToInputEnum = ({ uri, parentUri = uri }, { enum: {
   }
 }
 
-export const transformElementsToInputAnyOf = ({ uri, parentUri = uri }, { anyOf: { items = [], selectedItems = [], id, name = id, ...field } }) => {
+export const transformElementsToInputAnyOf = ({ items = [], selectedItems = [] }, { anyOf: { id, name = id, ...field } }) => {
   log('transformElementsToInputAnyOf') // , selectedItems)
 
   return {
@@ -252,7 +252,7 @@ export const transformElementsToInputAnyOf = ({ uri, parentUri = uri }, { anyOf:
   }
 }
 
-export const transformElementsToInputOneOf = ({ uri, parentUri = uri }, { oneOf: { items = [], selectedItems = [], id, name = id, ...field } }) => {
+export const transformElementsToInputOneOf = ({ items = [], selectedItems = [] }, { oneOf: { id, name = id, ...field } }) => {
   log('transformElementsToInputOneOf') // , selectedItems)
 
   return {
@@ -263,7 +263,7 @@ export const transformElementsToInputOneOf = ({ uri, parentUri = uri }, { oneOf:
   }
 }
 
-export const transformElementsToInputField = ({ uri, parentUri = uri }, { field: { id, name = id, ...field } }) => {
+export const transformElementsToInputField = (meta, { field: { id, name = id, ...field } }) => {
   log('transformElementsToInputField')
 
   return {
@@ -274,7 +274,14 @@ export const transformElementsToInputField = ({ uri, parentUri = uri }, { field:
   }
 }
 
-export const transformElementsToGroup = (meta, { id, name = id, ...field } = {}) => ({ ...(name ? { name } : {}), ...(id ? { id } : {}), ...(hasRequired(field) ? { required: getRequired(field) } : {}), ...(hasValue(field) ? { value: getValue(field) } : {}) })
+export const transformElementsToGroup = (meta, { id, name = id, ...elements } = {}) => {
+  return {
+    ...(id ? { id } : {}),
+    ...(name ? { name } : {}),
+    ...(hasRequired(elements) ? { required: getRequired(elements) } : {}),
+    ...(hasValue(elements) ? { value: getValue(elements) } : {})
+  }
+}
 
 export function transformFields (meta, elements) {
   log('transformFields')
@@ -654,10 +661,7 @@ export function transformFieldToComponent (meta, elements) {
   }
 }
 
-export const transformOne = ({
-  meta = {},
-  elements = {}
-} = {}) => {
+export function transformOne ({ meta = {}, elements = {} } = {}) {
   log('transformOne')
 
   const type = getType(meta)
@@ -678,10 +682,7 @@ export const transformOne = ({
   }
 }
 
-export const transformAll = ({
-  meta = {},
-  elements = {}
-} = {}) => {
+export function transformAll ({ meta = {}, elements = {} } = {}) {
   log('transformAll')
 
   const type = getType(meta)
@@ -714,4 +715,88 @@ const transform = (zashiki = {}) => {
     : transformOne(zashiki)
 }
 
-export default (definition, response, components) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
+export function transformEmbark (definition, response, components) {
+  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
+}
+
+export function transformAlpha (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--m', isPageHeading = false, ...meta } = {}, ...components } = {}) {
+  const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components)
+
+  const {
+    meta: {
+      type
+    } = {}
+  } = zashiki
+
+  if (type === 'object' || type === 'array') {
+    return {
+      zashiki: {
+        group: {
+          legend: {
+            text: description,
+            classes,
+            isPageHeading
+          }
+        },
+        fields: transformAll(zashiki)
+      }
+    }
+  } else {
+    return {
+      zashiki: {
+        group: {
+          legend: {
+            text: description,
+            classes,
+            isPageHeading
+          }
+        },
+        fields: transformOne(zashiki)
+      }
+    }
+  }
+}
+
+export function transformOmega (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--l', isPageHeading = true, ...meta } = {}, ...components } = {}) {
+  const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, { ...components, meta: { ...meta, isPageHeading: true } })
+
+  const {
+    meta: {
+      type
+    } = {}
+  } = zashiki
+
+  if (type === 'object' || type === 'array') {
+    return {
+      zashiki: {
+        group: {
+          legend: {
+            text: description,
+            classes,
+            isPageHeading
+          }
+        },
+        fields: transformAll(zashiki)
+      }
+    }
+  } else {
+    return {
+      zashiki: {
+        group: {
+          legend: {
+            text: description,
+            classes,
+            isPageHeading
+          }
+        },
+        fields: transformOne(zashiki)
+      }
+    }
+  }
+}
+
+export function transformDebark (definition, response, components) {
+  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
+}
+
+export default (description, definition, response, components = {}) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
