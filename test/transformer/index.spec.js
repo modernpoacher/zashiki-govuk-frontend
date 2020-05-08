@@ -11,14 +11,6 @@ import transform, {
   transformFieldToInput,
   transformFieldToComponent,
   transformFieldsToComponent,
-  hasEnum,
-  getEnum,
-  hasOneOf,
-  getOneOf,
-  hasAnyOf,
-  getAnyOf,
-  getType,
-  getComponent,
   getName,
   transformDescriptionToHint,
   transformTitleToLabel,
@@ -128,62 +120,6 @@ describe('zashiki-govuk-frontend/src/transformer', () => {
   describe('`transformFieldToComponent`', () => {
     it('is a function', () => {
       expect(transformFieldToComponent)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`hasEnum`', () => {
-    it('is a function', () => {
-      expect(hasEnum)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`getEnum`', () => {
-    it('is a function', () => {
-      expect(getEnum)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`hasOneOf`', () => {
-    it('is a function', () => {
-      expect(hasOneOf)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`getOneOf`', () => {
-    it('is a function', () => {
-      expect(getOneOf)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`hasAnyOf`', () => {
-    it('is a function', () => {
-      expect(hasAnyOf)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`getAnyOf`', () => {
-    it('is a function', () => {
-      expect(getAnyOf)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`getType`', () => {
-    it('is a function', () => {
-      expect(getType)
-        .to.be.a('function')
-    })
-  })
-
-  describe('`getComponent`', () => {
-    it('is a function', () => {
-      expect(getComponent)
         .to.be.a('function')
     })
   })
