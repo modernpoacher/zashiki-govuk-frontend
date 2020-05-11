@@ -19,11 +19,15 @@ export default function getResourceUrl (resource = {}) {
     if (Reflect.has(resource, 'debark')) {
       return Rails.to(resource, Signals.DEBARK_PATTERN)
     } else {
-      if (Reflect.has(resource, 'embark')) {
-        return Rails.to(resource, Signals.EMBARK_PATTERN)
+      if (Reflect.has(resource, 'confirmation')) {
+        return Rails.to(resource, Signals.CONFIRMATION_PATTERN)
       } else {
-        if (Reflect.has(resource, 'alpha')) {
-          return Rails.to(resource, Signals.ALPHA_PATTERN)
+        if (Reflect.has(resource, 'embark')) {
+          return Rails.to(resource, Signals.EMBARK_PATTERN)
+        } else {
+          if (Reflect.has(resource, 'alpha')) {
+            return Rails.to(resource, Signals.ALPHA_PATTERN)
+          }
         }
       }
     }
