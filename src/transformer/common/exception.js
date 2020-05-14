@@ -6,7 +6,7 @@ import {
   Signals
 } from 'shinkansen-signals'
 
-const error = debug('zashiki:transformer:exception')
+const log = debug('zashiki:transformer:exception')
 
 const transformException = ({
   code = 500,
@@ -20,23 +20,23 @@ const transformException = ({
   )
 })
 
-export default (e) => ({
+export default (error) => ({
   status: Signals.FAILURE,
-  exception: transformException(e)
+  exception: transformException(error)
 })
 
 export const NOT_FOUND = 'https://tools.ietf.org/html/rfc7231#section-6.5.4'
 export const BAD_DATA = 'https://tools.ietf.org/html/rfc7231#section-6.5.1'
 export const BAD_IMPLEMENTATION = 'https://tools.ietf.org/html/rfc7231#section-6.5.1'
 
-export function handleException (e) {
+export function handleException (error) {
   const {
     code,
     message = 'No error message defined'
-  } = e
+  } = error
 
-  if (code) error(code, message)
-  else error(message)
+  if (code) log(code, message)
+  else log(message)
 
   if (code === 404) throw Boom.notFound(NOT_FOUND)
   throw Boom.badImplementation(BAD_IMPLEMENTATION)
