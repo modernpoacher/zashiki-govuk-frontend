@@ -1,15 +1,15 @@
   {% if field.component === 'checkboxes' %}
 
     {% if field.enum %}
-      {{ checkboxes(field.enum) }}
+{{ checkboxes(field.enum) }}
     {% else %}
       {% if field.anyOf %}
-        {{ checkboxes(field.anyOf) }}
+{{ checkboxes(field.anyOf) }}
       {% else %}
         {% if field.oneOf %}
-          {{ checkboxes(field.oneOf) }}
+{{ checkboxes(field.oneOf) }}
         {% else %}
-          {{ input(field.field) }}
+{{ input(field.field) }}
         {% endif %}
       {% endif %}
     {% endif %}
@@ -17,15 +17,15 @@
   {% elif field.component === 'radios' %}
 
     {% if field.enum %}
-      {{ radios(field.enum) }}
+{{ radios(field.enum) }}
     {% else %}
       {% if field.anyOf %}
-        {{ radios(field.anyOf) }}
+{{ radios(field.anyOf) }}
       {% else %}
         {% if field.oneOf %}
-          {{ radios(field.oneOf) }}
+{{ radios(field.oneOf) }}
         {% else %}
-          {{ input(field.field) }}
+{{ input(field.field) }}
         {% endif %}
       {% endif %}
     {% endif %}
@@ -33,15 +33,15 @@
   {% elif field.component === 'select' %}
 
     {% if field.enum %}
-      {{ select(field.enum) }}
+{{ select(field.enum) }}
     {% else %}
       {% if field.anyOf %}
-        {{ select(field.anyOf) }}
+{{ select(field.anyOf) }}
       {% else %}
         {% if field.oneOf %}
-          {{ select(field.oneOf) }}
+{{ select(field.oneOf) }}
         {% else %}
-          {{ input(field.field) }}
+{{ input(field.field) }}
         {% endif %}
       {% endif %}
     {% endif %}

@@ -1,0 +1,31 @@
+{% extends "views/templates/page.njk" %}
+{% from "components/back-link/macro.njk" import backLink %}
+{% from "components/error-summary/macro.njk" import errorSummary %}
+
+{% block beforeContent %}
+{% if reverse %}
+{{ backLink(reverse) }}
+{% endif %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {{ pageHeading }}
+      </h1>
+{% for stage in stages %}
+{% if stage.errors %}
+{{ errorSummary(stage.errors) }}
+{% endif %}
+
+      <form method="post" action="{{ stage.action }}">
+{{ zashiki(stage.params) }}
+{{ button({
+  text: "Update"
+}) }}
+      </form>
+{% endfor %}
+    </div>
+  </div>
+{% endblock %}

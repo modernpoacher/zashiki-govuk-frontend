@@ -1,13 +1,13 @@
   {% if field.enum %}
-    {{ select(field.enum) }}
+{{ select(field.enum) }}
   {% else %}
     {% if field.anyOf %}
-      {{ radios(field.anyOf) }}
+{{ radios(field.anyOf) }}
     {% else %}
       {% if field.oneOf %}
-        {{ radios(field.oneOf) }}
+{{ radios(field.oneOf) }}
       {% else %}
-        {{ input(field.field) }}
+{{ input(field.field) }}
       {% endif %}
     {% endif %}
   {% endif %}

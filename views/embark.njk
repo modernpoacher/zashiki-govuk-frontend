@@ -1,0 +1,17 @@
+{% extends "views/templates/page.njk" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="{{ action }}">
+        <h1 class="govuk-heading-xl">
+          Embark
+        </h1>
+{{ zashiki(params) }}
+{{ button({
+  text: "Start"
+}) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

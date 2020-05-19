@@ -1,0 +1,37 @@
+{% extends "views/templates/page.njk" %}
+{% from "components/summary-list/macro.njk" import summaryList %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        {{ pageHeading }}
+      </h1>
+{% for stage in stages %}
+      <h2 class="govuk-heading-m">
+        {{ stage.title }}
+      </h2>
+{{ summaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: stage.items
+}) }}
+
+{% endfor %}
+
+      <h2 class="govuk-heading-m">Now send your answers</h2>
+
+      <p class="govuk-body">By submitting this notification you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+
+      <form action="{{ action }}" method="post" novalidate>
+        {% for key, value in token %}
+        <input type="hidden" name="{{ key }}" value="{{ value }}">
+        {% endfor %}
+
+        <button class="govuk-button" data-module="govuk-button">
+          Accept and send
+        </button>
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
