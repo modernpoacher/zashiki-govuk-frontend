@@ -15,6 +15,8 @@ import {
   getRequired
 } from './common'
 
+import toErrorMessage, { hasError, getError } from './to-error-message'
+
 const log = debug('zashiki:transformer:transform')
 
 export const getName = ({ name } = {}) => (name ? { name } : {})
@@ -29,37 +31,40 @@ export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(tex
 
 export const transformTitleToFieldsetLegend = (field = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
 
-export function transformElementsToCheckboxesEnum ({ selectedItems = [] }, { enum: { items = [], id, name = id, ...field } }, { uri, parentUri = uri }) {
+export function transformElementsToCheckboxesEnum ({ selectedItems = [] }, { enum: { items = [], id, name = id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
   log('transformElementsToCheckboxesEnum')
 
   return {
     id: parentUri,
     items: items.map((value, index) => ({ text: String(value), value: String(index), id, name, checked: selectedItems.includes(index) })),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, parentUri) ? { errorMessage: toErrorMessage(getError(errors, parentUri), components) } : {})
   }
 }
 
-export function transformElementsToCheckboxesAnyOf ({ selectedItems = [] }, { anyOf: { items = [], id, ...field } }, { uri, parentUri = uri }) {
+export function transformElementsToCheckboxesAnyOf ({ selectedItems = [] }, { anyOf: { items = [], id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
   log('transformElementsToCheckboxesAnyOf')
 
   return {
     id: parentUri,
     items: items.map(({ elements: { title, description, field: { id, name = id } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), id, name, checked: selectedItems.includes(index) }, title), description)),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, parentUri) ? { errorMessage: toErrorMessage(getError(errors, parentUri), components) } : {})
   }
 }
 
-export function transformElementsToCheckboxesOneOf ({ selectedItems = [] }, { oneOf: { items = [], id, ...field } }, { uri, parentUri = uri }) {
+export function transformElementsToCheckboxesOneOf ({ selectedItems = [] }, { oneOf: { items = [], id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
   log('transformElementsToCheckboxesOneOf')
 
   return {
     id: parentUri,
     items: items.map(({ elements: { title, description, field: { id, name = id } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), id, name, checked: selectedItems.includes(index) }, title), description)),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, parentUri) ? { errorMessage: toErrorMessage(getError(errors, parentUri), components) } : {})
   }
 }
 
-export function transformElementsToCheckboxesField ({ selectedItems = [] }, { field: { value, id, name = id, ...field } }, { uri, parentUri = uri }) {
+export function transformElementsToCheckboxesField ({ selectedItems = [] }, { field: { value, id, name = id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
   log('transformElementsToCheckboxesField')
 
   return {
@@ -73,7 +78,8 @@ export function transformElementsToCheckboxesField ({ selectedItems = [] }, { fi
         checked: selectedItems.includes(value)
       }
     ],
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, parentUri) ? { errorMessage: toErrorMessage(getError(errors, parentUri), components) } : {})
   }
 }
 
@@ -87,7 +93,7 @@ export function transformElementsToCheckboxesField ({ selectedItems = [] }, { fi
  *  `radios` item `id` is omitted (not provided by `toZashiki`)
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosEnum ({ selectedItems = [] }, { enum: { id, name = id, items = [], ...field } }) {
+export function transformElementsToRadiosEnum ({ selectedItems = [], uri }, { enum: { id, name = id, items = [], ...field } }, { components, errors }) {
   log('transformElementsToRadiosEnum')
 
   return {
@@ -99,7 +105,8 @@ export function transformElementsToRadiosEnum ({ selectedItems = [] }, { enum: {
        */
       return { text: String(value), value: String(index), /* id, */ checked: selectedItems.includes(index) }
     }),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
@@ -110,7 +117,7 @@ export function transformElementsToRadiosEnum ({ selectedItems = [] }, { enum: {
  *  `radios` item `id` is the id
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosAnyOf ({ selectedItems = [] }, { anyOf: { id, name = id, items = [], ...field } }) {
+export function transformElementsToRadiosAnyOf ({ selectedItems = [], uri }, { anyOf: { id, name = id, items = [], ...field } }, { components, errors }) {
   log('transformElementsToRadiosAnyOf')
 
   return {
@@ -122,7 +129,8 @@ export function transformElementsToRadiosAnyOf ({ selectedItems = [] }, { anyOf:
        */
       return transformDescriptionToHint({ ...(title ? { text: title } : { text: String(value) }), value: String(index), id, checked: selectedItems.includes(index) }, description)
     }),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
@@ -133,7 +141,7 @@ export function transformElementsToRadiosAnyOf ({ selectedItems = [] }, { anyOf:
  *  `radios` item `id` is the id
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosOneOf ({ selectedItems = [] }, { oneOf: { id, name = id, items = [], ...field } }) {
+export function transformElementsToRadiosOneOf ({ selectedItems = [], uri }, { oneOf: { id, name = id, items = [], ...field } }, { components, errors }) {
   log('transformElementsToRadiosOneOf')
 
   return {
@@ -145,7 +153,8 @@ export function transformElementsToRadiosOneOf ({ selectedItems = [] }, { oneOf:
        */
       return transformDescriptionToHint({ ...(title ? { text: title } : { text: String(value) }), value: String(index), id, checked: selectedItems.includes(index) }, description)
     }),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
@@ -159,7 +168,7 @@ export function transformElementsToRadiosOneOf ({ selectedItems = [] }, { oneOf:
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectEnum ({ selectedItems = [] }, { enum: { id, name = id, items = [], ...field } }) {
+export function transformElementsToSelectEnum ({ selectedItems = [], uri }, { enum: { id, name = id, items = [], ...field } }, { components, errors }) {
   log('transformElementsToSelectEnum')
 
   return {
@@ -171,7 +180,8 @@ export function transformElementsToSelectEnum ({ selectedItems = [] }, { enum: {
        */
       return { text: String(value), value: String(index), selected: selectedItems.includes(index) }
     }),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
@@ -182,7 +192,7 @@ export function transformElementsToSelectEnum ({ selectedItems = [] }, { enum: {
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectAnyOf ({ selectedItems = [] }, { anyOf: { id, name = id, items = [], ...field } }) {
+export function transformElementsToSelectAnyOf ({ selectedItems = [], uri }, { anyOf: { id, name = id, items = [], ...field } }, { components, errors }) {
   log('transformElementsToSelectAnyOf')
 
   return {
@@ -194,7 +204,8 @@ export function transformElementsToSelectAnyOf ({ selectedItems = [] }, { anyOf:
        */
       return { ...(title ? { text: title } : { text: String(value) }), value: String(index), selected: selectedItems.includes(index) }
     }),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
@@ -205,7 +216,7 @@ export function transformElementsToSelectAnyOf ({ selectedItems = [] }, { anyOf:
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectOneOf ({ selectedItems = [] }, { oneOf: { id, name = id, items = [], ...field } }) {
+export function transformElementsToSelectOneOf ({ selectedItems = [], uri }, { oneOf: { id, name = id, items = [], ...field } }, { components, errors }) {
   log('transformElementsToSelectOneOf')
 
   return {
@@ -217,66 +228,72 @@ export function transformElementsToSelectOneOf ({ selectedItems = [] }, { oneOf:
        */
       return { ...(title ? { text: title } : { text: String(value) }), value: String(index), selected: selectedItems.includes(index) }
     }),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
-export function transformElementsToInputEnum ({ items = [], selectedItems = [] }, { enum: { id, name = id, ...field } }) {
+export function transformElementsToInputEnum ({ items = [], selectedItems = [], uri }, { enum: { id, name = id, ...field } }, { components, errors }) {
   log('transformElementsToInputEnum')
 
   return {
     items: items.map((value, index) => ({ text: String(value), value: String(index), /* id, name, */ selected: selectedItems.includes(index) })),
     ...(id ? { id } : {}),
     ...(name ? { name } : {}),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
-export function transformElementsToInputAnyOf ({ items = [], selectedItems = [] }, { anyOf: { id, name = id, ...field } }) {
+export function transformElementsToInputAnyOf ({ items = [], selectedItems = [], uri }, { anyOf: { id, name = id, ...field } }, { components, errors }) {
   log('transformElementsToInputAnyOf')
 
   return {
     items: items.map(({ elements: { title, description, field: { id, name = id } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), id, name, checked: selectedItems.includes(index) }, title), description)),
     ...(id ? { id } : {}),
     ...(name ? { name } : {}),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
-export function transformElementsToInputOneOf ({ items = [], selectedItems = [] }, { oneOf: { id, name = id, ...field } }) {
+export function transformElementsToInputOneOf ({ items = [], selectedItems = [], uri }, { oneOf: { id, name = id, ...field } }, { components, errors }) {
   log('transformElementsToInputOneOf')
 
   return {
     items: items.map(({ elements: { title, description, field: { id, name = id } = {} } }, index) => transformDescriptionToHint(transformTitleToText({ value: String(index), id, name, checked: selectedItems.includes(index) }, title), description)),
     ...(id ? { id } : {}),
     ...(name ? { name } : {}),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
-export function transformElementsToInputField (meta, { field: { id, name = id, ...field } }) {
+export function transformElementsToInputField ({ uri }, { field: { id, name = id, ...field } }, { components, errors }) {
   log('transformElementsToInputField')
 
   return {
     ...(id ? { id } : {}),
     ...(name ? { name } : {}),
     ...(hasValue(field) ? { value: getValue(field) } : {}),
-    ...(hasRequired(field) ? { required: getRequired(field) } : {})
+    ...(hasRequired(field) ? { required: getRequired(field) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
-export function transformElementsToGroup (meta, { id, name = id, ...elements } = {}) {
+export function transformElementsToGroup ({ uri }, { id, name = id, ...elements } = {}, { components, errors }) {
   log('transformElementsToGroup')
 
   return {
     ...(id ? { id } : {}),
     ...(name ? { name } : {}),
     ...(hasRequired(elements) ? { required: getRequired(elements) } : {}),
-    ...(hasValue(elements) ? { value: getValue(elements) } : {})
+    ...(hasValue(elements) ? { value: getValue(elements) } : {}),
+    ...(hasError(errors, uri) ? { errorMessage: toErrorMessage(getError(errors, uri), components) } : {})
   }
 }
 
-export function transformFields (meta, elements) {
+export function transformFields (meta, elements, params) {
   log('transformFields')
 
   const {
@@ -285,39 +302,39 @@ export function transformFields (meta, elements) {
   } = elements
 
   return {
-    group: transformTitleToLegend(transformElementsToGroup(meta, elements), title),
-    fields: fields.map(transform)
+    group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
+    fields: fields.map((field) => transform(field, params))
   }
 }
 
-export function transformField (meta, elements) {
+export function transformField (meta, elements, params) {
   log('transformField')
 
   if (hasEnum(elements)) {
     log('transformField (`enum`)')
 
     return {
-      enum: transformElementsToInputForEnum(meta, elements)
+      enum: transformElementsToInputForEnum(meta, elements, params)
     }
   } else {
     if (hasAnyOf(elements)) {
       log('transformField (`anyOf`)')
 
       return {
-        anyOf: transformElementsToInputForAnyOf(meta, elements)
+        anyOf: transformElementsToInputForAnyOf(meta, elements, params)
       }
     } else {
       if (hasOneOf(elements)) {
         log('transformField (`oneOf`)')
 
         return {
-          oneOf: transformElementsToInputForOneOf(meta, elements)
+          oneOf: transformElementsToInputForOneOf(meta, elements, params)
         }
       } else {
         log('transformField (`field`)')
 
         return {
-          field: transformElementsToInputForField(meta, elements)
+          field: transformElementsToInputForField(meta, elements, params)
         }
       }
     }
@@ -327,24 +344,24 @@ export function transformField (meta, elements) {
 export const transformElementsToCheckboxesForEnum = (meta, elements, parentMeta, {
   title,
   description
-}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesEnum(meta, elements, parentMeta), title), description)
+} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesEnum(meta, elements, parentMeta, params), title), description)
 
 export const transformElementsToCheckboxesForAnyOf = (meta, elements, parentMeta, {
   title,
   description
-}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesAnyOf(meta, elements, parentMeta), title), description)
+} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesAnyOf(meta, elements, parentMeta, params), title), description)
 
 export const transformElementsToCheckboxesForOneOf = (meta, elements, parentMeta, {
   title,
   description
-}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesOneOf(meta, elements, parentMeta), title), description)
+} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesOneOf(meta, elements, parentMeta, params), title), description)
 
 export const transformElementsToCheckboxesForField = (meta, elements, parentMeta, {
   title,
   description
-}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesField(meta, elements, parentMeta), title), description)
+} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesField(meta, elements, parentMeta, params), title), description)
 
-export function transformElementsToRadiosForEnum (meta, elements) {
+export function transformElementsToRadiosForEnum (meta, elements, params) {
   log('transformElementsToRadiosForEnum')
 
   const {
@@ -352,10 +369,10 @@ export function transformElementsToRadiosForEnum (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosEnum(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosEnum(meta, elements, params), title), description)
 }
 
-export function transformElementsToRadiosForAnyOf (meta, elements) {
+export function transformElementsToRadiosForAnyOf (meta, elements, params) {
   log('transformElementsToRadiosForAnyOf')
 
   const {
@@ -363,20 +380,20 @@ export function transformElementsToRadiosForAnyOf (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosAnyOf(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosAnyOf(meta, elements, params), title), description)
 }
 
-export function transformElementsToRadiosForOneOf (meta, elements) {
+export function transformElementsToRadiosForOneOf (meta, elements, params) {
   log('transformElementsToRadiosForOneOf')
 
   const {
     title,
     description
   } = elements
-  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosOneOf(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosOneOf(meta, elements, params), title), description)
 }
 
-export function transformElementsToSelectForEnum (meta, elements) {
+export function transformElementsToSelectForEnum (meta, elements, params) {
   log('transformElementsToSelectForEnum')
 
   const {
@@ -384,10 +401,10 @@ export function transformElementsToSelectForEnum (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectEnum(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectEnum(meta, elements, params), title), description)
 }
 
-export function transformElementsToSelectForAnyOf (meta, elements) {
+export function transformElementsToSelectForAnyOf (meta, elements, params) {
   log('transformElementsToSelectForAnyOf')
 
   const {
@@ -395,10 +412,10 @@ export function transformElementsToSelectForAnyOf (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectAnyOf(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectAnyOf(meta, elements, params), title), description)
 }
 
-export function transformElementsToSelectForOneOf (meta, elements) {
+export function transformElementsToSelectForOneOf (meta, elements, params) {
   log('transformElementsToSelectForOneOf')
 
   const {
@@ -406,10 +423,10 @@ export function transformElementsToSelectForOneOf (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectOneOf(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToLabel(transformElementsToSelectOneOf(meta, elements, params), title), description)
 }
 
-export function transformElementsToInputForEnum (meta, elements) {
+export function transformElementsToInputForEnum (meta, elements, params) {
   log('transformElementsToInputForEnum')
 
   const {
@@ -417,10 +434,10 @@ export function transformElementsToInputForEnum (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToLabel(transformElementsToInputEnum(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToLabel(transformElementsToInputEnum(meta, elements, params), title), description)
 }
 
-export function transformElementsToInputForAnyOf (meta, elements) {
+export function transformElementsToInputForAnyOf (meta, elements, params) {
   log('transformElementsToInputForAnyOf')
 
   const {
@@ -428,10 +445,10 @@ export function transformElementsToInputForAnyOf (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToInputAnyOf(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToInputAnyOf(meta, elements, params), title), description)
 }
 
-export function transformElementsToInputForOneOf (meta, elements) {
+export function transformElementsToInputForOneOf (meta, elements, params) {
   log('transformElementsToInputForOneOf')
 
   const {
@@ -439,10 +456,10 @@ export function transformElementsToInputForOneOf (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToInputOneOf(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToInputOneOf(meta, elements, params), title), description)
 }
 
-export function transformElementsToInputForField (meta, elements) {
+export function transformElementsToInputForField (meta, elements, params) {
   log('transformElementsToInputForField')
 
   const {
@@ -450,73 +467,73 @@ export function transformElementsToInputForField (meta, elements) {
     description
   } = elements
 
-  return transformDescriptionToHint(transformTitleToLabel(transformElementsToInputField(meta, elements), title), description)
+  return transformDescriptionToHint(transformTitleToLabel(transformElementsToInputField(meta, elements, params), title), description)
 }
 
-export function transformFieldToCheckboxes (meta, elements, parentMeta, parentElements) {
+export function transformFieldToCheckboxes (meta, elements, parentMeta, parentElements, params) {
   log('transformFieldToCheckboxes')
 
   if (hasEnum(elements)) {
     log('transformFieldToCheckboxes (`enum`)')
 
     return {
-      enum: transformElementsToCheckboxesForEnum(meta, elements, parentMeta, parentElements)
+      enum: transformElementsToCheckboxesForEnum(meta, elements, parentMeta, parentElements, params)
     }
   } else {
     if (hasAnyOf(elements)) {
       log('transformFieldToCheckboxes (`anyOf`)')
 
       return {
-        anyOf: transformElementsToCheckboxesForAnyOf(meta, elements, parentMeta, parentElements)
+        anyOf: transformElementsToCheckboxesForAnyOf(meta, elements, parentMeta, parentElements, params)
       }
     } else {
       if (hasOneOf(elements)) {
         log('transformFieldToCheckboxes (`oneOf`)')
 
         return {
-          oneOf: transformElementsToCheckboxesForOneOf(meta, elements, parentMeta, parentElements)
+          oneOf: transformElementsToCheckboxesForOneOf(meta, elements, parentMeta, parentElements, params)
         }
       } else {
         log('transformFieldToCheckboxes (`field`)')
 
         return {
-          field: transformElementsToCheckboxesForField(meta, elements, parentMeta, parentElements)
+          field: transformElementsToCheckboxesForField(meta, elements, parentMeta, parentElements, params)
         }
       }
     }
   }
 }
 
-export function transformFieldToDateInput (meta, elements) {
+export function transformFieldToDateInput (meta, elements, params) {
 
 }
 
-export function transformFieldToFileUpload (meta, elements) {
+export function transformFieldToFileUpload (meta, elements, params) {
 
 }
 
-export function transformFieldToRadios (meta, elements) {
+export function transformFieldToRadios (meta, elements, params) {
   log('transformFieldToRadios')
 
   if (hasEnum(elements)) {
     log('transformFieldToRadios (`enum`)')
 
     return {
-      enum: transformElementsToRadiosForEnum(meta, elements)
+      enum: transformElementsToRadiosForEnum(meta, elements, params)
     }
   } else {
     if (hasAnyOf(elements)) {
       log('transformFieldToRadios (`anyOf`)')
 
       return {
-        anyOf: transformElementsToRadiosForAnyOf(meta, elements)
+        anyOf: transformElementsToRadiosForAnyOf(meta, elements, params)
       }
     } else {
       if (hasOneOf(elements)) {
         log('transformFieldToRadios (`oneOf`)')
 
         return {
-          oneOf: transformElementsToRadiosForOneOf(meta, elements)
+          oneOf: transformElementsToRadiosForOneOf(meta, elements, params)
         }
       } else {
         log('transformFieldToRadios (`field`)')
@@ -527,28 +544,28 @@ export function transformFieldToRadios (meta, elements) {
   }
 }
 
-export function transformFieldToSelect (meta, elements) {
+export function transformFieldToSelect (meta, elements, params) {
   log('transformFieldToSelect')
 
   if (hasEnum(elements)) {
     log('transformFieldToSelect (`enum`)')
 
     return {
-      enum: transformElementsToSelectForEnum(meta, elements)
+      enum: transformElementsToSelectForEnum(meta, elements, params)
     }
   } else {
     if (hasAnyOf(elements)) {
       log('transformFieldToSelect (`anyOf`)')
 
       return {
-        anyOf: transformElementsToSelectForAnyOf(meta, elements)
+        anyOf: transformElementsToSelectForAnyOf(meta, elements, params)
       }
     } else {
       if (hasOneOf(elements)) {
         log('transformFieldToSelect (`oneOf`)')
 
         return {
-          oneOf: transformElementsToSelectForOneOf(meta, elements)
+          oneOf: transformElementsToSelectForOneOf(meta, elements, params)
         }
       } else {
         log('transformFieldToSelect (`field`)')
@@ -559,34 +576,34 @@ export function transformFieldToSelect (meta, elements) {
   }
 }
 
-export function transformFieldToInput (meta, elements) {
+export function transformFieldToInput (meta, elements, params) {
   log('transformFieldToInput')
 
   if (hasEnum(elements)) {
     log('transformFieldToInput (`enum`)')
 
     return {
-      enum: transformElementsToInputForEnum(meta, elements)
+      enum: transformElementsToInputForEnum(meta, elements, params)
     }
   } else {
     if (hasAnyOf(elements)) {
       log('transformFieldToInput (`anyOf`)')
 
       return {
-        anyOf: transformElementsToInputForAnyOf(meta, elements)
+        anyOf: transformElementsToInputForAnyOf(meta, elements, params)
       }
     } else {
       if (hasOneOf(elements)) {
         log('transformFieldToInput (`oneOf`)')
 
         return {
-          oneOf: transformElementsToInputForOneOf(meta, elements)
+          oneOf: transformElementsToInputForOneOf(meta, elements, params)
         }
       } else {
         log('transformFieldToInput (`field`)')
 
         return {
-          field: transformElementsToInputForField(meta, elements)
+          field: transformElementsToInputForField(meta, elements, params)
         }
       }
     }
@@ -602,13 +619,13 @@ export const transformFieldsToCheckboxes = (parentMeta, {
   ] = [],
   title,
   description
-} = {}) => {
+} = {}, params) => {
   log('transformFieldsToCheckboxes')
 
-  return transformFieldToCheckboxes(meta, elements, parentMeta, { title, description })
+  return transformFieldToCheckboxes(meta, elements, parentMeta, { title, description }, params)
 }
 
-export function transformFieldsToDateInput (meta, elements) {
+export function transformFieldsToDateInput (meta, elements, params) {
   log('transformFieldsToDateInput')
 
   const {
@@ -617,12 +634,12 @@ export function transformFieldsToDateInput (meta, elements) {
   } = elements
 
   return {
-    group: transformTitleToLegend(transformElementsToGroup(meta, elements), title),
-    fields: fields.map(transform)
+    group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
+    fields: fields.map((field) => transform(field, params))
   }
 }
 
-export function transformFieldsToFileUpload (meta, elements) {
+export function transformFieldsToFileUpload (meta, elements, params) {
   log('transformFieldsToFileUpload')
 
   const {
@@ -631,12 +648,12 @@ export function transformFieldsToFileUpload (meta, elements) {
   } = elements
 
   return {
-    group: transformTitleToLegend(transformElementsToGroup(meta, elements), title),
-    fields: fields.map(transform)
+    group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
+    fields: fields.map((field) => transform(field, params))
   }
 }
 
-export function transformFieldsToInput (meta, elements) {
+export function transformFieldsToInput (meta, elements, params) {
   log('transformFieldsToInput')
 
   const {
@@ -645,12 +662,12 @@ export function transformFieldsToInput (meta, elements) {
   } = elements
 
   return {
-    group: transformTitleToLegend(transformElementsToGroup(meta, elements), title),
-    fields: fields.map(transform)
+    group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
+    fields: fields.map((field) => transform(field, params))
   }
 }
 
-export function transformFieldsToComponent (meta, elements) {
+export function transformFieldsToComponent (meta, elements, params) {
   log('transformFieldsToComponent')
 
   const {
@@ -659,13 +676,13 @@ export function transformFieldsToComponent (meta, elements) {
 
   switch (component) {
     case 'checkboxes':
-      return transformFieldsToCheckboxes(meta, elements)
+      return transformFieldsToCheckboxes(meta, elements, params)
     default:
-      return transformFieldsToInput(meta, elements)
+      return transformFieldsToInput(meta, elements, params)
   }
 }
 
-export function transformFieldToComponent (meta, elements) {
+export function transformFieldToComponent (meta, elements, params) {
   log('transformFieldToComponent')
 
   const {
@@ -674,19 +691,19 @@ export function transformFieldToComponent (meta, elements) {
 
   switch (component) {
     case 'date-input':
-      return transformFieldToDateInput(meta, elements)
+      return transformFieldToDateInput(meta, elements, params)
     case 'file-upload':
-      return transformFieldToFileUpload(meta, elements)
+      return transformFieldToFileUpload(meta, elements, params)
     case 'radios':
-      return transformFieldToRadios(meta, elements)
+      return transformFieldToRadios(meta, elements, params)
     case 'select':
-      return transformFieldToSelect(meta, elements)
+      return transformFieldToSelect(meta, elements, params)
     default:
-      return transformFieldToInput(meta, elements)
+      return transformFieldToInput(meta, elements, params)
   }
 }
 
-export function transformOne ({ meta = {}, elements = {} } = {}) {
+export function transformOne ({ meta = {}, elements = {} } = {}, params = {}) {
   log('transformOne')
 
   const {
@@ -699,17 +716,17 @@ export function transformOne ({ meta = {}, elements = {} } = {}) {
     return {
       type,
       component,
-      ...transformFieldToComponent(meta, elements)
+      ...transformFieldToComponent(meta, elements, params)
     }
   } else {
     return {
       type,
-      ...transformField(meta, elements)
+      ...transformField(meta, elements, params)
     }
   }
 }
 
-export function transformAll ({ meta = {}, elements = {} } = {}) {
+export function transformAll ({ meta = {}, elements = {} } = {}, params = {}) {
   log('transformAll')
 
   const {
@@ -722,17 +739,17 @@ export function transformAll ({ meta = {}, elements = {} } = {}) {
     return {
       type,
       component,
-      ...transformFieldsToComponent(meta, elements)
+      ...transformFieldsToComponent(meta, elements, params)
     }
   } else {
     return {
       type,
-      ...transformFields(meta, elements)
+      ...transformFields(meta, elements, params)
     }
   }
 }
 
-const transform = (zashiki = {}) => {
+const transform = (zashiki = {}, params = {}) => {
   log('transform')
 
   const {
@@ -742,17 +759,17 @@ const transform = (zashiki = {}) => {
   } = zashiki
 
   return (type === 'object' || type === 'array')
-    ? transformAll(zashiki)
-    : transformOne(zashiki)
+    ? transformAll(zashiki, params)
+    : transformOne(zashiki, params)
 }
 
-export function transformEmbark (definition, response, components) {
+export function transformEmbark (definition, response, components = {}, errors = []) {
   log('transformEmbark')
 
-  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
+  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components), { components, errors })
 }
 
-export function transformAlpha (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--m', isPageHeading = false, ...meta } = {}, ...components } = {}) {
+export function transformAlpha (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--m', isPageHeading = false, ...meta } = {}, ...components } = {}, errors = []) {
   log('transformAlpha')
 
   const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components)
@@ -773,7 +790,7 @@ export function transformAlpha (description, definition, response, { meta: { cla
             isPageHeading
           }
         },
-        fields: transformAll(zashiki)
+        fields: transformAll(zashiki, { components, errors })
       }
     }
   }
@@ -787,12 +804,12 @@ export function transformAlpha (description, definition, response, { meta: { cla
           isPageHeading
         }
       },
-      fields: transformOne(zashiki)
+      fields: transformOne(zashiki, { components, errors })
     }
   }
 }
 
-export function transformOmega (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--l', isPageHeading = true, ...meta } = {}, ...components } = {}) {
+export function transformOmega (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--l', isPageHeading = true, ...meta } = {}, ...components } = {}, errors = []) {
   log('transformOmega')
 
   const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, { ...components, meta: { ...meta, isPageHeading: true } })
@@ -813,7 +830,7 @@ export function transformOmega (description, definition, response, { meta: { cla
             isPageHeading
           }
         },
-        fields: transformAll(zashiki)
+        fields: transformAll(zashiki, { components, errors })
       }
     }
   }
@@ -827,15 +844,15 @@ export function transformOmega (description, definition, response, { meta: { cla
           isPageHeading
         }
       },
-      fields: transformOne(zashiki)
+      fields: transformOne(zashiki, { components, errors })
     }
   }
 }
 
-export function transformDebark (definition, response, components) {
+export function transformDebark (definition, response, components = {}, errors = []) {
   log('transformDebark')
 
-  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
+  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components), { components, errors })
 }
 
-export default (definition, response, components = {}) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components))
+export default (definition, response, components = {}, errors = []) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components), { components, errors })

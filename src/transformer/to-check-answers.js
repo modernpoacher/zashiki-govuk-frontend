@@ -51,6 +51,8 @@ export const transformSummaryKey = ({ elements } = {}) => (
 export const getVisuallyHiddenText = ({ elements: { title: visuallyHiddenText = '' } = {} } = {}) => visuallyHiddenText.toLowerCase()
 
 export function getEnumSelectedItemsValue (items = [], selectedItems = []) {
+  log('getEnumSelectedItemsValue')
+
   return (
     selectedItems.reduce((accumulator, selectedItem) => (
       (Reflect.has(items, selectedItem))
@@ -61,6 +63,8 @@ export function getEnumSelectedItemsValue (items = [], selectedItems = []) {
 }
 
 export function getEnumSelectedItemValue (items = [], [selectedItem] = []) {
+  log('getEnumSelectedItemValue')
+
   return (
     Reflect.has(items, selectedItem)
       ? String(Reflect.get(items, selectedItem))
@@ -69,6 +73,8 @@ export function getEnumSelectedItemValue (items = [], [selectedItem] = []) {
 }
 
 export function getAnyOfSelectedItemsValue (items = [], selectedItems = []) {
+  log('getAnyOfSelectedItemsValue')
+
   return (
     selectedItems.reduce((accumulator, selectedItem) => (
       (Reflect.has(items, selectedItem))
@@ -79,12 +85,16 @@ export function getAnyOfSelectedItemsValue (items = [], selectedItems = []) {
 }
 
 export function getAnyOfSelectedItemValue (items = [], [selectedItem] = []) {
+  log('getAnyOfSelectedItemValue')
+
   return (Reflect.has(items, selectedItem))
     ? toSummaryValue(Reflect.get(items, selectedItem)) // || 'Not answered'
     : '' // 'Not answered'
 }
 
 export function getOneOfSelectedItemsValue (items = [], selectedItems = []) {
+  log('getOneOfSelectedItemsValue')
+
   return (
     selectedItems.reduce((accumulator, selectedItem) => (
       (Reflect.has(items, selectedItem))
@@ -95,6 +105,8 @@ export function getOneOfSelectedItemsValue (items = [], selectedItems = []) {
 }
 
 export function getOneOfSelectedItemValue (items = [], [selectedItem] = []) {
+  log('getOneOfSelectedItemValue')
+
   return (Reflect.has(items, selectedItem))
     ? toSummaryValue(Reflect.get(items, selectedItem)) // || 'Not answered'
     : '' // 'Not answered'
