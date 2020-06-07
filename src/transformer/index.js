@@ -15,7 +15,12 @@ import {
   getRequired
 } from './common'
 
-import toErrorMessage, { hasError, getError } from './to-error-message'
+import {
+  hasError,
+  getError
+} from './common/error'
+
+import toErrorMessage from './to-error-message'
 
 const log = debug('zashiki:transformer:transform')
 

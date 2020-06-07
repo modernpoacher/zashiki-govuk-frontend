@@ -8,9 +8,7 @@ import {
   Signals
 } from 'shinkansen-signals'
 
-import {
-  NOT_FOUND
-} from './exception'
+const NOT_FOUND = 'https://tools.ietf.org/html/rfc7231#section-6.5.4'
 
 export default function getResourceUrl (resource = {}) {
   if (Rails.go(resource, Signals.OMEGA_PATTERN)) {

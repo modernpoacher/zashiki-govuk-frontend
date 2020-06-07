@@ -20,13 +20,11 @@ import {
   hasText,
   getText,
   hasHtml,
-  getHtml
+  getHtml,
+  hasElementsTitle
 } from './common'
 
 const log = debug('zashiki:transformer:to-check-answers')
-
-export const hasElementsTitle = ({ elements } = {}) => hasTitle(elements)
-export const getElementsTitle = ({ elements } = {}) => getTitle(elements)
 
 export const toSummaryValue = ({ elements } = {}) => {
   const {
@@ -98,7 +96,7 @@ export function getOneOfSelectedItemsValue (items = [], selectedItems = []) {
   return (
     selectedItems.reduce((accumulator, selectedItem) => (
       (Reflect.has(items, selectedItem))
-        ? accumulator.concat(`<p class="govuk-body">${Reflect.get(items, selectedItem)}</p>`)
+        ? accumulator.concat(`<p class="govuk-body">${toSummaryValue(Reflect.get(items, selectedItem))}</p>`)
         : accumulator
     ), '') // || 'Not answered'
   )
@@ -110,6 +108,23 @@ export function getOneOfSelectedItemValue (items = [], [selectedItem] = []) {
   return (Reflect.has(items, selectedItem))
     ? toSummaryValue(Reflect.get(items, selectedItem)) // || 'Not answered'
     : '' // 'Not answered'
+}
+
+export function getGroup (index, array) {
+  const group = []
+
+  let n = index + 1
+  let sibling = array[n]
+  if (sibling) {
+    while (!hasElementsTitle(sibling)) {
+      group.push(sibling)
+      n = n + 1
+      sibling = array[n]
+      if (!sibling) break
+    }
+  }
+
+  return group
 }
 
 export function transformEnumValue ({ items, selectedItems } = {}) {
@@ -238,23 +253,9 @@ export function transformObject ({ elements: { fields = [] } = {} } = {}, resour
   return fields.reduce((accumulator, field, i, a) => {
     if (hasElementsTitle(field)) {
       /*
-       *  `field` has a title. Assign an array to `group`
+       *  `field` has a title. Put any title-less siblings into `group`
        */
-      group = []
-
-      /*
-       *  Put any title-less siblings into `group`
-       */
-      let n = i + 1
-      let sibling = a[n]
-      if (sibling) {
-        while (!hasElementsTitle(sibling)) {
-          group.push(sibling)
-          n = n + 1
-          sibling = a[n]
-          if (!sibling) break
-        }
-      }
+      group = getGroup(i, a)
 
       if (group.length) {
         /*
@@ -278,23 +279,9 @@ export function transformArray ({ elements: { fields = [] } = {} } = {}, resourc
   return fields.reduce((accumulator, field, i, a) => {
     if (hasElementsTitle(field)) {
       /*
-       *  `field` has a title. Assign an array to `group`
+       *  `field` has a title. Put any title-less siblings into `group`
        */
-      group = []
-
-      /*
-       *  Put any title-less siblings into `group`
-       */
-      let n = i + 1
-      let sibling = a[n]
-      if (sibling) {
-        while (!hasElementsTitle(sibling)) {
-          group.push(sibling)
-          n = n + 1
-          sibling = a[n]
-          if (!sibling) break
-        }
-      }
+      group = getGroup(i, a)
 
       if (group.length) {
         /*
