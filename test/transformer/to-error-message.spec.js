@@ -2,7 +2,7 @@ import debug from 'debug'
 
 import { expect } from 'chai'
 
-import transform from 'zashiki-govuk-frontend/src/transformer/to-error-message'
+import transformer from 'zashiki-govuk-frontend/src/transformer/to-error-message'
 
 describe('zashiki-govuk-frontend/src/transformer/to-error-message', () => {
   before(() => {
@@ -17,7 +17,7 @@ describe('zashiki-govuk-frontend/src/transformer/to-error-message', () => {
 
   describe('`transformer`', () => {
     it('is a function', () => {
-      return expect(transform)
+      return expect(transformer)
         .to.be.a('function')
     })
   })
