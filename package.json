@@ -1,6 +1,6 @@
 {
   "name": "@modernpoacher/zashiki-govuk-frontend",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "GOV.UK Frontend for Zashiki",
   "main": "./index.js",
   "keywords": [
