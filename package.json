@@ -64,11 +64,11 @@
     "shinkansen-transmission": "2.1.7"
   },
   "peerDependencies": {
-    "govuk-frontend": "^3.6.0",
-    "shinkansen-rails": "1.0.7",
-    "shinkansen-signals": "1.0.7",
-    "shinkansen-transmission": "2.1.3",
-    "@hapi/boom": "^9.1.0"
+    "@hapi/boom": "^9.1.0",
+    "govuk-frontend": "^3.7.0",
+    "shinkansen-rails": "1.0.8",
+    "shinkansen-signals": "1.0.8",
+    "shinkansen-transmission": "2.1.7"
   },
   "husky": {
     "hooks": {
