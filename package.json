@@ -35,19 +35,19 @@
     "debug": "^4.1.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.10.1",
-    "@babel/core": "^7.10.2",
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
     "@babel/plugin-proposal-export-default-from": "^7.10.1",
     "@babel/polyfill": "^7.10.1",
-    "@babel/preset-env": "^7.10.2",
-    "@babel/register": "^7.10.1",
+    "@babel/preset-env": "^7.10.3",
+    "@babel/register": "^7.10.3",
     "@hapi/boom": "^9.1.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
-    "eslint": "^7.2.0",
+    "eslint": "^7.3.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.21.2",
@@ -59,9 +59,9 @@
     "mocha": "^8.0.1",
     "nunjucks": "^3.2.1",
     "rimraf": "^3.0.2",
-    "shinkansen-rails": "1.0.9",
-    "shinkansen-signals": "1.0.9",
-    "shinkansen-transmission": "2.1.8"
+    "shinkansen-rails": "1.0.10",
+    "shinkansen-signals": "1.0.10",
+    "shinkansen-transmission": "2.1.9"
   },
   "peerDependencies": {
     "@hapi/boom": "^9.1.0",
