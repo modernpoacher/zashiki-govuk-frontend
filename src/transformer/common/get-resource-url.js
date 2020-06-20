@@ -1,5 +1,3 @@
-import Boom from '@hapi/boom'
-
 import {
   Rails
 } from 'shinkansen-rails'
@@ -7,8 +5,6 @@ import {
 import {
   Signals
 } from 'shinkansen-signals'
-
-const NOT_FOUND = 'https://tools.ietf.org/html/rfc7231#section-6.5.4'
 
 export default function getResourceUrl (resource = {}) {
   if (Rails.go(resource, Signals.OMEGA_PATTERN)) {
@@ -31,5 +27,5 @@ export default function getResourceUrl (resource = {}) {
     }
   }
 
-  throw Boom.notFound(NOT_FOUND)
+  throw new Error('Incompatible with Zashiki')
 }

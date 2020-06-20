@@ -4,10 +4,7 @@
   "description": "GOV.UK Frontend for Zashiki",
   "main": "./index.js",
   "keywords": [
-    "Nunjucks",
     "GOV.UK Frontend",
-    "Shinkansen",
-    "Transmission",
     "Zashiki Karakuri",
     "Zashiki",
     "Karakuri"
@@ -17,21 +14,23 @@
     "url": "git@github.com/modernpoacher/zashiki-govuk-frontend.git"
   },
   "author": "Jonathan Perry for Modern Poacher Limited",
-  "license": "MIT",
+  "license": "UNLICENSED",
   "scripts": {
-    "prepublishOnly": "npm run lint:fix && npm run babel",
+    "prepublishOnly": "npm run lint:fix && npm run build",
     "prebuild": "npm run clean",
-    "build": "npm run babel",
+    "build": "cross-env NODE_ENV=production npm run babel",
+    "build:clean": "npm run clean && cross-env NODE_ENV=production npm run build",
     "build:watch": "npm run babel:watch",
     "clean": "rimraf lib",
     "babel": "babel src -d lib",
     "babel:watch": "npm run babel -- -w",
-    "lint": "eslint src test *.js",
+    "lint": "eslint *.js src test",
     "lint:fix": "npm run lint -- --fix",
-    "test": "NODE_ENV=test mocha test --recursive -r @babel/register -r @babel/polyfill --verbose",
-    "pre-commit": "npm run lint && npm run test"
+    "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register -r @babel/polyfill --verbose",
+    "pre-commit": "npm run lint && npm run test && npm run build && git add lib"
   },
   "dependencies": {
+    "cross-env": "^7.0.2",
     "debug": "^4.1.1"
   },
   "devDependencies": {
@@ -41,7 +40,6 @@
     "@babel/polyfill": "^7.10.1",
     "@babel/preset-env": "^7.10.3",
     "@babel/register": "^7.10.3",
-    "@hapi/boom": "^9.1.0",
     "babel-eslint": "^10.1.0",
     "babel-loader": "^8.1.0",
     "babel-plugin-module-resolver": "^4.0.0",
@@ -64,7 +62,6 @@
     "shinkansen-transmission": "2.1.9"
   },
   "peerDependencies": {
-    "@hapi/boom": "^9.1.0",
     "govuk-frontend": "^3.7.0",
     "shinkansen-rails": "1.0.8",
     "shinkansen-signals": "1.0.8",
