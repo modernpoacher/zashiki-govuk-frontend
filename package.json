@@ -31,7 +31,10 @@
   },
   "dependencies": {
     "cross-env": "^7.0.2",
-    "debug": "^4.1.1"
+    "debug": "^4.1.1",
+    "shinkansen-rails": "1.0.10",
+    "shinkansen-signals": "1.0.10",
+    "shinkansen-transmission": "2.1.9"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
@@ -56,16 +59,10 @@
     "husky": "^4.2.5",
     "mocha": "^8.0.1",
     "nunjucks": "^3.2.1",
-    "rimraf": "^3.0.2",
-    "shinkansen-rails": "1.0.10",
-    "shinkansen-signals": "1.0.10",
-    "shinkansen-transmission": "2.1.9"
+    "rimraf": "^3.0.2"
   },
   "peerDependencies": {
-    "govuk-frontend": "^3.7.0",
-    "shinkansen-rails": "1.0.8",
-    "shinkansen-signals": "1.0.8",
-    "shinkansen-transmission": "2.1.7"
+    "govuk-frontend": "^3.7.0"
   },
   "husky": {
     "hooks": {
