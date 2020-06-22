@@ -34,7 +34,7 @@
     "debug": "^4.1.1",
     "shinkansen-rails": "1.0.10",
     "shinkansen-signals": "1.0.10",
-    "shinkansen-transmission": "2.1.9"
+    "shinkansen-transmission": "2.1.10"
   },
   "devDependencies": {
     "@babel/cli": "^7.10.3",
