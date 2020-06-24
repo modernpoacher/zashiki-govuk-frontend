@@ -2,21 +2,21 @@
   "name": "@modernpoacher/zashiki-govuk-frontend",
   "version": "1.0.32",
   "description": "GOV.UK Frontend for Zashiki",
-  "main": "./index.js",
   "keywords": [
     "GOV.UK Frontend",
     "Zashiki Karakuri",
     "Zashiki",
     "Karakuri"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com/modernpoacher/zashiki-govuk-frontend.git"
-  },
-  "author": "Jonathan Perry for Modern Poacher Limited",
+  "main": "./index.js",
+  "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=12.18.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com/modernpoacher/zashiki-govuk-frontend.git"
   },
   "scripts": {
     "prepublishOnly": "cross-env NODE_ENV=production npm run build",
