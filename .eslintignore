@@ -1,3 +1,6 @@
+.circleci
+.github
+node_modules
+lib
 components
-templates
 views

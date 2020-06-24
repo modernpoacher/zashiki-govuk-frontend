@@ -15,22 +15,23 @@
   },
   "author": "Jonathan Perry for Modern Poacher Limited",
   "license": "UNLICENSED",
+  "engines": {
+    "node": ">=12.18.1"
+  },
   "scripts": {
-    "prepublishOnly": "npm run lint:fix && npm run build",
+    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
     "prebuild": "npm run clean",
-    "build": "cross-env NODE_ENV=production npm run babel",
-    "build:clean": "npm run clean && cross-env NODE_ENV=production npm run build",
+    "build": "npm run babel",
     "build:watch": "npm run babel:watch",
     "clean": "rimraf lib",
     "babel": "babel src -d lib",
     "babel:watch": "npm run babel -- -w",
-    "lint": "eslint *.js src test",
+    "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register -r @babel/polyfill --verbose",
     "pre-commit": "npm run lint && npm run test && npm run build && git add lib"
   },
   "dependencies": {
-    "cross-env": "^7.0.2",
     "debug": "^4.1.1",
     "shinkansen-rails": "1.0.11",
     "shinkansen-signals": "1.0.11",
@@ -48,6 +49,7 @@
     "babel-plugin-module-resolver": "^4.0.0",
     "body-parser": "^1.19.0",
     "chai": "^4.2.0",
+    "cross-env": "^7.0.2",
     "eslint": "^7.3.1",
     "eslint-config-standard": "^14.1.1",
     "eslint-import-resolver-babel-module": "^5.1.2",
