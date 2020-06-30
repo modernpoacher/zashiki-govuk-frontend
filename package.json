@@ -28,7 +28,7 @@
     "babel:watch": "npm run babel -- -w",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
-    "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register -r @babel/polyfill --verbose",
+    "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register --verbose",
     "pre-commit": "npm run lint && npm run test && npm run build && git add lib"
   },
   "dependencies": {
@@ -41,7 +41,6 @@
     "@babel/cli": "^7.10.4",
     "@babel/core": "^7.10.4",
     "@babel/plugin-proposal-export-default-from": "^7.10.4",
-    "@babel/polyfill": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/register": "^7.10.4",
     "babel-eslint": "^10.1.0",
