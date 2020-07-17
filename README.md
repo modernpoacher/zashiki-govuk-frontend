@@ -2,4 +2,4 @@
 
 # Zashiki GOV.UK Frontend
 
-Implements *GOV.UK Frontend* for Zashiki Karakuri.
+Implements *GOV.UK Frontend* for *Zashiki Karakuri*.
