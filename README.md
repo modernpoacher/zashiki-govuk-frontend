@@ -1,4 +1,4 @@
-## @modernpoacher/zashiki-govuk-frontend
+## `@modernpoacher/zashiki-govuk-frontend`
 
 # Zashiki GOV.UK Frontend
 
