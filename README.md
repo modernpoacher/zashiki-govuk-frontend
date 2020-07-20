@@ -12,7 +12,7 @@ npm i -P @modernpoacher/zashiki-govuk-frontend
 
 ## Usage
 
-- Optionally, build the JS in `src` to `lib` (the published package is pre-built according to the configuration in `babel.config.js`)
+- Optionally, build the JS in `src` to `lib` (the published JS is built according to the configuration in `babel.config.js`)
 - Import the built JS from `lib`
 
 ## Structure
