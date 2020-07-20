@@ -60,7 +60,7 @@
     "govuk-frontend": "^3.7.0",
     "husky": "^4.2.5",
     "mocha": "^8.0.1",
-    "nunjucks": "^3.2.1",
+    "nunjucks": "^3.2.2",
     "rimraf": "^3.0.2"
   },
   "peerDependencies": {
