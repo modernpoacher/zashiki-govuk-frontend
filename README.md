@@ -24,4 +24,4 @@ npm i -P @modernpoacher/zashiki-govuk-frontend
 
 ### JavaScript:
 
-- Transformers are in `transformers`
+- Transformers are in `src/transformer`
