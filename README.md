@@ -12,8 +12,8 @@ npm i -P @modernpoacher/zashiki-govuk-frontend
 
 ## Usage
 
-- Build JS from `src`
-- Import (or require) built JS from `lib`
+- Optionally, build JS in `src` to `lib`
+- Import built JS from `lib`
 
 ## Structure
 
