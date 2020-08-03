@@ -59,7 +59,7 @@
     "eslint-plugin-standard": "^4.0.1",
     "govuk-frontend": "^3.8.0",
     "husky": "^4.2.5",
-    "mocha": "^8.0.1",
+    "mocha": "^8.1.0",
     "nunjucks": "^3.2.2",
     "rimraf": "^3.0.2"
   },
