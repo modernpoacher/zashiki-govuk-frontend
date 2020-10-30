@@ -2,13 +2,13 @@ import debug from 'debug'
 
 const log = debug('zashiki:transformer:common:error')
 
-export function hasError (errors = [], uri) {
+export function hasError (errors = [], uri = null) {
   log('hasError')
 
   return errors.some(({ uri: URI }) => URI === uri)
 }
 
-export function getError (errors = [], uri) {
+export function getError (errors = [], uri = null) {
   log('getError')
 
   return errors.find(({ uri: URI }) => URI === uri)

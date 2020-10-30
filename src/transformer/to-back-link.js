@@ -10,19 +10,19 @@ import {
 
 const log = debug('zashiki:transformer:to-back-link')
 
-export function transformAlpha (resource = {}, pattern = Signals.ALPHA_PATTERN, text) {
+export function transformAlpha (resource = {}, pattern = Signals.ALPHA_PATTERN, text = 'Back') {
   log('transformAlpha')
 
   return transform(resource, pattern, text)
 }
 
-export function transformOmega (resource = {}, pattern = Signals.OMEGA_PATTERN, text) {
+export function transformOmega (resource = {}, pattern = Signals.OMEGA_PATTERN, text = 'Back') {
   log('transformOmega')
 
   return transform(resource, pattern, text)
 }
 
-export default function transform (resource = {}, pattern, text = 'Back') {
+export default function transform (resource, pattern, text) {
   log('transform')
 
   if (Rails.go(resource, pattern)) {

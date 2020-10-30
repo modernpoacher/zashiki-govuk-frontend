@@ -26,17 +26,17 @@ const log = debug('zashiki:transformer:transform')
 
 export const getName = ({ name } = {}) => (name ? { name } : {})
 
-export const transformDescriptionToHint = (field = {}, text) => ({ ...field, ...(text ? { hint: { text } } : {}) })
+export const transformDescriptionToHint = (field = {}, text = null) => ({ ...field, ...(text ? { hint: { text } } : {}) })
 
-export const transformTitleToText = (field = {}, text) => ({ ...field, ...(text ? { text } : {}) })
+export const transformTitleToText = (field = {}, text = null) => ({ ...field, ...(text ? { text } : {}) })
 
-export const transformTitleToLabel = (field = {}, text) => ({ ...field, ...(text ? { label: { text } } : {}) })
+export const transformTitleToLabel = (field = {}, text = null) => ({ ...field, ...(text ? { label: { text } } : {}) })
 
-export const transformTitleToLegend = (field = {}, text) => ({ ...field, ...(text ? { legend: { text } } : {}) })
+export const transformTitleToLegend = (field = {}, text = null) => ({ ...field, ...(text ? { legend: { text } } : {}) })
 
-export const transformTitleToFieldsetLegend = (field = {}, text) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
+export const transformTitleToFieldsetLegend = (field = {}, text = null) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
 
-export function transformElementsToCheckboxesEnum ({ selectedItems = [] }, { enum: { items = [], id, name = id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
+export function transformElementsToCheckboxesEnum ({ selectedItems = [] } = {}, { enum: { items = [], id, name = id, ...field } } = {}, { uri, parentUri = uri } = {}, { components, errors } = {}) {
   log('transformElementsToCheckboxesEnum')
 
   return {
@@ -47,7 +47,7 @@ export function transformElementsToCheckboxesEnum ({ selectedItems = [] }, { enu
   }
 }
 
-export function transformElementsToCheckboxesAnyOf ({ selectedItems = [] }, { anyOf: { items = [], id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
+export function transformElementsToCheckboxesAnyOf ({ selectedItems = [] } = {}, { anyOf: { items = [], id, ...field } } = {}, { uri, parentUri = uri } = {}, { components, errors } = {}) {
   log('transformElementsToCheckboxesAnyOf')
 
   return {
@@ -58,7 +58,7 @@ export function transformElementsToCheckboxesAnyOf ({ selectedItems = [] }, { an
   }
 }
 
-export function transformElementsToCheckboxesOneOf ({ selectedItems = [] }, { oneOf: { items = [], id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
+export function transformElementsToCheckboxesOneOf ({ selectedItems = [] } = {}, { oneOf: { items = [], id, ...field } } = {}, { uri, parentUri = uri } = {}, { components, errors } = {}) {
   log('transformElementsToCheckboxesOneOf')
 
   return {
@@ -69,7 +69,7 @@ export function transformElementsToCheckboxesOneOf ({ selectedItems = [] }, { on
   }
 }
 
-export function transformElementsToCheckboxesField ({ selectedItems = [] }, { field: { value, id, name = id, ...field } }, { uri, parentUri = uri }, { components, errors }) {
+export function transformElementsToCheckboxesField ({ selectedItems = [] } = {}, { field: { value, id, name = id, ...field } } = {}, { uri, parentUri = uri } = {}, { components, errors } = {}) {
   log('transformElementsToCheckboxesField')
 
   return {
@@ -98,7 +98,7 @@ export function transformElementsToCheckboxesField ({ selectedItems = [] }, { fi
  *  `radios` item `id` is omitted (not provided by `toZashiki`)
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosEnum ({ selectedItems = [], uri }, { enum: { id, name = id, items = [], ...field } }, { components, errors }) {
+export function transformElementsToRadiosEnum ({ selectedItems = [], uri } = {}, { enum: { id, name = id, items = [], ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToRadiosEnum')
 
   return {
@@ -122,7 +122,7 @@ export function transformElementsToRadiosEnum ({ selectedItems = [], uri }, { en
  *  `radios` item `id` is the id
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosAnyOf ({ selectedItems = [], uri }, { anyOf: { id, name = id, items = [], ...field } }, { components, errors }) {
+export function transformElementsToRadiosAnyOf ({ selectedItems = [], uri } = {}, { anyOf: { id, name = id, items = [], ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToRadiosAnyOf')
 
   return {
@@ -146,7 +146,7 @@ export function transformElementsToRadiosAnyOf ({ selectedItems = [], uri }, { a
  *  `radios` item `id` is the id
  *  `radios` item `name` is omitted (not required)
  */
-export function transformElementsToRadiosOneOf ({ selectedItems = [], uri }, { oneOf: { id, name = id, items = [], ...field } }, { components, errors }) {
+export function transformElementsToRadiosOneOf ({ selectedItems = [], uri } = {}, { oneOf: { id, name = id, items = [], ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToRadiosOneOf')
 
   return {
@@ -173,7 +173,7 @@ export function transformElementsToRadiosOneOf ({ selectedItems = [], uri }, { o
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectEnum ({ selectedItems = [], uri }, { enum: { id, name = id, items = [], ...field } }, { components, errors }) {
+export function transformElementsToSelectEnum ({ selectedItems = [], uri } = {}, { enum: { id, name = id, items = [], ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToSelectEnum')
 
   return {
@@ -197,7 +197,7 @@ export function transformElementsToSelectEnum ({ selectedItems = [], uri }, { en
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectAnyOf ({ selectedItems = [], uri }, { anyOf: { id, name = id, items = [], ...field } }, { components, errors }) {
+export function transformElementsToSelectAnyOf ({ selectedItems = [], uri } = {}, { anyOf: { id, name = id, items = [], ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToSelectAnyOf')
 
   return {
@@ -221,7 +221,7 @@ export function transformElementsToSelectAnyOf ({ selectedItems = [], uri }, { a
  *  `select` item `id` is omitted (not required)
  *  `select` item `name` is omitted (not required)
  */
-export function transformElementsToSelectOneOf ({ selectedItems = [], uri }, { oneOf: { id, name = id, items = [], ...field } }, { components, errors }) {
+export function transformElementsToSelectOneOf ({ selectedItems = [], uri } = {}, { oneOf: { id, name = id, items = [], ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToSelectOneOf')
 
   return {
@@ -238,7 +238,7 @@ export function transformElementsToSelectOneOf ({ selectedItems = [], uri }, { o
   }
 }
 
-export function transformElementsToInputEnum ({ items = [], selectedItems = [], uri }, { enum: { id, name = id, ...field } }, { components, errors }) {
+export function transformElementsToInputEnum ({ items = [], selectedItems = [], uri } = {}, { enum: { id, name = id, ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToInputEnum')
 
   return {
@@ -250,7 +250,7 @@ export function transformElementsToInputEnum ({ items = [], selectedItems = [], 
   }
 }
 
-export function transformElementsToInputAnyOf ({ items = [], selectedItems = [], uri }, { anyOf: { id, name = id, ...field } }, { components, errors }) {
+export function transformElementsToInputAnyOf ({ items = [], selectedItems = [], uri } = {}, { anyOf: { id, name = id, ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToInputAnyOf')
 
   return {
@@ -262,7 +262,7 @@ export function transformElementsToInputAnyOf ({ items = [], selectedItems = [],
   }
 }
 
-export function transformElementsToInputOneOf ({ items = [], selectedItems = [], uri }, { oneOf: { id, name = id, ...field } }, { components, errors }) {
+export function transformElementsToInputOneOf ({ items = [], selectedItems = [], uri } = {}, { oneOf: { id, name = id, ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToInputOneOf')
 
   return {
@@ -274,7 +274,7 @@ export function transformElementsToInputOneOf ({ items = [], selectedItems = [],
   }
 }
 
-export function transformElementsToInputField ({ uri }, { field: { id, name = id, ...field } }, { components, errors }) {
+export function transformElementsToInputField ({ uri } = {}, { field: { id, name = id, ...field } } = {}, { components, errors } = {}) {
   log('transformElementsToInputField')
 
   return {
@@ -286,7 +286,7 @@ export function transformElementsToInputField ({ uri }, { field: { id, name = id
   }
 }
 
-export function transformElementsToGroup ({ uri }, { id, name = id, ...elements } = {}, { components, errors }) {
+export function transformElementsToGroup ({ uri } = {}, { id, name = id, ...elements } = {}, { components, errors } = {}) {
   log('transformElementsToGroup')
 
   return {
@@ -349,22 +349,22 @@ export function transformField (meta, elements, params) {
 export const transformElementsToCheckboxesForEnum = (meta, elements, parentMeta, {
   title,
   description
-} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesEnum(meta, elements, parentMeta, params), title), description)
+} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesEnum(meta, elements, parentMeta, params), title), description)
 
 export const transformElementsToCheckboxesForAnyOf = (meta, elements, parentMeta, {
   title,
   description
-} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesAnyOf(meta, elements, parentMeta, params), title), description)
+} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesAnyOf(meta, elements, parentMeta, params), title), description)
 
 export const transformElementsToCheckboxesForOneOf = (meta, elements, parentMeta, {
   title,
   description
-} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesOneOf(meta, elements, parentMeta, params), title), description)
+} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesOneOf(meta, elements, parentMeta, params), title), description)
 
 export const transformElementsToCheckboxesForField = (meta, elements, parentMeta, {
   title,
   description
-} = {}, params) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesField(meta, elements, parentMeta, params), title), description)
+} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesField(meta, elements, parentMeta, params), title), description)
 
 export function transformElementsToRadiosForEnum (meta, elements, params) {
   log('transformElementsToRadiosForEnum')
@@ -624,7 +624,7 @@ export const transformFieldsToCheckboxes = (parentMeta, {
   ] = [],
   title,
   description
-} = {}, params) => {
+} = {}, params = {}) => {
   log('transformFieldsToCheckboxes')
 
   return transformFieldToCheckboxes(meta, elements, parentMeta, { title, description }, params)
