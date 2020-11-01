@@ -61,9 +61,6 @@
     "nunjucks": "^3.2.2",
     "rimraf": "^3.0.2"
   },
-  "peerDependencies": {
-    "govuk-frontend": "^3.9.1"
-  },
   "husky": {
     "hooks": {
       "pre-commit": "npm run pre-commit"
