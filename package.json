@@ -55,7 +55,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.3.1",
     "govuk-frontend": "^3.11.0",
-    "husky": "^5.2.0",
+    "husky": "^6.0.0",
     "mocha": "^8.3.2",
     "nunjucks": "^3.2.3",
     "rimraf": "^3.0.2"
