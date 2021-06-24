@@ -50,7 +50,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^7.29.0",
     "eslint-import-resolver-babel-module": "^5.3.1",
-    "govuk-frontend": "^3.12.0",
+    "govuk-frontend": "^3.13.0",
     "husky": "^6.0.0",
     "mocha": "^9.0.1",
     "nunjucks": "^3.2.3",
