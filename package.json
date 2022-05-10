@@ -46,7 +46,7 @@
     "@babel/register": "^7.17.7",
     "babel-plugin-module-resolver": "^4.1.0",
     "chai": "^4.3.6",
-    "core-js": "^3.22.4",
+    "core-js": "^3.22.5",
     "cross-env": "^7.0.3",
     "eslint": "7.32.0",
     "eslint-config-standard": "^17.0.0",
@@ -55,7 +55,7 @@
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "5.2.0",
     "govuk-frontend": "^4.0.1",
-    "husky": "^7.0.4",
+    "husky": "^8.0.1",
     "mocha": "^10.0.0",
     "nunjucks": "^3.2.3",
     "rimraf": "^3.0.2"
