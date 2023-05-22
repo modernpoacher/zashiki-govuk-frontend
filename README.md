@@ -10,11 +10,6 @@ Implements *GOV.UK Frontend* for *Zashiki Karakuri*.
 npm i -P @modernpoacher/zashiki-govuk-frontend
 ```
 
-## Usage
-
-- Optionally, build the JS in `src` to `lib` (the published JS is built according to the configuration in `babel.config.js`)
-- Import the built JS from `lib`
-
 ## Structure
 
 ### Nunjucks
@@ -22,6 +17,6 @@ npm i -P @modernpoacher/zashiki-govuk-frontend
 - Component `macros` and `templates` are in `components`
 - Views are in `views`
 
-### JavaScript:
+### JavaScript
 
 - Transformers are in `src/transformer`
