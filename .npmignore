@@ -2,14 +2,22 @@
 
 .circleci
 .github
+.husky
 
 .editorconfig
 .eslintignore
 .eslintrc
 
+# Git
+.gitattributes
+.gitignore
+
 # NPM
 .npmignore
 .npmrc
+
+# NVM
+.nvmrc
 
 # Deps
 .depsrc
