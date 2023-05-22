@@ -1,7 +1,7 @@
 import debug from 'debug'
 
-import toZashiki from 'shinkansen-transmission/lib/transmission/to-zashiki'
-import fromDocumentToHash from 'shinkansen-transmission/lib/transmission/from-document-to-hash'
+import toZashiki from 'shinkansen-transmission/transmission/to-zashiki'
+import fromDocumentToHash from 'shinkansen-transmission/transmission/from-document-to-hash'
 
 import {
   hasEnum,
@@ -13,16 +13,18 @@ import {
   getComponent,
   hasRequired,
   getRequired
-} from './common'
+} from './common/index.mjs'
 
 import {
   hasError,
   getError
-} from './common/error'
+} from './common/error.mjs'
 
-import toErrorMessage from './to-error-message'
+import toErrorMessage from './to-error-message.mjs'
 
-const log = debug('zashiki:transformer:transform')
+const log = debug('zashiki/transformer')
+
+log('`zashiki` is awake')
 
 export const getName = ({ name } = {}) => (name ? { name } : {})
 
@@ -346,25 +348,49 @@ export function transformField (meta, elements, params) {
   }
 }
 
-export const transformElementsToCheckboxesForEnum = (meta, elements, parentMeta, {
-  title,
-  description
-} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesEnum(meta, elements, parentMeta, params), title), description)
+export function transformElementsToCheckboxesForEnum (meta, elements, parentMeta, parentElements = {}, params = {}) {
+  log('transformElementsToCheckboxesForEnum')
 
-export const transformElementsToCheckboxesForAnyOf = (meta, elements, parentMeta, {
-  title,
-  description
-} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesAnyOf(meta, elements, parentMeta, params), title), description)
+  const {
+    title,
+    description
+  } = parentElements
 
-export const transformElementsToCheckboxesForOneOf = (meta, elements, parentMeta, {
-  title,
-  description
-} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesOneOf(meta, elements, parentMeta, params), title), description)
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesEnum(meta, elements, parentMeta, params), title), description)
+}
 
-export const transformElementsToCheckboxesForField = (meta, elements, parentMeta, {
-  title,
-  description
-} = {}, params = {}) => transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesField(meta, elements, parentMeta, params), title), description)
+export function transformElementsToCheckboxesForAnyOf (meta, elements, parentMeta, parentElements = {}, params = {}) {
+  log('transformElementsToCheckboxesForAnyOf')
+
+  const {
+    title,
+    description
+  } = parentElements
+
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesAnyOf(meta, elements, parentMeta, params), title), description)
+}
+
+export function transformElementsToCheckboxesForOneOf (meta, elements, parentMeta, parentElements = {}, params = {}) {
+  log('transformElementsToCheckboxesForOneOf')
+
+  const {
+    title,
+    description
+  } = parentElements
+
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesOneOf(meta, elements, parentMeta, params), title), description)
+}
+
+export function transformElementsToCheckboxesForField (meta, elements, parentMeta, parentElements = {}, params = {}) {
+  log('transformElementsToCheckboxesForField')
+
+  const {
+    title,
+    description
+  } = parentElements
+
+  return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToCheckboxesField(meta, elements, parentMeta, params), title), description)
+}
 
 export function transformElementsToRadiosForEnum (meta, elements, params) {
   log('transformElementsToRadiosForEnum')
@@ -395,6 +421,7 @@ export function transformElementsToRadiosForOneOf (meta, elements, params) {
     title,
     description
   } = elements
+
   return transformDescriptionToHint(transformTitleToFieldsetLegend(transformElementsToRadiosOneOf(meta, elements, params), title), description)
 }
 

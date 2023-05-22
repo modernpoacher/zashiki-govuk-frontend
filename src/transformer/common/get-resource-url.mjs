@@ -1,3 +1,5 @@
+import debug from 'debug'
+
 import {
   Rails
 } from 'shinkansen-rails'
@@ -5,6 +7,10 @@ import {
 import {
   Signals
 } from 'shinkansen-signals'
+
+const log = debug('zashiki/transformer/common/get-resource-url')
+
+log('`zashiki` is awake')
 
 export default function getResourceUrl (resource = {}) {
   if (Rails.go(resource, Signals.OMEGA_PATTERN)) {

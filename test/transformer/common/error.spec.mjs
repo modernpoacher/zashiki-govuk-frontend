@@ -29,9 +29,9 @@ import {
   getErrorTextByType,
   hasError,
   getError
-} from 'zashiki-govuk-frontend/src/transformer/common/error'
+} from '@modernpoacher/zashiki-govuk-frontend/transformer/common/error'
 
-describe('zashiki-govuk-frontend/src/transformer/common/error', () => {
+describe('@modernpoacher/zashiki-govuk-frontend/transformer/common/error', () => {
   before(() => {
     const {
       env: {

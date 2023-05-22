@@ -8,56 +8,51 @@
     "Zashiki",
     "Karakuri"
   ],
-  "main": "./index.js",
+  "main": "./src/index.mjs",
+  "type": "module",
   "author": "Jonathan Perry for Modern Poacher Limited <modernpoacher@modernpoacher.com>",
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=16.13.0"
+    "node": ">=18.5.0"
   },
   "repository": {
     "type": "git",
     "url": "git@github.com/modernpoacher/zashiki-govuk-frontend.git"
   },
   "scripts": {
-    "prepublishOnly": "cross-env NODE_ENV=production npm run build",
-    "prebuild": "npm run clean",
-    "build": "npm run babel",
-    "build:watch": "npm run babel:watch",
-    "clean": "rimraf lib",
-    "babel": "babel src -d lib",
-    "babel:watch": "npm run babel -- -w",
-    "lint": "eslint .",
+    "lint": "eslint . --ext .mjs --ext .cjs",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register --verbose",
-    "pre-commit": "npm run lint && npm run test && npm run build && git add lib"
+    "prepare": "npx husky install"
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.18",
-    "shinkansen-signals": "1.1.2",
-    "shinkansen-transmission": "2.2.2"
+    "shinkansen-rails": "1.0.53",
+    "shinkansen-signals": "1.1.36",
+    "shinkansen-transmission": "2.2.48"
   },
   "devDependencies": {
-    "@babel/cli": "^7.21.5",
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
-    "@babel/plugin-proposal-export-default-from": "^7.18.10",
     "@babel/preset-env": "^7.21.5",
-    "@babel/register": "^7.21.0",
-    "babel-plugin-module-resolver": "^5.0.0",
     "chai": "^4.3.7",
-    "core-js": "^3.30.1",
+    "core-js": "^3.30.2",
     "cross-env": "^7.0.3",
-    "eslint": "^8.39.0",
+    "eslint": "^8.41.0",
     "eslint-config-standard": "^17.0.0",
-    "eslint-import-resolver-babel-module": "^5.3.2",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.1.1",
     "govuk-frontend": "^4.6.0",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
-    "nunjucks": "^3.2.4",
-    "rimraf": "^5.0.0"
+    "nunjucks": "^3.2.4"
+  },
+  "exports": {
+    ".": "./src/index.mjs",
+    "./transformer/common/*": "./src/transformer/common/*.mjs",
+    "./transformer/common": "./src/transformer/common/index.mjs",
+    "./transformer/*": "./src/transformer/*.mjs",
+    "./transformer": "./src/transformer/index.mjs"
   }
 }

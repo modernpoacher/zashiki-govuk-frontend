@@ -2,9 +2,9 @@ import debug from 'debug'
 
 import { expect } from 'chai'
 
-import transformer from 'zashiki-govuk-frontend/src/transformer/to-error-message'
+import transformer from '@modernpoacher/zashiki-govuk-frontend/transformer/to-error-summary'
 
-describe('zashiki-govuk-frontend/src/transformer/to-error-message', () => {
+describe('@modernpoacher/zashiki-govuk-frontend/transformer/to-error-summary', () => {
   before(() => {
     const {
       env: {

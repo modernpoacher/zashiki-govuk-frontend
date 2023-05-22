@@ -1,9 +1,9 @@
 import debug from 'debug'
 
-import toZashiki from 'shinkansen-transmission/lib/transmission/to-zashiki'
-import fromDocumentToHash from 'shinkansen-transmission/lib/transmission/from-document-to-hash'
-import getResourceUrl from 'zashiki-govuk-frontend/src/transformer/common/get-resource-url'
+import toZashiki from 'shinkansen-transmission/transmission/to-zashiki'
+import fromDocumentToHash from 'shinkansen-transmission/transmission/from-document-to-hash'
 
+import getResourceUrl from './common/get-resource-url.mjs'
 import {
   hasEnum,
   getEnum,
@@ -22,9 +22,11 @@ import {
   hasHtml,
   getHtml,
   hasElementsTitle
-} from './common'
+} from './common/index.mjs'
 
-const log = debug('zashiki:transformer:to-check-answers')
+const log = debug('zashiki/transformer/to-check-answers')
+
+log('`zashiki` is awake')
 
 export const toSummaryValue = ({ elements } = {}) => {
   const {

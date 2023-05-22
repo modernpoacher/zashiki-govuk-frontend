@@ -1,8 +1,10 @@
 import debug from 'debug'
 
-import transformError from './common/error'
+import transformError from './common/error.mjs'
 
-const log = debug('zashiki:transformer:to-error-message')
+const log = debug('zashiki/transformer/to-error-message')
+
+log('`zashiki` is awake')
 
 export default function transform (definition = {}, components = {}) {
   log('transform')

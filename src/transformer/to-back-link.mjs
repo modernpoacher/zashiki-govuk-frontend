@@ -8,7 +8,9 @@ import {
   Rails
 } from 'shinkansen-rails'
 
-const log = debug('zashiki:transformer:to-back-link')
+const log = debug('zashiki/transformer/to-back-link')
+
+log('`zashiki` is awake')
 
 export function transformAlpha (resource = {}, pattern = Signals.ALPHA_PATTERN, text = 'Back') {
   log('transformAlpha')

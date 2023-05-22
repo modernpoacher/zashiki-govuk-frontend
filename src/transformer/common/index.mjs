@@ -1,3 +1,9 @@
+import debug from 'debug'
+
+const log = debug('zashiki/transformer/common')
+
+log('`zashiki` is awake')
+
 export const hasEnum = (elements = {}) => Reflect.has(elements, 'enum')
 export const getEnum = (elements = {}) => Reflect.get(elements, 'enum')
 

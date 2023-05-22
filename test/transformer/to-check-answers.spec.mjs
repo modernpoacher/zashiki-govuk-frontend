@@ -29,9 +29,9 @@ import transformer, {
   transformFieldValue,
   transformSummaryKey,
   getVisuallyHiddenText
-} from 'zashiki-govuk-frontend/src/transformer/to-check-answers'
+} from '@modernpoacher/zashiki-govuk-frontend/transformer/to-check-answers'
 
-describe('zashiki-govuk-frontend/src/transformer/to-check-answers', () => {
+describe('@modernpoacher/zashiki-govuk-frontend/transformer/to-check-answers', () => {
   before(() => {
     const {
       env: {

@@ -48,9 +48,9 @@ import transform, {
   transformField,
   transformOne,
   transformAll
-} from 'zashiki-govuk-frontend/src/transformer'
+} from '@modernpoacher/zashiki-govuk-frontend/transformer'
 
-describe('zashiki-govuk-frontend/src/transformer', () => {
+describe('@modernpoacher/zashiki-govuk-frontend/transformer', () => {
   before(() => {
     const {
       env: {

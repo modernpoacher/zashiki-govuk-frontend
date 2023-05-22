@@ -1,6 +1,8 @@
 import debug from 'debug'
 
-const log = debug('zashiki:transformer:common:error')
+const log = debug('zashiki/transformer/common/error')
+
+log('`zashiki` is awake')
 
 export function hasError (errors = [], uri = null) {
   log('hasError')
@@ -14,145 +16,145 @@ export function getError (errors = [], uri = null) {
   return errors.find(({ uri: URI }) => URI === uri)
 }
 
-export function getErrorTextForMaxItems (components = {}) {
+export function getErrorTextForMaxItems () {
   log('getErrorTextForMaxItems')
 
   return 'Max items'
 }
 
-export function getErrorTextForMinItems (components = {}) {
+export function getErrorTextForMinItems () {
   log('getErrorTextForMinItems')
 
   return 'Min items'
 }
 
-export function getErrorTextForMaxLength (components = {}) {
+export function getErrorTextForMaxLength () {
   log('getErrorTextForMaxLength')
 
   return 'Max length'
 }
 
-export function getErrorTextForMinLength (components = {}) {
+export function getErrorTextForMinLength () {
   log('getErrorTextForMinLength')
 
   return 'Min length'
 }
 
-export function getErrorTextForMaxProperties (components = {}) {
+export function getErrorTextForMaxProperties () {
   log('getErrorTextForMaxProperties')
 
   return 'Max properties'
 }
 
-export function getErrorTextForMinProperties (components = {}) {
+export function getErrorTextForMinProperties () {
   log('getErrorTextForMinProperties')
 
   return 'Min properties'
 }
 
-export function getErrorTextForAdditionalItems (components = {}) {
+export function getErrorTextForAdditionalItems () {
   log('getErrorTextForAdditionalItems')
 
   return 'Additional items'
 }
 
-export function getErrorTextForMaximum (components = {}) {
+export function getErrorTextForMaximum () {
   log('getErrorTextForMaximum')
 
   return 'Maximum'
 }
 
-export function getErrorTextForMinimum (components = {}) {
+export function getErrorTextForMinimum () {
   log('getErrorTextForMinimum')
 
   return 'Minimum'
 }
 
-export function getErrorTextForFormat (components = {}) {
+export function getErrorTextForFormat () {
   log('getErrorTextForFormat')
 
   return 'Format'
 }
 
-export function getErrorTextForAdditionalProperties (components = {}) {
+export function getErrorTextForAdditionalProperties () {
   log('getErrorTextForAdditionalProperties')
 
   return 'Additional properties'
 }
 
-export function getErrorTextForDependencies (components = {}) {
+export function getErrorTextForDependencies () {
   log('getErrorTextForDependencies')
 
   return 'Dependencies'
 }
 
-export function getErrorTextForUniqeItems (components = {}) {
+export function getErrorTextForUniqeItems () {
   log('getErrorTextForUniqeItems')
 
   return 'Unique items'
 }
 
-export function getErrorTextForPropertyRequired (components = {}) {
+export function getErrorTextForPropertyRequired () {
   log('getErrorTextForPropertyRequired')
 
   return 'Property required'
 }
 
-export function getErrorTextForPropertyNames (components = {}) {
+export function getErrorTextForPropertyNames () {
   log('getErrorTextForPropertyNames')
 
   return 'Property names'
 }
 
-export function getErrorTextForPatternRequired (components = {}) {
+export function getErrorTextForPatternRequired () {
   log('getErrorTextForMultipleOf')
 
   return 'Pattern required'
 }
 
-export function getErrorTextForMultipleOf (components = {}) {
+export function getErrorTextForMultipleOf () {
   log('getErrorTextForMultipleOf')
 
   return 'Multiple of'
 }
 
-export function getErrorTextForPattern (components = {}) {
+export function getErrorTextForPattern () {
   log('getErrorTextForPattern')
 
   return 'Pattern'
 }
 
-export function getErrorTextForConst (components = {}) {
+export function getErrorTextForConst () {
   log('getErrorTextForConst')
 
   return 'Const'
 }
 
-export function getErrorTextForEnum (components = {}) {
+export function getErrorTextForEnum () {
   log('getErrorTextForEnum')
 
   return 'Enum'
 }
 
-export function getErrorTextFor$Ref (components = {}) {
+export function getErrorTextFor$Ref () {
   log('getErrorTextFor$Ref')
 
   return '$Ref'
 }
 
-export function getErrorTextForOneOf (components = {}) {
+export function getErrorTextForOneOf () {
   log('getErrorTextForOneOf')
 
   return 'One of'
 }
 
-export function getErrorTextForUnknown (components = {}) {
+export function getErrorTextForUnknown () {
   log('getErrorTextForUnknown')
 
   return 'Unknown'
 }
 
-export function getErrorTextForTypeInvalid ({ expectedType } = {}, components = {}) {
+export function getErrorTextForTypeInvalid ({ expectedType } = {}) {
   log('getErrorTextForTypeInvalid')
 
   switch (expectedType) {
@@ -173,58 +175,58 @@ export function getErrorTextForTypeInvalid ({ expectedType } = {}, components = 
   }
 }
 
-export function getErrorTextByType ({ type, params } = {}, components = {}) {
+export function getErrorTextByType ({ type, params } = {}) {
   log('getErrorTextByType')
 
   switch (type) {
     case 'MAX_ITEMS':
-      return getErrorTextForMaxItems(components)
+      return getErrorTextForMaxItems()
     case 'MIN_ITEMS':
-      return getErrorTextForMinItems(components)
+      return getErrorTextForMinItems()
     case 'MAX_LENGTH':
-      return getErrorTextForMaxLength(components)
+      return getErrorTextForMaxLength()
     case 'MIN_LENGTH':
-      return getErrorTextForMinLength(components)
+      return getErrorTextForMinLength()
     case 'MAX_PROPERTIES':
-      return getErrorTextForMaxProperties(components)
+      return getErrorTextForMaxProperties()
     case 'MIN_PROPERTIES':
-      return getErrorTextForMinProperties(components)
+      return getErrorTextForMinProperties()
     case 'ADDITIONAL_ITEMS':
-      return getErrorTextForAdditionalItems(components)
+      return getErrorTextForAdditionalItems()
     case 'MAXIMUM':
-      return getErrorTextForMaximum(components)
+      return getErrorTextForMaximum()
     case 'MINIMUM':
-      return getErrorTextForMinimum(components)
+      return getErrorTextForMinimum()
     case 'FORMAT':
-      return getErrorTextForFormat(components)
+      return getErrorTextForFormat()
     case 'ADDITIONAL_PROPERTIES':
-      return getErrorTextForAdditionalProperties(components)
+      return getErrorTextForAdditionalProperties()
     case 'DEPENDENCIES':
-      return getErrorTextForDependencies(components)
+      return getErrorTextForDependencies()
     case 'UNIQUE_ITEMS':
-      return getErrorTextForUniqeItems(components)
+      return getErrorTextForUniqeItems()
     case 'PROPERTY_REQUIRED':
-      return getErrorTextForPropertyRequired(components)
+      return getErrorTextForPropertyRequired()
     case 'PROPERTY_NAMES':
-      return getErrorTextForPropertyNames(components)
+      return getErrorTextForPropertyNames()
     case 'PATTERN_REQUIRED':
-      return getErrorTextForPatternRequired(components)
+      return getErrorTextForPatternRequired()
     case 'TYPE_INVALID':
-      return getErrorTextForTypeInvalid(params, components)
+      return getErrorTextForTypeInvalid(params)
     case 'MULTIPLE_OF':
-      return getErrorTextForMultipleOf(components)
+      return getErrorTextForMultipleOf()
     case 'PATTERN':
-      return getErrorTextForPattern(components)
+      return getErrorTextForPattern()
     case 'CONST':
-      return getErrorTextForConst(components)
+      return getErrorTextForConst()
     case 'ENUM':
-      return getErrorTextForEnum(components)
+      return getErrorTextForEnum()
     case '$REF':
-      return getErrorTextFor$Ref(components)
+      return getErrorTextFor$Ref()
     case 'ONE_OF':
-      return getErrorTextForOneOf(components)
+      return getErrorTextForOneOf()
     case 'UNKNOWN':
-      return getErrorTextForUnknown(components)
+      return getErrorTextForUnknown()
     default:
       throw new Error('Error incompatible with Zashiki')
   }
@@ -236,11 +238,11 @@ export function getErrorHref ({ uri = '' } = {}) {
   return '#'.concat(uri)
 }
 
-export default function transformError (error, components) {
+export default function transformError (error) {
   log('transformError')
 
   return {
-    text: getErrorTextByType(error, components),
+    text: getErrorTextByType(error),
     href: getErrorHref(error)
   }
 }
