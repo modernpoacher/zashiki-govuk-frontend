@@ -34,7 +34,7 @@
   "dependencies": {
     "debug": "^4.3.4",
     "shinkansen-rails": "1.0.18",
-    "shinkansen-signals": "1.1.2",
+    "shinkansen-signals": "1.1.36",
     "shinkansen-transmission": "2.2.2"
   },
   "devDependencies": {
