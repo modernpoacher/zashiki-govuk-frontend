@@ -22,7 +22,7 @@
   "scripts": {
     "lint": "eslint . --ext .mjs --ext .cjs",
     "lint:fix": "npm run lint -- --fix",
-    "test": "cross-env NODE_ENV=test mocha test --recursive -r @babel/register --verbose",
+    "test": "cross-env NODE_ENV=test mocha test --recursive --verbose",
     "prepare": "npx husky install"
   },
   "dependencies": {
@@ -35,6 +35,7 @@
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/preset-env": "^7.21.5",
+    "@modernpoacher/hooks": "^1.0.406",
     "chai": "^4.3.7",
     "core-js": "^3.30.2",
     "cross-env": "^7.0.3",
