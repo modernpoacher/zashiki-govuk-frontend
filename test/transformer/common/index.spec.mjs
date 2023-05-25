@@ -29,7 +29,7 @@ import {
   getElementsTitle
 } from '@modernpoacher/zashiki-govuk-frontend/transformer/common'
 
-describe('@modernpoacher/zashiki-govuk-frontend/transformer/common', () => {
+describe('#transformer/common', () => {
   before(() => {
     const {
       env: {

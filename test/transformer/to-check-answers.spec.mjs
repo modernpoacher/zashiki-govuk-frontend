@@ -31,7 +31,7 @@ import transformer, {
   getVisuallyHiddenText
 } from '@modernpoacher/zashiki-govuk-frontend/transformer/to-check-answers'
 
-describe('@modernpoacher/zashiki-govuk-frontend/transformer/to-check-answers', () => {
+describe('#transformer/to-check-answers', () => {
   before(() => {
     const {
       env: {

@@ -50,7 +50,7 @@ import transform, {
   transformAll
 } from '@modernpoacher/zashiki-govuk-frontend/transformer'
 
-describe('@modernpoacher/zashiki-govuk-frontend/transformer', () => {
+describe('#transformer', () => {
   before(() => {
     const {
       env: {
