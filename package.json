@@ -23,19 +23,19 @@
     "lint": "eslint . --ext .mjs --ext .cjs",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive --verbose",
-    "prepare": "npx husky install"
+    "prepare": "husky install"
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.56",
-    "shinkansen-signals": "1.1.39",
-    "shinkansen-transmission": "2.2.51"
+    "shinkansen-rails": "1.0.57",
+    "shinkansen-signals": "1.1.40",
+    "shinkansen-transmission": "2.2.52"
   },
   "devDependencies": {
-    "@babel/core": "^7.21.8",
+    "@babel/core": "^7.22.1",
     "@babel/eslint-parser": "^7.21.8",
-    "@babel/preset-env": "^7.21.5",
-    "@modernpoacher/hooks": "^1.0.409",
+    "@babel/preset-env": "^7.22.2",
+    "@modernpoacher/hooks": "^1.0.411",
     "chai": "^4.3.7",
     "core-js": "^3.30.2",
     "cross-env": "^7.0.3",
