@@ -1,6 +1,6 @@
 const debug = require('debug')
 
-const log = debug('zashiki:transformer')
+const log = debug('zashiki-govuk-frontend')
 
 const {
   env: {
