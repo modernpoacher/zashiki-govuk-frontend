@@ -26,17 +26,44 @@ const log = debug('zashiki/transformer')
 
 log('`zashiki` is awake')
 
-export const getName = ({ name } = {}) => (name ? { name } : {})
+export function getName ({ name } = {}) {
+  return (name ? { name } : {})
+}
 
-export const transformDescriptionToHint = (field = {}, text = null) => ({ ...field, ...(text ? { hint: { text } } : {}) })
+export function transformDescriptionToHint (field = {}, text = null) {
+  return {
+    ...field,
+    ...(text ? { hint: { text } } : {})
+  }
+}
 
-export const transformTitleToText = (field = {}, text = null) => ({ ...field, ...(text ? { text } : {}) })
+export function transformTitleToText (field = {}, text = null) {
+  return {
+    ...field,
+    ...(text ? { text } : {})
+  }
+}
 
-export const transformTitleToLabel = (field = {}, text = null) => ({ ...field, ...(text ? { label: { text } } : {}) })
+export function transformTitleToLabel (field = {}, text = null) {
+  return {
+    ...field,
+    ...(text ? { label: { text } } : {})
+  }
+}
 
-export const transformTitleToLegend = (field = {}, text = null) => ({ ...field, ...(text ? { legend: { text } } : {}) })
+export function transformTitleToLegend (field = {}, text = null) {
+  return {
+    ...field,
+    ...(text ? { legend: { text } } : {})
+  }
+}
 
-export const transformTitleToFieldsetLegend = (field = {}, text = null) => ({ ...field, ...(text ? { fieldset: { legend: { text } } } : {}) })
+export function transformTitleToFieldsetLegend (field = {}, text = null) {
+  return {
+    ...field,
+    ...(text ? { fieldset: { legend: { text } } } : {})
+  }
+}
 
 export function transformElementsToCheckboxesEnum ({ selectedItems = [] } = {}, { enum: { items = [], id, name = id, ...field } } = {}, { uri, parentUri = uri } = {}, { components, errors } = {}) {
   log('transformElementsToCheckboxesEnum')
@@ -781,7 +808,7 @@ export function transformAll ({ meta = {}, elements = {} } = {}, params = {}) {
   }
 }
 
-const transform = (zashiki = {}, params = {}) => {
+export function transform (zashiki = {}, params = {}) {
   log('transform')
 
   const {
@@ -790,9 +817,11 @@ const transform = (zashiki = {}, params = {}) => {
     } = {}
   } = zashiki
 
-  return (type === 'object' || type === 'array')
-    ? transformAll(zashiki, params)
-    : transformOne(zashiki, params)
+  return (
+    type === 'object' || type === 'array'
+      ? transformAll(zashiki, params)
+      : transformOne(zashiki, params)
+  )
 }
 
 export function transformEmbark (definition, response, components = {}, errors = []) {
@@ -804,7 +833,7 @@ export function transformEmbark (definition, response, components = {}, errors =
 export function transformAlpha (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--m', isPageHeading = false, ...meta } = {}, ...components } = {}, errors = []) {
   log('transformAlpha')
 
-  const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components)
+  const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, { ...components, meta: { ...meta, isPageHeading: true } })
 
   const {
     meta: {
