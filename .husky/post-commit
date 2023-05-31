@@ -1,14 +1,14 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-has_package_depencies_changes () {
+has_package_dependencies_changes () {
   git diff HEAD~1..HEAD~0 -- origin/main package.json | grep \
     -e '+\s*\"shinkansen-rails\":\s\".*"' \
     -e '+\s*\"shinkansen-signals\":\s\".*"' \
     -e '+\s*\"shinkansen-transmission\":\s\".*"'
 }
 
-if has_package_depencies_changes;
+if has_package_dependencies_changes;
 then
   npx cross-env DEBUG=@modernpoacher/hooks* node .husky/post-commit.mjs
 fi
