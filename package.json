@@ -29,7 +29,7 @@
     "debug": "^4.3.4",
     "shinkansen-rails": "1.0.63",
     "shinkansen-signals": "1.1.48",
-    "shinkansen-transmission": "2.2.56"
+    "shinkansen-transmission": "2.2.59"
   },
   "devDependencies": {
     "@babel/core": "^7.22.1",
