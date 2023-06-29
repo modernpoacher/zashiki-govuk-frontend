@@ -20,30 +20,27 @@
     "url": "git@github.com/modernpoacher/zashiki-govuk-frontend.git"
   },
   "scripts": {
-    "lint": "eslint . --ext .mjs --ext .cjs",
+    "lint": "eslint . --ext .mjs,.cjs",
     "lint:fix": "npm run lint -- --fix",
     "test": "cross-env NODE_ENV=test mocha test --recursive --verbose",
     "prepare": "husky install"
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.75",
-    "shinkansen-signals": "1.1.59",
+    "shinkansen-rails": "1.0.76",
+    "shinkansen-signals": "1.1.60",
     "shinkansen-transmission": "2.2.71"
   },
   "devDependencies": {
     "@babel/core": "^7.22.5",
     "@babel/eslint-parser": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
-    "@modernpoacher/hooks": "^1.0.419",
+    "@modernpoacher/hooks": "^1.0.420",
     "chai": "^4.3.7",
     "core-js": "^3.31.0",
     "cross-env": "^7.0.3",
     "eslint": "^8.43.0",
     "eslint-config-standard": "^17.1.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-promise": "^6.1.1",
     "govuk-frontend": "^4.6.0",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
