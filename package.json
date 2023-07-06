@@ -27,15 +27,15 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.80",
-    "shinkansen-signals": "1.1.64",
-    "shinkansen-transmission": "2.2.75"
+    "shinkansen-rails": "1.0.81",
+    "shinkansen-signals": "1.1.65",
+    "shinkansen-transmission": "2.2.76"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.6",
-    "@babel/eslint-parser": "^7.22.6",
-    "@babel/preset-env": "^7.22.6",
-    "@modernpoacher/hooks": "^1.0.423",
+    "@babel/core": "^7.22.7",
+    "@babel/eslint-parser": "^7.22.7",
+    "@babel/preset-env": "^7.22.7",
+    "@modernpoacher/hooks": "^1.0.424",
     "chai": "^4.3.7",
     "core-js": "^3.31.1",
     "cross-env": "^7.0.3",
