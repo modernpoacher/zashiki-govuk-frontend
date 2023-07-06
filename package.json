@@ -27,21 +27,21 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.81",
-    "shinkansen-signals": "1.1.65",
-    "shinkansen-transmission": "2.2.76"
+    "shinkansen-rails": "1.0.82",
+    "shinkansen-signals": "1.1.66",
+    "shinkansen-transmission": "2.2.77"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.7",
+    "@babel/core": "^7.22.8",
     "@babel/eslint-parser": "^7.22.7",
     "@babel/preset-env": "^7.22.7",
-    "@modernpoacher/hooks": "^1.0.424",
+    "@modernpoacher/hooks": "^1.0.425",
     "chai": "^4.3.7",
     "core-js": "^3.31.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.44.0",
     "eslint-config-standard": "^17.1.0",
-    "govuk-frontend": "^4.6.0",
+    "govuk-frontend": "^4.7.0",
     "husky": "^8.0.3",
     "mocha": "^10.2.0",
     "nunjucks": "^3.2.4"
