@@ -31,17 +31,17 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.89",
-    "shinkansen-signals": "1.1.73",
+    "shinkansen-rails": "1.0.90",
+    "shinkansen-signals": "1.1.74",
     "shinkansen-transmission": "2.2.87"
   },
   "devDependencies": {
     "@babel/core": "^7.22.10",
     "@babel/eslint-parser": "^7.22.10",
     "@babel/preset-env": "^7.22.10",
-    "@modernpoacher/hooks": "^1.0.429",
+    "@modernpoacher/hooks": "^1.0.430",
     "chai": "4.3.7",
-    "core-js": "^3.32.0",
+    "core-js": "^3.32.1",
     "cross-env": "^7.0.3",
     "eslint": "^8.47.0",
     "eslint-config-standard": "^17.1.0",
