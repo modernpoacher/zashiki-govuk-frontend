@@ -40,7 +40,7 @@
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.22.15",
     "@modernpoacher/hooks": "^1.0.434",
-    "chai": "4.3.7",
+    "chai": "^4.3.8",
     "core-js": "^3.32.2",
     "cross-env": "^7.0.3",
     "eslint": "^8.49.0",
