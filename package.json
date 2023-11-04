@@ -31,19 +31,19 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.111",
-    "shinkansen-signals": "1.1.91",
-    "shinkansen-transmission": "2.2.106"
+    "shinkansen-rails": "1.0.112",
+    "shinkansen-signals": "1.1.92",
+    "shinkansen-transmission": "2.2.107"
   },
   "devDependencies": {
     "@babel/core": "^7.23.2",
     "@babel/eslint-parser": "^7.22.15",
     "@babel/preset-env": "^7.23.2",
-    "@modernpoacher/hooks": "^1.0.443",
+    "@modernpoacher/hooks": "^1.0.444",
     "chai": "^4.3.10",
     "core-js": "^3.33.2",
     "cross-env": "^7.0.3",
-    "eslint": "^8.52.0",
+    "eslint": "^8.53.0",
     "eslint-config-standard": "^17.1.0",
     "govuk-frontend": "^4.7.0",
     "husky": "^8.0.3",
