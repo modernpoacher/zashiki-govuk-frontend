@@ -32,14 +32,14 @@
   "dependencies": {
     "debug": "^4.3.4",
     "shinkansen-rails": "1.0.122",
-    "shinkansen-signals": "1.1.103",
-    "shinkansen-transmission": "2.2.118"
+    "shinkansen-signals": "1.1.104",
+    "shinkansen-transmission": "2.2.119"
   },
   "devDependencies": {
-    "@babel/core": "^7.23.6",
+    "@babel/core": "^7.23.7",
     "@babel/eslint-parser": "^7.23.3",
-    "@babel/preset-env": "^7.23.6",
-    "@modernpoacher/hooks": "^1.0.454",
+    "@babel/preset-env": "^7.23.7",
+    "@modernpoacher/hooks": "^1.0.455",
     "chai": "^5.0.0",
     "core-js": "^3.35.0",
     "cross-env": "^7.0.3",
