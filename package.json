@@ -45,7 +45,7 @@
     "cross-env": "^7.0.3",
     "eslint": "^8.56.0",
     "eslint-config-standard": "^17.1.0",
-    "govuk-frontend": "^5.1.0",
+    "govuk-frontend": "^5.2.0",
     "husky": "^9.0.11",
     "mocha": "^10.3.0",
     "nunjucks": "^3.2.4"
