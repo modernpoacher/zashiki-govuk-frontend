@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "debug": "^4.3.4",
-    "shinkansen-rails": "1.0.141",
-    "shinkansen-signals": "1.1.120",
-    "shinkansen-transmission": "2.2.137"
+    "shinkansen-rails": "1.0.142",
+    "shinkansen-signals": "1.1.121",
+    "shinkansen-transmission": "2.2.138"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
