@@ -26,14 +26,14 @@
   "scripts": {
     "lint": "eslint . --ext .mjs,.cjs",
     "lint:fix": "npm run lint -- --fix",
-    "test": "cross-env NODE_ENV=test mocha test --recursive --verbose",
-    "prepare": "husky"
+    "prepare": "husky",
+    "test": "cross-env NODE_ENV=test mocha test --recursive --verbose"
   },
   "dependencies": {
     "debug": "^4.3.5",
-    "shinkansen-rails": "1.0.168",
-    "shinkansen-signals": "1.1.146",
-    "shinkansen-transmission": "2.2.165"
+    "shinkansen-rails": "1.0.169",
+    "shinkansen-signals": "1.1.147",
+    "shinkansen-transmission": "2.2.166"
   },
   "devDependencies": {
     "@babel/core": "^7.24.6",
@@ -52,9 +52,9 @@
   },
   "exports": {
     ".": "./src/index.mjs",
-    "./transformer/common/*": "./src/transformer/common/*.mjs",
-    "./transformer/common": "./src/transformer/common/index.mjs",
+    "./transformer": "./src/transformer/index.mjs",
     "./transformer/*": "./src/transformer/*.mjs",
-    "./transformer": "./src/transformer/index.mjs"
+    "./transformer/common": "./src/transformer/common/index.mjs",
+    "./transformer/common/*": "./src/transformer/common/*.mjs"
   }
 }
