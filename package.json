@@ -13,7 +13,7 @@
   "author": {
     "name": "Jonathan Perry for Modern Poacher Limited",
     "email": "modernpoacher@modernpoacher.com",
-    "url": "http://modernpoacher.com"
+    "url": "https://modernpoacher.com"
   },
   "license": "UNLICENSED",
   "engines": {
@@ -31,15 +31,15 @@
   },
   "dependencies": {
     "debug": "^4.3.5",
-    "shinkansen-rails": "1.0.177",
-    "shinkansen-signals": "1.1.155",
-    "shinkansen-transmission": "2.2.175"
+    "shinkansen-rails": "1.0.178",
+    "shinkansen-signals": "1.1.156",
+    "shinkansen-transmission": "2.2.176"
   },
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/eslint-parser": "^7.24.7",
     "@babel/preset-env": "^7.24.7",
-    "@modernpoacher/hooks": "^1.0.480",
+    "@modernpoacher/hooks": "^1.0.481",
     "chai": "^5.1.1",
     "core-js": "^3.37.1",
     "cross-env": "^7.0.3",
