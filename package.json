@@ -30,16 +30,16 @@
     "test": "cross-env NODE_ENV=test mocha test --recursive --verbose"
   },
   "dependencies": {
-    "debug": "^4.3.5",
-    "shinkansen-rails": "1.0.185",
-    "shinkansen-signals": "1.1.162",
-    "shinkansen-transmission": "2.2.183"
+    "debug": "^4.3.6",
+    "shinkansen-rails": "1.0.186",
+    "shinkansen-signals": "1.1.163",
+    "shinkansen-transmission": "2.2.184"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",
     "@babel/eslint-parser": "^7.25.0",
     "@babel/preset-env": "^7.25.0",
-    "@modernpoacher/hooks": "^1.0.485",
+    "@modernpoacher/hooks": "^1.0.486",
     "chai": "^5.1.1",
     "core-js": "^3.37.1",
     "cross-env": "^7.0.3",
