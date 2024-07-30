@@ -31,22 +31,22 @@
   },
   "dependencies": {
     "debug": "^4.3.6",
-    "shinkansen-rails": "1.0.187",
-    "shinkansen-signals": "1.1.164",
-    "shinkansen-transmission": "2.2.185"
+    "shinkansen-rails": "1.0.188",
+    "shinkansen-signals": "1.1.165",
+    "shinkansen-transmission": "2.2.186"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.9",
+    "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
-    "@babel/preset-env": "^7.25.0",
-    "@modernpoacher/hooks": "^1.0.487",
+    "@babel/preset-env": "^7.25.2",
+    "@modernpoacher/hooks": "^1.0.488",
     "chai": "^5.1.1",
     "core-js": "^3.37.1",
     "cross-env": "^7.0.3",
     "eslint": "8.57.0",
     "eslint-config-standard": "^17.1.0",
     "govuk-frontend": "^5.4.1",
-    "husky": "^9.1.3",
+    "husky": "^9.1.4",
     "mocha": "^10.7.0",
     "nunjucks": "^3.2.4"
   },
