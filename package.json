@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "debug": "^4.3.6",
-    "shinkansen-rails": "1.0.196",
-    "shinkansen-signals": "1.1.167",
-    "shinkansen-transmission": "2.2.188"
+    "shinkansen-rails": "1.0.197",
+    "shinkansen-signals": "1.1.168",
+    "shinkansen-transmission": "2.2.189"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
@@ -45,9 +45,9 @@
     "cross-env": "^7.0.3",
     "eslint": "8.57.0",
     "eslint-config-standard": "^17.1.0",
-    "govuk-frontend": "^5.4.1",
+    "govuk-frontend": "^5.5.0",
     "husky": "^9.1.4",
-    "mocha": "^10.7.0",
+    "mocha": "^10.7.3",
     "nunjucks": "^3.2.4"
   },
   "exports": {
