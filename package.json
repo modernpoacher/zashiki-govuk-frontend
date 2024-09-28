@@ -39,7 +39,6 @@
     "@babel/core": "^7.25.2",
     "@babel/eslint-parser": "^7.25.1",
     "@babel/preset-env": "^7.25.4",
-    "@modernpoacher/hooks": "^1.0.495",
     "chai": "^5.1.1",
     "core-js": "^3.38.1",
     "cross-env": "^7.0.3",
