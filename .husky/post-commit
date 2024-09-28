@@ -16,5 +16,7 @@ has_package_dependencies_changes () {
 
 if has_package_dependencies_changes;
 then
+  git clone https://github.com/modernpoacher/hooks.git .husky/hooks
   npx cross-env DEBUG=@modernpoacher/hooks* node .husky/post-commit.mjs
+  rm -rf .husky/hooks
 fi
