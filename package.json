@@ -31,14 +31,14 @@
   },
   "dependencies": {
     "debug": "^4.3.7",
-    "shinkansen-rails": "1.0.239",
-    "shinkansen-signals": "1.1.177",
-    "shinkansen-transmission": "2.2.199"
+    "shinkansen-rails": "1.0.240",
+    "shinkansen-signals": "1.1.178",
+    "shinkansen-transmission": "2.2.200"
   },
   "devDependencies": {
-    "@babel/core": "^7.25.9",
+    "@babel/core": "^7.26.0",
     "@babel/eslint-parser": "^7.25.9",
-    "@babel/preset-env": "^7.25.9",
+    "@babel/preset-env": "^7.26.0",
     "chai": "^5.1.2",
     "core-js": "^3.38.1",
     "cross-env": "^7.0.3",
