@@ -30,10 +30,10 @@
     "test": "cross-env NODE_ENV=test mocha test --recursive --verbose"
   },
   "dependencies": {
-    "debug": "^4.3.7",
-    "shinkansen-rails": "1.0.257",
-    "shinkansen-signals": "1.1.185",
-    "shinkansen-transmission": "2.2.207"
+    "debug": "^4.4.0",
+    "shinkansen-rails": "1.0.258",
+    "shinkansen-signals": "1.1.186",
+    "shinkansen-transmission": "2.2.208"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
