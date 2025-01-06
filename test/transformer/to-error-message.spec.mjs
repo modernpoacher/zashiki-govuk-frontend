@@ -1,6 +1,8 @@
 import debug from 'debug'
 
-import { expect } from 'chai'
+import {
+  expect
+} from 'chai'
 
 import transformer from '@modernpoacher/zashiki-govuk-frontend/transformer/to-error-message'
 
