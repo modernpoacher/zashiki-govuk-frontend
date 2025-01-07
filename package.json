@@ -40,7 +40,7 @@
     "@babel/eslint-parser": "^7.25.9",
     "@babel/preset-env": "^7.26.0",
     "chai": "^5.1.2",
-    "core-js": "^3.39.0",
+    "core-js": "^3.40.0",
     "cross-env": "^7.0.3",
     "eslint": "8.57.1",
     "eslint-config-standard": "^17.1.0",
