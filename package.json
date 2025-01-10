@@ -31,13 +31,13 @@
   },
   "dependencies": {
     "debug": "^4.4.0",
-    "shinkansen-rails": "1.0.259",
-    "shinkansen-signals": "1.1.187",
-    "shinkansen-transmission": "2.2.210"
+    "shinkansen-rails": "1.0.261",
+    "shinkansen-signals": "1.1.189",
+    "shinkansen-transmission": "2.2.212"
   },
   "devDependencies": {
     "@babel/core": "^7.26.0",
-    "@babel/eslint-parser": "^7.25.9",
+    "@babel/eslint-parser": "^7.26.5",
     "@babel/preset-env": "^7.26.0",
     "chai": "^5.1.2",
     "core-js": "^3.40.0",
