@@ -31,15 +31,15 @@
   },
   "dependencies": {
     "debug": "^4.4.0",
-    "shinkansen-rails": "1.0.276",
-    "shinkansen-signals": "1.1.206",
-    "shinkansen-transmission": "2.2.226"
+    "shinkansen-rails": "1.0.277",
+    "shinkansen-signals": "1.1.207",
+    "shinkansen-transmission": "2.2.227"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.8",
+    "@babel/core": "^7.26.9",
     "@babel/eslint-parser": "^7.26.8",
-    "@babel/preset-env": "^7.26.8",
-    "chai": "^5.1.2",
+    "@babel/preset-env": "^7.26.9",
+    "chai": "^5.2.0",
     "core-js": "^3.40.0",
     "cross-env": "^7.0.3",
     "eslint": "8.57.1",
