@@ -26,6 +26,16 @@ const log = debug('zashiki/transformer')
 
 log('`zashiki` is awake')
 
+function toValues (response, definition) {
+  if (response !== undefined) {
+    return (
+      fromDocumentToHash(response, definition)
+    )
+  }
+
+  return {}
+}
+
 export function getName ({ name } = {}) {
   return (name ? { name } : {})
 }
@@ -337,7 +347,7 @@ export function transformFields (meta, elements, params) {
 
   return {
     group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
-    fields: fields.map((field) => transform(field, params))
+    fields: fields.map((field) => fromZashiki(field, params))
   }
 }
 
@@ -694,7 +704,7 @@ export function transformFieldsToDateInput (meta, elements, params) {
 
   return {
     group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
-    fields: fields.map((field) => transform(field, params))
+    fields: fields.map((field) => fromZashiki(field, params))
   }
 }
 
@@ -708,7 +718,7 @@ export function transformFieldsToFileUpload (meta, elements, params) {
 
   return {
     group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
-    fields: fields.map((field) => transform(field, params))
+    fields: fields.map((field) => fromZashiki(field, params))
   }
 }
 
@@ -722,7 +732,7 @@ export function transformFieldsToInput (meta, elements, params) {
 
   return {
     group: transformTitleToLegend(transformElementsToGroup(meta, elements, params), title),
-    fields: fields.map((field) => transform(field, params))
+    fields: fields.map((field) => fromZashiki(field, params))
   }
 }
 
@@ -808,8 +818,8 @@ export function transformAll ({ meta = {}, elements = {} } = {}, params = {}) {
   }
 }
 
-export function transform (zashiki = {}, params = {}) {
-  log('transform')
+export function fromZashiki (zashiki = {}, params = {}) {
+  log('fromZashiki')
 
   const {
     meta: {
@@ -827,13 +837,17 @@ export function transform (zashiki = {}, params = {}) {
 export function transformEmbark (definition, response, components = {}, errors = []) {
   log('transformEmbark')
 
-  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components), { components, errors })
+  return (
+    fromZashiki(
+      toZashiki(definition, toValues(response, definition), components), { components, errors }
+    )
+  )
 }
 
 export function transformAlpha (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--m', isPageHeading = false, ...meta } = {}, ...components } = {}, errors = []) {
   log('transformAlpha')
 
-  const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, { ...components, meta: { ...meta, isPageHeading: true } })
+  const zashiki = toZashiki(definition, toValues(response, definition), { ...components, meta: { ...meta, isPageHeading: true } })
 
   const {
     meta: {
@@ -873,7 +887,7 @@ export function transformAlpha (description, definition, response, { meta: { cla
 export function transformOmega (description, definition, response, { meta: { classes = 'govuk-fieldset__legend--l', isPageHeading = true, ...meta } = {}, ...components } = {}, errors = []) {
   log('transformOmega')
 
-  const zashiki = toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, { ...components, meta: { ...meta, isPageHeading: true } })
+  const zashiki = toZashiki(definition, toValues(response, definition), { ...components, meta: { ...meta, isPageHeading: true } })
 
   const {
     meta: {
@@ -913,7 +927,17 @@ export function transformOmega (description, definition, response, { meta: { cla
 export function transformDebark (definition, response, components = {}, errors = []) {
   log('transformDebark')
 
-  return transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components), { components, errors })
+  return (
+    fromZashiki(
+      toZashiki(definition, toValues(response, definition), components), { components, errors }
+    )
+  )
 }
 
-export default (definition, response, components = {}, errors = []) => transform(toZashiki(definition, (response !== undefined) ? fromDocumentToHash(response, definition) : {}, components), { components, errors })
+export default function transform (definition, response, components = {}, errors = []) {
+  return (
+    fromZashiki(
+      toZashiki(definition, toValues(response, definition), components), { components, errors }
+    )
+  )
+}
