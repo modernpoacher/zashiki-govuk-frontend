@@ -134,17 +134,17 @@ export const getType = (meta = {}) => meta.type
 
 /**
  * @param {unknown} [elements]
- * @returns {meta is { component: Record<PropertyKey, unknown> | Record<PropertyKey, never> }}
+ * @returns {meta is { component: string }}
  */
 export const hasComponent = (meta = {}) => 'component' in meta
 
 /**
  * @overload
- * @param {{ component: Record<PropertyKey, unknown> | Record<PropertyKey, never> }} elements
- * @returns {Record<PropertyKey, unknown> | Record<PropertyKey, never>}
+ * @param {{ component: string }} elements
+ * @returns {string}
  *
- * @param {{ component?: Record<PropertyKey, unknown> | Record<PropertyKey, never> }} [elements]
- * @returns {Record<PropertyKey, unknown> | Record<PropertyKey, never> | undefined}
+ * @param {{ component?: string }} [elements]
+ * @returns {string | undefined}
  */
 export const getComponent = (meta = {}) => meta.component
 
