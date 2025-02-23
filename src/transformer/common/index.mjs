@@ -4,41 +4,210 @@ const log = debug('zashiki/transformer/common')
 
 log('`zashiki` is awake')
 
-export const hasEnum = (elements = {}) => Reflect.has(elements, 'enum')
-export const getEnum = (elements = {}) => Reflect.get(elements, 'enum')
+/**
+ * @param {{ enum?: string[] | number[] | object[] | boolean[] | null[] }} elements
+ * @returns {elements is { enum: string[] | number[] | object[] | boolean[] | null[] } }
+ */
+export const hasEnum = (elements = {}) => 'enum' in elements
 
-export const hasOneOf = (elements = {}) => Reflect.has(elements, 'oneOf')
-export const getOneOf = (elements = {}) => Reflect.get(elements, 'oneOf')
+/**
+ * @overload
+ * @param {{ enum: string[] | number[] | object[] | boolean[] | null[] }} elements
+ * @returns {string[] | number[] | object[] | boolean[] | null[]}
+ *
+ * @param {{ enum?: string[] | number[] | object[] | boolean[] | null[] }} elements
+ * @returns {string[] | number[] | object[] | boolean[] | null[] | undefined}
+ */
+export const getEnum = (elements = {}) => elements.enum
 
-export const hasAnyOf = (elements = {}) => Reflect.has(elements, 'anyOf')
-export const getAnyOf = (elements = {}) => Reflect.get(elements, 'anyOf')
+/**
+ * @param {unknown} [elements]
+ * @returns {elements is { oneOf: string[] | number[] | object[] | boolean[] | null[] } }
+ */
+export const hasOneOf = (elements = {}) => 'oneOf' in elements
 
-export const hasField = (elements = {}) => Reflect.has(elements, 'field')
-export const getField = (elements = {}) => Reflect.get(elements, 'field')
+/**
+ * @overload
+ * @param {{ oneOf: string[] | number[] | object[] | boolean[] | null[] }} elements
+ * @returns {string[] | number[] | object[] | boolean[] | null[]}
+ *
+ * @param {{ oneOf?: string[] | number[] | object[] | boolean[] | null[] }} [elements]
+ * @returns {string[] | number[] | object[] | boolean[] | null[] | undefined}
+ */
+export const getOneOf = (elements = {}) => elements.oneOf
 
-export const hasTitle = (elements = {}) => Reflect.has(elements, 'title')
-export const getTitle = (elements = {}) => Reflect.get(elements, 'title')
+/**
+ * @param {unknown} [elements]
+ * @returns {elements is { anyOf: string[] | number[] | object[] | boolean[] | null[] } }
+ */
+export const hasAnyOf = (elements = {}) => 'anyOf' in elements
 
-export const hasDescription = (elements = {}) => Reflect.has(elements, 'description')
-export const getDescription = (elements = {}) => Reflect.get(elements, 'description')
+/**
+ * @overload
+ * @param {{ anyOf: string[] | number[] | object[] | boolean[] | null[] }} elements
+ * @returns {string[] | number[] | object[] | boolean[] | null[]}
+ *
+ * @param {{ anyOf?: string[] | number[] | object[] | boolean[] | null[] }} [elements]
+ * @returns {string[] | number[] | object[] | boolean[] | null[] | undefined}
+ */
+export const getAnyOf = (elements = {}) => elements.anyOf
 
-export const hasRequired = (elements = {}) => Reflect.has(elements, 'required')
-export const getRequired = (elements = {}) => Reflect.get(elements, 'required')
+/**
+ * @param {unknown} [elements]
+ * @returns {elements is { field: Record<PropertyKey, unknown> | Record<PropertyKey, never> }}
+ */
+export const hasField = (elements = {}) => 'field' in elements
 
-export const hasType = (meta = {}) => Reflect.has(meta, 'type')
-export const getType = (meta = {}) => Reflect.get(meta, 'type')
+/**
+ * @overload
+ * @param {{ field: Record<PropertyKey, unknown> | Record<PropertyKey, never> }} elements
+ * @returns {Record<PropertyKey, unknown> | Record<PropertyKey, never>}
+ *
+ * @param {{ field?: Record<PropertyKey, unknown> | Record<PropertyKey, never> }} [elements]
+ * @returns {Record<PropertyKey, unknown> | Record<PropertyKey, never> | undefined}
+ */
+export const getField = (elements = {}) => elements.field
 
-export const hasComponent = (meta = {}) => Reflect.has(meta, 'component')
-export const getComponent = (meta = {}) => Reflect.get(meta, 'component')
+/**
+ * @param {unknown} [elements]
+ * @returns {elements is { title: string }}
+ */
+export const hasTitle = (elements = {}) => 'title' in elements
 
-export const hasValue = (field = {}) => Reflect.has(field, 'value')
-export const getValue = (field = {}) => Reflect.get(field, 'value')
+/**
+ * @overload
+ * @param {{ title: string }} elements
+ * @returns {string}
+ *
+ * @param {{ title?: string }} [elements]
+ * @returns {string | undefined}
+ */
+export const getTitle = (elements = {}) => elements.title
 
-export const hasText = (value = {}) => Reflect.has(value, 'text')
-export const getText = (value = {}) => Reflect.get(value, 'text')
+/**
+ * @param {unknown} [elements]
+ * @returns {elements is { description: string }}
+ */
+export const hasDescription = (elements = {}) => 'description' in elements
 
-export const hasHtml = (value = {}) => Reflect.has(value, 'html')
-export const getHtml = (value = {}) => Reflect.get(value, 'html')
+/**
+ * @overload
+ * @param {{ description: string }} elements
+ * @returns {string}
+ *
+ * @param {{ description?: string }} [elements]
+ * @returns {string | undefined}
+ */
+export const getDescription = (elements = {}) => elements.description
 
+/**
+ * @param {unknown} [elements]
+ * @returns {elements is { required: string[] }}
+ */
+export const hasRequired = (elements = {}) => 'required' in elements
+
+/**
+ * @overload
+ * @param {{ required: string[] }} elements
+ * @returns {string[]}
+ *
+ * @param {{ required?: string[] }} [elements]
+ * @returns {string[] | undefined}
+ */
+export const getRequired = (elements = {}) => elements.required
+
+/**
+ * @param {unknown} [elements]
+ * @returns {meta is { type: string }}
+ */
+export const hasType = (meta = {}) => 'type' in meta
+
+/**
+ * @overload
+ * @param {{ type: string }} elements
+ * @returns {string}
+ *
+ * @param {{ type?: string }} [elements]
+ * @returns {string | undefined}
+ */
+export const getType = (meta = {}) => meta.type
+
+/**
+ * @param {unknown} [elements]
+ * @returns {meta is { component: Record<PropertyKey, unknown> | Record<PropertyKey, never> }}
+ */
+export const hasComponent = (meta = {}) => 'component' in meta
+
+/**
+ * @overload
+ * @param {{ component: Record<PropertyKey, unknown> | Record<PropertyKey, never> }} elements
+ * @returns {Record<PropertyKey, unknown> | Record<PropertyKey, never>}
+ *
+ * @param {{ component?: Record<PropertyKey, unknown> | Record<PropertyKey, never> }} [elements]
+ * @returns {Record<PropertyKey, unknown> | Record<PropertyKey, never> | undefined}
+ */
+export const getComponent = (meta = {}) => meta.component
+
+/**
+ * @param {unknown} [elements]
+ * @returns {field is { value: string } }
+ */
+export const hasValue = (field = {}) => 'value' in field
+
+/**
+ * @overload
+ * @param {{ value: string }} elements
+ * @returns {string}
+ *
+ * @param {{ value?: string }} [elements]
+ * @returns {string | undefined}
+ */
+export const getValue = (field = {}) => field.value
+
+/**
+ * @param {unknown} [elements]
+ * @returns {value is { text: string }}
+ */
+export const hasText = (value = {}) => 'text' in value
+
+/**
+ * @overload
+ * @param {{ text: string }} elements
+ * @returns {string}
+ *
+ * @param {{ text?: string }} [elements]
+ * @returns {string | undefined}
+ */
+export const getText = (value = {}) => value.text
+
+/**
+ * @param {unknown} [elements]
+ * @returns {value is { html: string }}
+ */
+export const hasHtml = (value = {}) => 'html' in value
+
+/**
+ * @overload
+ * @param {{ html: string }} elements
+ * @returns {string}
+ *
+ * @param {{ html?: string }} [elements]
+ * @returns {string | undefined}
+ */
+export const getHtml = (value = {}) => value.html
+
+/**
+ * @param {unknown} [params]
+ * @returns {params is { elements: { title: string} }}
+ */
 export const hasElementsTitle = ({ elements } = {}) => hasTitle(elements)
+
+/**
+ * @overload
+ * @param {{ elements: { title: string} }} elements
+ * @returns {string}
+ *
+ * @param {{ elements?: { title?: string } }} [elements]
+ * @returns {string | undefined}
+ */
 export const getElementsTitle = ({ elements } = {}) => getTitle(elements)

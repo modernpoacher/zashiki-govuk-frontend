@@ -154,6 +154,10 @@ export function getErrorTextForUnknown () {
   return 'Unknown'
 }
 
+/**
+ *  @param {{ expectedType?: string }} [params]
+ *  @returns {string}
+ */
 export function getErrorTextForTypeInvalid ({ expectedType } = {}) {
   log('getErrorTextForTypeInvalid')
 
@@ -175,6 +179,10 @@ export function getErrorTextForTypeInvalid ({ expectedType } = {}) {
   }
 }
 
+/**
+ *  @param {{ type?: string, params?: Record<PropertyKey, unknown> }} [params]
+ *  @returns {string}
+ */
 export function getErrorTextByType ({ type, params } = {}) {
   log('getErrorTextByType')
 
@@ -232,12 +240,20 @@ export function getErrorTextByType ({ type, params } = {}) {
   }
 }
 
+/**
+ *  @param {{ uri?: string }} [params]
+ *  @returns {string}
+ */
 export function getErrorHref ({ uri = '' } = {}) {
   log('getErrorHref')
 
   return '#'.concat(uri)
 }
 
+/**
+ *  @param {{ type?: string, params?: Record<PropertyKey, unknown>, uri?: string }} [error]
+ *  @returns {{ text: string, href: string }}
+ */
 export default function transformError (error) {
   log('transformError')
 
