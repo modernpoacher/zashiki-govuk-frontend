@@ -17,7 +17,7 @@
   },
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=23"
+    "node": ">=23.0.0"
   },
   "repository": {
     "type": "git",
