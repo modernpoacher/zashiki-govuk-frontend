@@ -391,7 +391,7 @@ describe('#transformer', () => {
         describe('With params', () => {
           describe('Transforming `string` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `string` type schemas With `enum`', () => {
+              it('transforms `string` type schemas with `enum`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -403,7 +403,7 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = 2
+                const document = 'Three'
 
                 const params = {
                   '#/': { meta: { component: 'radios' } }
@@ -445,7 +445,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `anyOf`', () => {
+              it('transforms `string` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -502,7 +502,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `oneOf`', () => {
+              it('transforms `string` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -562,7 +562,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -587,7 +587,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -609,7 +609,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `string` type schemas With `enum`', () => {
+              it('transforms `string` type schemas with `enum`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -621,7 +621,7 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = 2
+                const document = 'Three'
 
                 const params = {
                   '#/': { meta: { component: 'select' } }
@@ -661,7 +661,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `anyOf`', () => {
+              it('transforms `string` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -713,7 +713,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `oneOf`', () => {
+              it('transforms `string` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -768,7 +768,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -793,7 +793,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -817,7 +817,7 @@ describe('#transformer', () => {
 
           describe('Transforming `number` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `number` type schemas With `enum`', () => {
+              it('transforms `number` type schemas with `enum`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -871,7 +871,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `anyOf`', () => {
+              it('transforms `number` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -928,7 +928,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `oneOf`', () => {
+              it('transforms `number` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -988,7 +988,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -1013,7 +1013,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -1035,7 +1035,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `number` type schemas With `enum`', () => {
+              it('transforms `number` type schemas with `enum`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -1087,7 +1087,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `anyOf`', () => {
+              it('transforms `number` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -1139,7 +1139,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `oneOf`', () => {
+              it('transforms `number` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -1194,7 +1194,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -1219,7 +1219,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -1243,7 +1243,7 @@ describe('#transformer', () => {
 
           describe('Transforming `array` type schemas', () => {
             describe('To a `checkboxes` component', () => {
-              it('transforms `array` type schemas With `enum` (`items` is an array of `string` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1309,7 +1309,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `enum` (`items` is an array of `number` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1325,7 +1325,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [3]
+                const document = [
+                  3
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1369,7 +1371,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `enum` (`items` is an array of `boolean` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1384,7 +1386,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1421,7 +1425,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `enum` (`items` is an array of `null` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1435,7 +1439,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1465,7 +1471,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `enum` (`items` is an object of `string` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1527,7 +1533,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `enum` (`items` is an object of `number` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1541,7 +1547,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [3]
+                const document = [
+                  3
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1585,7 +1593,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `enum` (`items` is an object of `boolean` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1598,7 +1606,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [false] // look-up
+                const document = [
+                  false
+                ] // look-up
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1635,7 +1645,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `enum` (`items` is an object of `null` type)', () => {
+              it('transforms `array` type schemas with `enum` (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1647,7 +1657,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1677,7 +1689,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an array of `string` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1689,14 +1701,30 @@ describe('#transformer', () => {
                         { const: 'Two' },
                         { const: 'Three' }
                       ]
+                    },
+                    {
+                      type: 'string',
+                      anyOf: [
+                        { const: 'Four' },
+                        { const: 'Five' },
+                        { const: 'Six' }
+                      ]
+                    },
+                    {
+                      type: 'string',
+                      anyOf: [
+                        { const: 'Seven' },
+                        { const: 'Eight' },
+                        { const: 'Nine' }
+                      ]
                     }
                   ]
                 }
 
                 const document = [
                   'One',
-                  'Two',
-                  'Three'
+                  'Five',
+                  'Nine'
                 ]
 
                 const params = {
@@ -1738,7 +1766,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an array of `number` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1754,7 +1782,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [3]
+                const document = [
+                  3
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1796,7 +1826,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an array of `boolean` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1811,7 +1841,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1846,7 +1878,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an array of `null` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1860,7 +1892,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -1889,7 +1923,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an object of `string` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1948,7 +1982,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an object of `number` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -1962,7 +1996,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [3]
+                const document = [
+                  3
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2003,7 +2039,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an object of `boolean` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2016,7 +2052,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2051,7 +2089,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `anyOf` (`items` is an object of `null` type)', () => {
+              it('transforms `array` type schemas with `anyOf` (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2063,7 +2101,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [0]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2092,7 +2132,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `oneOf` (`items` is an array of `string` type)', () => {
+              it('transforms `array` type schemas with `oneOf` (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2109,9 +2149,175 @@ describe('#transformer', () => {
                 }
 
                 const document = [
-                  'One',
-                  'Two',
-                  'Three'
+                  'Two'
+                ]
+
+                const params = {
+                  '#/': { meta: { component: 'checkboxes' } }
+                }
+
+                return expect(transform(schema, document, params))
+                  .to.eql({
+                    type: 'array',
+                    component: 'checkboxes',
+                    oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
+                      items: [
+                        {
+                          value: '0',
+                          id: '#/0/0',
+                          name: '#/0/0',
+                          checked: false
+                        },
+                        {
+                          value: '1',
+                          id: '#/0/1',
+                          name: '#/0/1',
+                          checked: true
+                        },
+                        {
+                          value: '2',
+                          id: '#/0/2',
+                          name: '#/0/2',
+                          checked: false
+                        }
+                      ],
+                      id: '#/'
+                    }
+                  })
+              })
+
+              it('transforms `array` type schemas with `oneOf` (`items` is an array of `number` type)', () => {
+                const schema = {
+                  type: 'array',
+                  title: 'Checkboxes',
+                  items: [
+                    {
+                      type: 'number',
+                      oneOf: [
+                        { const: 1 },
+                        { const: 2 },
+                        { const: 3 }
+                      ]
+                    }
+                  ]
+                }
+
+                const document = [
+                  3
+                ]
+
+                const params = {
+                  '#/': { meta: { component: 'checkboxes' } }
+                }
+
+                return expect(transform(schema, document, params))
+                  .to.eql({
+                    type: 'array',
+                    component: 'checkboxes',
+                    oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
+                      items: [
+                        {
+                          value: '0',
+                          id: '#/0/0',
+                          name: '#/0/0',
+                          checked: false
+                        },
+                        {
+                          value: '1',
+                          id: '#/0/1',
+                          name: '#/0/1',
+                          checked: false
+                        },
+                        {
+                          value: '2',
+                          id: '#/0/2',
+                          name: '#/0/2',
+                          checked: true
+                        }
+                      ],
+                      id: '#/'
+                    }
+                  })
+              })
+
+              it('transforms `array` type schemas with `oneOf` (`items` is an array of `boolean` type)', () => {
+                const schema = {
+                  type: 'array',
+                  title: 'Checkboxes',
+                  items: [
+                    {
+                      type: 'boolean',
+                      oneOf: [
+                        { const: true },
+                        { const: false }
+                      ]
+                    }
+                  ]
+                }
+
+                const document = [
+                  false
+                ]
+
+                const params = {
+                  '#/': { meta: { component: 'checkboxes' } }
+                }
+
+                return expect(transform(schema, document, params))
+                  .to.eql({
+                    type: 'array',
+                    component: 'checkboxes',
+                    oneOf: {
+                      fieldset: {
+                        legend: {
+                          text: 'Checkboxes'
+                        }
+                      },
+                      items: [
+                        {
+                          value: '0',
+                          id: '#/0/0',
+                          name: '#/0/0',
+                          checked: false
+                        },
+                        {
+                          value: '1',
+                          id: '#/0/1',
+                          name: '#/0/1',
+                          checked: true
+                        }
+                      ],
+                      id: '#/'
+                    }
+                  })
+              })
+
+              it('transforms `array` type schemas with `oneOf` (`items` is an array of `null` type)', () => {
+                const schema = {
+                  type: 'array',
+                  title: 'Checkboxes',
+                  items: [
+                    {
+                      type: 'null',
+                      oneOf: [
+                        { const: null }
+                      ]
+                    }
+                  ]
+                }
+
+                const document = [
+                  null
                 ]
 
                 const params = {
@@ -2134,18 +2340,6 @@ describe('#transformer', () => {
                           id: '#/0/0',
                           name: '#/0/0',
                           checked: true
-                        },
-                        {
-                          value: '1',
-                          id: '#/0/1',
-                          name: '#/0/1',
-                          checked: true
-                        },
-                        {
-                          value: '2',
-                          id: '#/0/2',
-                          name: '#/0/2',
-                          checked: true
                         }
                       ],
                       id: '#/'
@@ -2153,157 +2347,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `oneOf` (`items` is an array of `number` type)', () => {
-                const schema = {
-                  type: 'array',
-                  title: 'Checkboxes',
-                  items: [
-                    {
-                      type: 'number',
-                      oneOf: [
-                        { const: 1 },
-                        { const: 2 },
-                        { const: 3 }
-                      ]
-                    }
-                  ]
-                }
-
-                const document = [3]
-
-                const params = {
-                  '#/': { meta: { component: 'checkboxes' } }
-                }
-
-                return expect(transform(schema, document, params))
-                  .to.eql({
-                    type: 'array',
-                    component: 'checkboxes',
-                    oneOf: {
-                      fieldset: {
-                        legend: {
-                          text: 'Checkboxes'
-                        }
-                      },
-                      items: [
-                        {
-                          value: '0',
-                          id: '#/0/0',
-                          name: '#/0/0',
-                          checked: false
-                        },
-                        {
-                          value: '1',
-                          id: '#/0/1',
-                          name: '#/0/1',
-                          checked: false
-                        },
-                        {
-                          value: '2',
-                          id: '#/0/2',
-                          name: '#/0/2',
-                          checked: true
-                        }
-                      ],
-                      id: '#/'
-                    }
-                  })
-              })
-
-              it('transforms `array` type schemas With `oneOf` (`items` is an array of `boolean` type)', () => {
-                const schema = {
-                  type: 'array',
-                  title: 'Checkboxes',
-                  items: [
-                    {
-                      type: 'boolean',
-                      oneOf: [
-                        { const: true },
-                        { const: false }
-                      ]
-                    }
-                  ]
-                }
-
-                const document = [false]
-
-                const params = {
-                  '#/': { meta: { component: 'checkboxes' } }
-                }
-
-                return expect(transform(schema, document, params))
-                  .to.eql({
-                    type: 'array',
-                    component: 'checkboxes',
-                    oneOf: {
-                      fieldset: {
-                        legend: {
-                          text: 'Checkboxes'
-                        }
-                      },
-                      items: [
-                        {
-                          value: '0',
-                          id: '#/0/0',
-                          name: '#/0/0',
-                          checked: false
-                        },
-                        {
-                          value: '1',
-                          id: '#/0/1',
-                          name: '#/0/1',
-                          checked: true
-                        }
-                      ],
-                      id: '#/'
-                    }
-                  })
-              })
-
-              it('transforms `array` type schemas With `oneOf` (`items` is an array of `null` type)', () => {
-                const schema = {
-                  type: 'array',
-                  title: 'Checkboxes',
-                  items: [
-                    {
-                      type: 'null',
-                      oneOf: [
-                        { const: null }
-                      ]
-                    }
-                  ]
-                }
-
-                const document = [null]
-
-                const params = {
-                  '#/': { meta: { component: 'checkboxes' } }
-                }
-
-                return expect(transform(schema, document, params))
-                  .to.eql({
-                    type: 'array',
-                    component: 'checkboxes',
-                    oneOf: {
-                      fieldset: {
-                        legend: {
-                          text: 'Checkboxes'
-                        }
-                      },
-                      items: [
-                        {
-                          value: '0',
-                          id: '#/0/0',
-                          name: '#/0/0',
-                          checked: true
-                        }
-                      ],
-                      id: '#/'
-                    }
-                  })
-              })
-
-              it('transforms `array` type schemas With `oneOf` (`items` is an object of `string` type)', () => {
+              it('transforms `array` type schemas with `oneOf` (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2362,7 +2406,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `oneOf` (`items` is an object of `number` type)', () => {
+              it('transforms `array` type schemas with `oneOf` (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2376,7 +2420,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [3]
+                const document = [
+                  3
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2417,7 +2463,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `oneOf` (`items` is an object of `boolean` type)', () => {
+              it('transforms `array` type schemas with `oneOf` (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2430,7 +2476,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2465,7 +2513,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `array` type schemas With `oneOf` (`items` is an object of `null` type)', () => {
+              it('transforms `array` type schemas with `oneOf` (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2477,7 +2525,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2509,7 +2559,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an array of `string` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2525,7 +2575,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = ['string']
+                const document = [
+                  'string'
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2558,7 +2610,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an array of `number` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2574,7 +2626,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [2]
+                const document = [
+                  2
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2607,7 +2661,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an array of `boolean` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2621,7 +2675,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2654,7 +2710,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an array of `null` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2668,7 +2724,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2701,7 +2759,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an object of `string` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2715,7 +2773,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = ['string']
+                const document = [
+                  'string'
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2748,7 +2808,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an object of `number` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2762,7 +2822,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [2]
+                const document = [
+                  2
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2795,7 +2857,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an object of `boolean` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2807,7 +2869,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2840,7 +2904,7 @@ describe('#transformer', () => {
               /*
                *  `allOf` incompatible?
                */
-              xit('transforms `array` type schemas With `allOf` (`items` is an object of `null` type)', () => {
+              xit('transforms `array` type schemas with `allOf` (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2852,7 +2916,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2885,7 +2951,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2899,7 +2965,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = ['string']
+                const document = [
+                  'string'
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2932,7 +3000,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2946,7 +3014,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [2]
+                const document = [
+                  2
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -2979,7 +3049,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -2991,7 +3061,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -3024,7 +3096,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -3036,7 +3108,9 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -3069,7 +3143,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -3081,7 +3155,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = ['string']
+                const document = [
+                  'string'
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -3114,7 +3190,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -3126,7 +3202,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [2]
+                const document = [
+                  2
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -3159,7 +3237,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -3169,7 +3247,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [false]
+                const document = [
+                  false
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -3202,7 +3282,7 @@ describe('#transformer', () => {
               /*
                *  Field incompatible?
                */
-              xit('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
+              xit('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
                 const schema = {
                   type: 'array',
                   title: 'Checkboxes',
@@ -3212,7 +3292,9 @@ describe('#transformer', () => {
                   }
                 }
 
-                const document = [null]
+                const document = [
+                  null
+                ]
 
                 const params = {
                   '#/': { meta: { component: 'checkboxes' } }
@@ -3246,7 +3328,7 @@ describe('#transformer', () => {
 
           describe('Transforming `boolean` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `boolean` type schemas With `enum`', () => {
+              it('transforms `boolean` type schemas with `enum`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -3257,7 +3339,7 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = 1
+                const document = false
 
                 const params = {
                   '#/': { meta: { component: 'radios' } }
@@ -3294,7 +3376,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `anyOf`', () => {
+              it('transforms `boolean` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -3344,7 +3426,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `oneOf`', () => {
+              it('transforms `boolean` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -3397,7 +3479,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -3420,7 +3502,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -3440,7 +3522,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `boolean` type schemas With `enum`', () => {
+              it('transforms `boolean` type schemas with `enum`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -3451,7 +3533,7 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = 1
+                const document = false
 
                 const params = {
                   '#/': { meta: { component: 'select' } }
@@ -3486,7 +3568,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `anyOf`', () => {
+              it('transforms `boolean` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -3532,7 +3614,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `oneOf`', () => {
+              it('transforms `boolean` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -3581,7 +3663,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -3604,7 +3686,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -3626,7 +3708,7 @@ describe('#transformer', () => {
 
           describe('Transforming `null` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `null` type schemas With `enum`', () => {
+              it('transforms `null` type schemas with `enum`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -3636,7 +3718,7 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = 0
+                const document = null
 
                 const params = {
                   '#/': { meta: { component: 'radios' } }
@@ -3668,7 +3750,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `anyOf`', () => {
+              it('transforms `null` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -3711,7 +3793,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `oneOf`', () => {
+              it('transforms `null` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -3757,7 +3839,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -3780,7 +3862,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('transforms `null` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('transforms `null` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -3800,7 +3882,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `null` type schemas With `enum`', () => {
+              it('transforms `null` type schemas with `enum`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -3810,7 +3892,7 @@ describe('#transformer', () => {
                   ]
                 }
 
-                const document = 0
+                const document = null
 
                 const params = {
                   '#/': { meta: { component: 'select' } }
@@ -3840,7 +3922,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `anyOf`', () => {
+              it('transforms `null` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -3880,7 +3962,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `oneOf`', () => {
+              it('transforms `null` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -3923,7 +4005,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -3946,7 +4028,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -3972,7 +4054,7 @@ describe('#transformer', () => {
         describe('With params', () => {
           describe('Transforming `string` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `string` type schemas With `enum`', () => {
+              it('transforms `string` type schemas with `enum`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -4026,7 +4108,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `anyOf`', () => {
+              it('transforms `string` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -4038,6 +4120,9 @@ describe('#transformer', () => {
                   ]
                 }
 
+                /**
+                 *  As above
+                 */
                 const document = undefined
 
                 const params = {
@@ -4083,7 +4168,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `oneOf`', () => {
+              it('transforms `string` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -4143,7 +4228,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -4168,7 +4253,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Radios',
@@ -4190,7 +4275,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `string` type schemas With `enum`', () => {
+              it('transforms `string` type schemas with `enum`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -4242,7 +4327,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `anyOf`', () => {
+              it('transforms `string` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -4294,7 +4379,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `string` type schemas With `oneOf`', () => {
+              it('transforms `string` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -4349,7 +4434,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -4374,7 +4459,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'string',
                   title: 'Select',
@@ -4398,7 +4483,7 @@ describe('#transformer', () => {
 
           describe('Transforming `number` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `number` type schemas With `enum`', () => {
+              it('transforms `number` type schemas with `enum`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -4452,7 +4537,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `anyOf`', () => {
+              it('transforms `number` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -4509,7 +4594,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `oneOf`', () => {
+              it('transforms `number` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -4569,7 +4654,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -4594,7 +4679,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Radios',
@@ -4616,7 +4701,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `number` type schemas With `enum`', () => {
+              it('transforms `number` type schemas with `enum`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -4668,7 +4753,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `anyOf`', () => {
+              it('transforms `number` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -4720,7 +4805,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `number` type schemas With `oneOf`', () => {
+              it('transforms `number` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -4775,7 +4860,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -4800,7 +4885,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'number',
                   title: 'Select',
@@ -4823,7 +4908,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `array` type schemas', () => {
-            it('transforms `array` type schemas With `enum` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -4885,7 +4970,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -4945,7 +5030,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -4997,7 +5082,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5041,7 +5126,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5099,7 +5184,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5157,7 +5242,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5207,7 +5292,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5249,7 +5334,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5306,7 +5391,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5364,7 +5449,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5414,7 +5499,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5457,7 +5542,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5512,7 +5597,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5567,7 +5652,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5615,7 +5700,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5656,7 +5741,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5713,7 +5798,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5770,7 +5855,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5820,7 +5905,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5863,7 +5948,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5918,7 +6003,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -5973,7 +6058,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6021,7 +6106,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6065,7 +6150,7 @@ describe('#transformer', () => {
             /*
              *
              */
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6111,7 +6196,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6127,7 +6212,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6157,7 +6244,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6171,7 +6258,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6201,7 +6290,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6215,7 +6304,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6245,7 +6336,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6259,7 +6350,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6289,7 +6382,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6303,7 +6396,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6333,7 +6428,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6345,7 +6440,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6375,7 +6472,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6387,7 +6484,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6420,7 +6519,7 @@ describe('#transformer', () => {
             /*
              *
              */
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6464,7 +6563,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6478,7 +6577,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6508,7 +6609,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6520,7 +6621,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6550,7 +6653,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6562,7 +6665,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6592,7 +6697,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6604,7 +6709,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6634,7 +6741,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6646,7 +6753,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6676,7 +6785,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6686,7 +6795,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6716,7 +6827,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Checkboxes',
@@ -6726,7 +6837,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'checkboxes' } }
@@ -6760,7 +6873,7 @@ describe('#transformer', () => {
 
           describe('Transforming `boolean` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `boolean` type schemas With `enum`', () => {
+              it('transforms `boolean` type schemas with `enum`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -6808,7 +6921,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `anyOf`', () => {
+              it('transforms `boolean` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -6858,7 +6971,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `oneOf`', () => {
+              it('transforms `boolean` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -6911,7 +7024,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -6934,7 +7047,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Radios',
@@ -6954,7 +7067,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `boolean` type schemas With `enum`', () => {
+              it('transforms `boolean` type schemas with `enum`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -7000,7 +7113,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `anyOf`', () => {
+              it('transforms `boolean` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -7046,7 +7159,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `boolean` type schemas With `oneOf`', () => {
+              it('transforms `boolean` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -7095,7 +7208,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -7118,7 +7231,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'boolean',
                   title: 'Select',
@@ -7140,7 +7253,7 @@ describe('#transformer', () => {
 
           describe('Transforming `null` type schemas', () => {
             describe('To a `radios` component', () => {
-              it('transforms `null` type schemas With `enum`', () => {
+              it('transforms `null` type schemas with `enum`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -7182,7 +7295,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `anyOf`', () => {
+              it('transforms `null` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -7225,7 +7338,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `oneOf`', () => {
+              it('transforms `null` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -7271,7 +7384,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -7294,7 +7407,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `radios`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Radios',
@@ -7314,7 +7427,7 @@ describe('#transformer', () => {
             })
 
             describe('To a `select` component', () => {
-              it('transforms `null` type schemas With `enum`', () => {
+              it('transforms `null` type schemas with `enum`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -7354,7 +7467,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `anyOf`', () => {
+              it('transforms `null` type schemas with `anyOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -7394,7 +7507,7 @@ describe('#transformer', () => {
                   })
               })
 
-              it('transforms `null` type schemas With `oneOf`', () => {
+              it('transforms `null` type schemas with `oneOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -7437,7 +7550,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws With `allOf`', () => {
+              it('throws with `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -7460,7 +7573,7 @@ describe('#transformer', () => {
               /*
                *  Schema incompatible with component `select`
                */
-              it('throws Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+              it('throws without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
                 const schema = {
                   type: 'null',
                   title: 'Select',
@@ -7487,7 +7600,7 @@ describe('#transformer', () => {
       describe('With values', () => {
         describe('With params', () => {
           describe('Transforming `string` type schemas', () => {
-            it('transforms `string` type schemas With `enum`', () => {
+            it('transforms `string` type schemas with `enum`', () => {
               const schema = {
                 type: 'string',
                 enum: [
@@ -7497,7 +7610,7 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = 2
+              const document = 'Three'
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -7531,7 +7644,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `anyOf`', () => {
+            it('transforms `string` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'string',
                 anyOf: [
@@ -7578,7 +7691,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `oneOf`', () => {
+            it('transforms `string` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'string',
                 oneOf: [
@@ -7628,7 +7741,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas With `allOf`', () => {
+            it('transforms `string` type schemas with `allOf`', () => {
               const schema = {
                 type: 'string',
                 allOf: [
@@ -7659,7 +7772,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `string` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'string'
               }
@@ -7684,7 +7797,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `number` type schemas', () => {
-            it('transforms `number` type schemas With `enum`', () => {
+            it('transforms `number` type schemas with `enum`', () => {
               const schema = {
                 type: 'number',
                 enum: [
@@ -7728,7 +7841,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `anyOf`', () => {
+            it('transforms `number` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'number',
                 anyOf: [
@@ -7775,7 +7888,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `oneOf`', () => {
+            it('transforms `number` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'number',
                 oneOf: [
@@ -7825,7 +7938,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas With `allOf`', () => {
+            it('transforms `number` type schemas with `allOf`', () => {
               const schema = {
                 type: 'number',
                 allOf: [
@@ -7856,7 +7969,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `number` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'number'
               }
@@ -7881,7 +7994,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `array` type schemas', () => {
-            it('transforms `array` type schemas With `enum` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -7897,7 +8010,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                'Three'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -7941,7 +8056,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -7957,7 +8072,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8001,7 +8118,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8016,7 +8133,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [1]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8055,7 +8174,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8069,7 +8188,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8103,7 +8224,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8117,7 +8238,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8161,7 +8284,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8175,7 +8298,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8219,7 +8344,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8232,7 +8357,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8271,7 +8398,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8283,7 +8410,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8317,7 +8446,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8333,7 +8462,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8380,7 +8511,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8396,7 +8527,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8443,7 +8576,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8458,7 +8591,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8499,7 +8634,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8513,7 +8648,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8548,7 +8685,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8562,7 +8699,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8609,7 +8748,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8623,7 +8762,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8670,7 +8811,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8683,7 +8824,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8724,7 +8867,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8736,7 +8879,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8771,7 +8916,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8787,7 +8932,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8834,7 +8981,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8850,7 +8997,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8897,7 +9046,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8912,7 +9061,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -8953,7 +9104,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -8967,7 +9118,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9003,7 +9156,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9017,7 +9170,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9064,7 +9219,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9078,7 +9233,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9125,7 +9282,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9138,7 +9295,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9179,7 +9338,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9191,7 +9350,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9230,7 +9391,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9246,7 +9407,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9274,7 +9437,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9290,7 +9453,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9318,7 +9483,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9332,7 +9497,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9360,7 +9527,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9374,7 +9541,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9402,7 +9571,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9416,7 +9585,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9444,7 +9615,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9458,7 +9629,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9486,7 +9659,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9498,7 +9671,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9526,7 +9701,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9538,7 +9713,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9569,7 +9746,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9578,7 +9755,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9606,7 +9785,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9615,7 +9794,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9643,7 +9824,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9652,7 +9833,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9680,7 +9863,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9689,7 +9872,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9717,7 +9902,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9726,7 +9911,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9754,7 +9941,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9763,7 +9950,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9791,7 +9980,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9800,7 +9989,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9828,7 +10019,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -9837,7 +10028,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9867,7 +10060,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `object` type schemas', () => {
-            it('transforms `object` type schemas With `enum` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -9883,7 +10076,7 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = { string: 2 }
+              const document = { string: 'Three' }
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -9927,7 +10120,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -9987,7 +10180,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10002,7 +10195,7 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = { boolean: 1 }
+              const document = { boolean: false }
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -10041,7 +10234,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10055,7 +10248,7 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = { null: 0 }
+              const document = { null: null }
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -10089,7 +10282,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10105,7 +10298,7 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = { string: 2 }
+              const document = { string: 'Three' }
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -10152,7 +10345,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10215,7 +10408,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10271,7 +10464,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10320,7 +10513,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10383,7 +10576,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10446,7 +10639,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10502,7 +10695,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10554,7 +10747,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `object` type schemas With `allOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10598,7 +10791,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10642,7 +10835,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10684,7 +10877,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10729,7 +10922,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10768,7 +10961,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10807,7 +11000,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10846,7 +11039,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -10887,7 +11080,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `boolean` type schemas', () => {
-            it('transforms `boolean` type schemas With `enum`', () => {
+            it('transforms `boolean` type schemas with `enum`', () => {
               const schema = {
                 type: 'boolean',
                 enum: [
@@ -10896,7 +11089,7 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = 1
+              const document = false
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -10925,7 +11118,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `boolean` type schemas With `anyOf`', () => {
+            it('transforms `boolean` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'boolean',
                 anyOf: [
@@ -10965,7 +11158,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `boolean` type schemas With `oneOf`', () => {
+            it('transforms `boolean` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'boolean',
                 oneOf: [
@@ -11008,7 +11201,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `boolean` type schemas With `allOf`', () => {
+            it('transforms `boolean` type schemas with `allOf`', () => {
               const schema = {
                 type: 'boolean',
                 allOf: [
@@ -11037,7 +11230,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `boolean` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `boolean` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'boolean'
               }
@@ -11062,7 +11255,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `null` type schemas', () => {
-            it('transforms `null` type schemas With `enum`', () => {
+            it('transforms `null` type schemas with `enum`', () => {
               const schema = {
                 type: 'null',
                 enum: [
@@ -11070,7 +11263,7 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = 0
+              const document = null
 
               const params = {
                 '#/': { meta: { component: 'component' } }
@@ -11094,7 +11287,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `null` type schemas With `anyOf`', () => {
+            it('transforms `null` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'null',
                 anyOf: [
@@ -11127,7 +11320,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `null` type schemas With `oneOf`', () => {
+            it('transforms `null` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'null',
                 oneOf: [
@@ -11163,7 +11356,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `null` type schemas With `allOf`', () => {
+            it('transforms `null` type schemas with `allOf`', () => {
               const schema = {
                 type: 'null',
                 allOf: [
@@ -11192,7 +11385,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `null` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `null` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'null'
               }
@@ -11219,7 +11412,7 @@ describe('#transformer', () => {
 
         describe('Without params', () => {
           describe('Transforming `string` type schemas', () => {
-            it('transforms `string` type schemas With `enum`', () => {
+            it('transforms `string` type schemas with `enum`', () => {
               const schema = {
                 type: 'string',
                 enum: [
@@ -11229,7 +11422,7 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = 2
+              const document = 'Three'
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11258,7 +11451,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `anyOf`', () => {
+            it('transforms `string` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'string',
                 anyOf: [
@@ -11300,7 +11493,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `oneOf`', () => {
+            it('transforms `string` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'string',
                 oneOf: [
@@ -11345,7 +11538,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas With `allOf`', () => {
+            it('transforms `string` type schemas with `allOf`', () => {
               const schema = {
                 type: 'string',
                 allOf: [
@@ -11371,7 +11564,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `string` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'string'
               }
@@ -11391,7 +11584,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `number` type schemas', () => {
-            it('transforms `number` type schemas With `enum`', () => {
+            it('transforms `number` type schemas with `enum`', () => {
               const schema = {
                 type: 'number',
                 enum: [
@@ -11430,7 +11623,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `anyOf`', () => {
+            it('transforms `number` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'number',
                 anyOf: [
@@ -11472,7 +11665,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `oneOf`', () => {
+            it('transforms `number` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'number',
                 oneOf: [
@@ -11517,7 +11710,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas With `allOf`', () => {
+            it('transforms `number` type schemas with `allOf`', () => {
               const schema = {
                 type: 'number',
                 allOf: [
@@ -11543,7 +11736,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `number` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'number'
               }
@@ -11563,7 +11756,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `array` type schemas', () => {
-            it('transforms `array` type schemas With `enum` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11579,7 +11772,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                'Three'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11618,7 +11813,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11634,7 +11829,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11673,7 +11870,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11688,7 +11885,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [1]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11722,7 +11921,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11736,7 +11935,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [0]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11765,7 +11966,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11779,7 +11980,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                'Three'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11818,7 +12021,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11832,7 +12035,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11871,7 +12076,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11884,7 +12089,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [1]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11918,7 +12125,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11930,7 +12137,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [0]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -11959,7 +12168,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -11975,7 +12184,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12017,7 +12228,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12033,7 +12244,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12075,7 +12288,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12090,7 +12303,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12126,7 +12341,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12140,7 +12355,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12170,7 +12387,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12184,7 +12401,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12226,7 +12445,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12240,7 +12459,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12282,7 +12503,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12295,7 +12516,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12331,7 +12554,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12343,7 +12566,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12373,7 +12598,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12389,7 +12614,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12431,7 +12658,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12447,7 +12674,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12489,7 +12718,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12504,7 +12733,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12540,7 +12771,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12554,7 +12785,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12584,7 +12817,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12598,7 +12831,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['Two']
+              const document = [
+                'Two'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12640,7 +12875,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12654,7 +12889,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12696,7 +12933,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12709,7 +12946,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12745,7 +12984,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12757,7 +12996,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12790,7 +13031,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12806,7 +13047,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12829,7 +13072,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12845,7 +13088,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12868,7 +13113,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12882,7 +13127,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12905,7 +13152,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12919,7 +13166,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12942,7 +13191,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12956,7 +13205,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -12979,7 +13230,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -12993,7 +13244,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13016,7 +13269,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13028,7 +13281,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13051,7 +13306,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13063,7 +13318,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13089,7 +13346,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13098,7 +13355,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13121,7 +13380,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13130,7 +13389,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13153,7 +13414,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13162,7 +13423,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13185,7 +13448,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13194,7 +13457,9 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13217,7 +13482,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13226,7 +13491,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = ['string']
+              const document = [
+                'string'
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13249,7 +13516,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13258,7 +13525,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [2]
+              const document = [
+                2
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13281,7 +13550,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13290,7 +13559,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [false]
+              const document = [
+                false
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13313,7 +13584,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -13322,7 +13593,9 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = [null]
+              const document = [
+                null
+              ]
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13347,7 +13620,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `object` type schemas', () => {
-            it('transforms `object` type schemas With `enum` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13363,7 +13636,7 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = { string: 2 }
+              const document = { string: 'Three' }
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13402,7 +13675,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13457,7 +13730,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13472,7 +13745,7 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = { boolean: 1 }
+              const document = { boolean: false }
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13506,7 +13779,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13520,7 +13793,7 @@ describe('#transformer', () => {
                 }
               }
 
-              const document = { null: 0 }
+              const document = { null: null }
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -13549,7 +13822,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13607,7 +13880,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13665,7 +13938,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13716,7 +13989,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13760,7 +14033,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13818,7 +14091,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13876,7 +14149,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13927,7 +14200,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -13974,7 +14247,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `object` type schemas With `allOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14013,7 +14286,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14052,7 +14325,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14089,7 +14362,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14129,7 +14402,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14163,7 +14436,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14197,7 +14470,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14231,7 +14504,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -14267,7 +14540,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `boolean` type schemas', () => {
-            it('transforms `boolean` type schemas With `enum`', () => {
+            it('transforms `boolean` type schemas with `enum`', () => {
               const schema = {
                 type: 'boolean',
                 enum: [
@@ -14276,7 +14549,7 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = 1
+              const document = false
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -14300,7 +14573,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `boolean` type schemas With `anyOf`', () => {
+            it('transforms `boolean` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'boolean',
                 anyOf: [
@@ -14335,7 +14608,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `boolean` type schemas With `oneOf`', () => {
+            it('transforms `boolean` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'boolean',
                 oneOf: [
@@ -14373,7 +14646,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `boolean` type schemas With `allOf`', () => {
+            it('transforms `boolean` type schemas with `allOf`', () => {
               const schema = {
                 type: 'boolean',
                 allOf: [
@@ -14397,7 +14670,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `boolean` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `boolean` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'boolean'
               }
@@ -14417,7 +14690,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `null` type schemas', () => {
-            it('transforms `null` type schemas With `enum`', () => {
+            it('transforms `null` type schemas with `enum`', () => {
               const schema = {
                 type: 'null',
                 enum: [
@@ -14425,7 +14698,7 @@ describe('#transformer', () => {
                 ]
               }
 
-              const document = 0
+              const document = null
 
               return expect(transform(schema, document))
                 .to.eql({
@@ -14444,7 +14717,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `null` type schemas With `anyOf`', () => {
+            it('transforms `null` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'null',
                 anyOf: [
@@ -14472,7 +14745,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `null` type schemas With `oneOf`', () => {
+            it('transforms `null` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'null',
                 oneOf: [
@@ -14503,7 +14776,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `null` type schemas With `allOf`', () => {
+            it('transforms `null` type schemas with `allOf`', () => {
               const schema = {
                 type: 'null',
                 allOf: [
@@ -14527,7 +14800,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `null` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `null` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'null'
               }
@@ -14551,7 +14824,7 @@ describe('#transformer', () => {
       describe('Without values', () => {
         describe('With params', () => {
           describe('Transforming `string` type schemas', () => {
-            it('transforms `string` type schemas With `enum`', () => {
+            it('transforms `string` type schemas with `enum`', () => {
               const schema = {
                 type: 'string',
                 enum: [
@@ -14595,7 +14868,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `anyOf`', () => {
+            it('transforms `string` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'string',
                 anyOf: [
@@ -14642,7 +14915,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `oneOf`', () => {
+            it('transforms `string` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'string',
                 oneOf: [
@@ -14692,7 +14965,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas With `allOf`', () => {
+            it('transforms `string` type schemas with `allOf`', () => {
               const schema = {
                 type: 'string',
                 allOf: [
@@ -14723,7 +14996,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `string` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'string'
               }
@@ -14747,7 +15020,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `number` type schemas', () => {
-            it('transforms `number` type schemas With `enum`', () => {
+            it('transforms `number` type schemas with `enum`', () => {
               const schema = {
                 type: 'number',
                 enum: [
@@ -14791,7 +15064,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `anyOf`', () => {
+            it('transforms `number` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'number',
                 anyOf: [
@@ -14838,7 +15111,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `oneOf`', () => {
+            it('transforms `number` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'number',
                 oneOf: [
@@ -14888,7 +15161,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas With `allOf`', () => {
+            it('transforms `number` type schemas with `allOf`', () => {
               const schema = {
                 type: 'number',
                 allOf: [
@@ -14919,7 +15192,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `number` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'number'
               }
@@ -14943,7 +15216,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `array` type schemas', () => {
-            it('transforms `array` type schemas With `enum` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15003,7 +15276,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15063,7 +15336,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15117,7 +15390,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15165,7 +15438,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15223,7 +15496,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15281,7 +15554,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15333,7 +15606,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15379,7 +15652,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15442,7 +15715,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15505,7 +15778,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15561,7 +15834,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15610,7 +15883,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15671,7 +15944,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15732,7 +16005,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15786,7 +16059,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15833,7 +16106,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15896,7 +16169,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -15959,7 +16232,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16015,7 +16288,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16065,7 +16338,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16126,7 +16399,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16187,7 +16460,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16241,7 +16514,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16292,7 +16565,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16336,7 +16609,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16380,7 +16653,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16422,7 +16695,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16464,7 +16737,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16506,7 +16779,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16548,7 +16821,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16588,7 +16861,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16631,7 +16904,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16667,7 +16940,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16703,7 +16976,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16739,7 +17012,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16775,7 +17048,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16811,7 +17084,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16847,7 +17120,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16883,7 +17156,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -16921,7 +17194,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `object` type schemas', () => {
-            it('transforms `object` type schemas With `enum` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -16981,7 +17254,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17041,7 +17314,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17095,7 +17368,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `enum` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `enum` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17143,7 +17416,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17206,7 +17479,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17269,7 +17542,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17325,7 +17598,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `anyOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `anyOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17374,7 +17647,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17437,7 +17710,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17500,7 +17773,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17556,7 +17829,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `oneOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `oneOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17608,7 +17881,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `object` type schemas With `allOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17652,7 +17925,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17696,7 +17969,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17738,7 +18011,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas With `allOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas with `allOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17783,7 +18056,7 @@ describe('#transformer', () => {
             /*
              *  Group - Input
              */
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17821,7 +18094,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17859,7 +18132,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17897,7 +18170,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
+            it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
               const schema = {
                 type: 'object',
                 title: 'Object',
@@ -17937,7 +18210,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `boolean` type schemas', () => {
-            it('transforms `boolean` type schemas With `enum`', () => {
+            it('transforms `boolean` type schemas with `enum`', () => {
               const schema = {
                 type: 'boolean',
                 enum: [
@@ -17975,7 +18248,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `boolean` type schemas With `anyOf`', () => {
+            it('transforms `boolean` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'boolean',
                 anyOf: [
@@ -18015,7 +18288,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `boolean` type schemas With `oneOf`', () => {
+            it('transforms `boolean` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'boolean',
                 oneOf: [
@@ -18058,7 +18331,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `boolean` type schemas With `allOf`', () => {
+            it('transforms `boolean` type schemas with `allOf`', () => {
               const schema = {
                 type: 'boolean',
                 allOf: [
@@ -18087,7 +18360,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `boolean` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `boolean` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'boolean'
               }
@@ -18111,7 +18384,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `null` type schemas', () => {
-            it('transforms `null` type schemas With `enum`', () => {
+            it('transforms `null` type schemas with `enum`', () => {
               const schema = {
                 type: 'null',
                 enum: [
@@ -18143,7 +18416,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `null` type schemas With `anyOf`', () => {
+            it('transforms `null` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'null',
                 anyOf: [
@@ -18176,7 +18449,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `null` type schemas With `oneOf`', () => {
+            it('transforms `null` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'null',
                 oneOf: [
@@ -18212,7 +18485,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `null` type schemas With `allOf`', () => {
+            it('transforms `null` type schemas with `allOf`', () => {
               const schema = {
                 type: 'null',
                 allOf: [
@@ -18241,7 +18514,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `null` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `null` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'null'
               }
@@ -18267,7 +18540,7 @@ describe('#transformer', () => {
 
         describe('Without params', () => {
           describe('Transforming `string` type schemas', () => {
-            it('transforms `string` type schemas With `enum`', () => {
+            it('transforms `string` type schemas with `enum`', () => {
               const schema = {
                 type: 'string',
                 enum: [
@@ -18304,7 +18577,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `anyOf`', () => {
+            it('transforms `string` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'string',
                 anyOf: [
@@ -18344,7 +18617,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `string` type schemas With `oneOf`', () => {
+            it('transforms `string` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'string',
                 oneOf: [
@@ -18387,7 +18660,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas With `allOf`', () => {
+            it('transforms `string` type schemas with `allOf`', () => {
               const schema = {
                 type: 'string',
                 allOf: [
@@ -18411,7 +18684,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `string` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `string` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'string'
               }
@@ -18428,7 +18701,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `number` type schemas', () => {
-            it('transforms `number` type schemas With `enum`', () => {
+            it('transforms `number` type schemas with `enum`', () => {
               const schema = {
                 type: 'number',
                 enum: [
@@ -18465,7 +18738,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `anyOf`', () => {
+            it('transforms `number` type schemas with `anyOf`', () => {
               const schema = {
                 type: 'number',
                 anyOf: [
@@ -18505,7 +18778,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `number` type schemas With `oneOf`', () => {
+            it('transforms `number` type schemas with `oneOf`', () => {
               const schema = {
                 type: 'number',
                 oneOf: [
@@ -18548,7 +18821,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas With `allOf`', () => {
+            it('transforms `number` type schemas with `allOf`', () => {
               const schema = {
                 type: 'number',
                 allOf: [
@@ -18572,7 +18845,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `number` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+            it('transforms `number` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
               const schema = {
                 type: 'number'
               }
@@ -18589,7 +18862,7 @@ describe('#transformer', () => {
           })
 
           describe('Transforming `array` type schemas', () => {
-            it('transforms `array` type schemas With `enum` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18642,7 +18915,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18695,7 +18968,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18742,7 +19015,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18783,7 +19056,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18834,7 +19107,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18885,7 +19158,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18930,7 +19203,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `enum` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `enum` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -18969,7 +19242,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19025,7 +19298,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19081,7 +19354,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19130,7 +19403,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19172,7 +19445,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19226,7 +19499,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19280,7 +19553,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19327,7 +19600,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `anyOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `anyOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19367,7 +19640,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19423,7 +19696,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19479,7 +19752,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19528,7 +19801,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19571,7 +19844,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19625,7 +19898,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19679,7 +19952,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19726,7 +19999,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `oneOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `oneOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19769,7 +20042,7 @@ describe('#transformer', () => {
             /*
              *  Input
              */
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19806,7 +20079,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19843,7 +20116,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19878,7 +20151,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an array of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an array of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19913,7 +20186,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `string` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `string` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19948,7 +20221,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `number` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `number` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -19983,7 +20256,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `boolean` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `boolean` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -20016,7 +20289,7 @@ describe('#transformer', () => {
                 })
             })
 
-            it('transforms `array` type schemas With `allOf` (`items` is an object of `null` type)', () => {
+            it('transforms `array` type schemas with `allOf` (`items` is an object of `null` type)', () => {
               const schema = {
                 type: 'array',
                 title: 'Array',
@@ -20053,7 +20326,7 @@ describe('#transformer', () => {
           /*
            *  Input
            */
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `string` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20082,7 +20355,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `number` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20111,7 +20384,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `boolean` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20140,7 +20413,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an array of `null` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20169,7 +20442,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `string` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20198,7 +20471,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `number` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20227,7 +20500,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `boolean` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20256,7 +20529,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `array` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
+          it('transforms `array` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`items` is an object of `null` type)', () => {
             const schema = {
               type: 'array',
               title: 'Array',
@@ -20287,7 +20560,7 @@ describe('#transformer', () => {
         })
 
         describe('Transforming `object` type schemas', () => {
-          it('transforms `object` type schemas With `enum` (`properties` has `string` type)', () => {
+          it('transforms `object` type schemas with `enum` (`properties` has `string` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20340,7 +20613,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `enum` (`properties` has `number` type)', () => {
+          it('transforms `object` type schemas with `enum` (`properties` has `number` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20393,7 +20666,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `enum` (`properties` has `boolean` type)', () => {
+          it('transforms `object` type schemas with `enum` (`properties` has `boolean` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20440,7 +20713,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `enum` (`properties` has `null` type)', () => {
+          it('transforms `object` type schemas with `enum` (`properties` has `null` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20481,7 +20754,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `anyOf` (`properties` has `string` type)', () => {
+          it('transforms `object` type schemas with `anyOf` (`properties` has `string` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20537,7 +20810,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `anyOf` (`properties` has `number` type)', () => {
+          it('transforms `object` type schemas with `anyOf` (`properties` has `number` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20593,7 +20866,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `anyOf` (`properties` has `boolean` type)', () => {
+          it('transforms `object` type schemas with `anyOf` (`properties` has `boolean` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20642,7 +20915,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `anyOf` (`properties` has `null` type)', () => {
+          it('transforms `object` type schemas with `anyOf` (`properties` has `null` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20684,7 +20957,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `oneOf` (`properties` has `string` type)', () => {
+          it('transforms `object` type schemas with `oneOf` (`properties` has `string` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20740,7 +21013,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `oneOf` (`properties` has `number` type)', () => {
+          it('transforms `object` type schemas with `oneOf` (`properties` has `number` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20796,7 +21069,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `oneOf` (`properties` has `boolean` type)', () => {
+          it('transforms `object` type schemas with `oneOf` (`properties` has `boolean` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20845,7 +21118,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `oneOf` (`properties` has `null` type)', () => {
+          it('transforms `object` type schemas with `oneOf` (`properties` has `null` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20890,7 +21163,7 @@ describe('#transformer', () => {
           /*
            *  Input
            */
-          it('transforms `object` type schemas With `allOf` (`properties` has `string` type)', () => {
+          it('transforms `object` type schemas with `allOf` (`properties` has `string` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20927,7 +21200,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `allOf` (`properties` has `number` type)', () => {
+          it('transforms `object` type schemas with `allOf` (`properties` has `number` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20964,7 +21237,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `allOf` (`properties` has `boolean` type)', () => {
+          it('transforms `object` type schemas with `allOf` (`properties` has `boolean` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -20999,7 +21272,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas With `allOf` (`properties` has `null` type)', () => {
+          it('transforms `object` type schemas with `allOf` (`properties` has `null` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -21037,7 +21310,7 @@ describe('#transformer', () => {
           /*
            *  Input
            */
-          it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
+          it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `string` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -21068,7 +21341,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
+          it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `number` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -21099,7 +21372,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
+          it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `boolean` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -21130,7 +21403,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `object` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
+          it('transforms `object` type schemas without `enum` or `anyOf` or `oneOf` or `allOf` (`properties` has `null` type)', () => {
             const schema = {
               type: 'object',
               title: 'Object',
@@ -21163,7 +21436,7 @@ describe('#transformer', () => {
         })
 
         describe('Transforming `boolean` type schemas', () => {
-          it('transforms `boolean` type schemas With `enum`', () => {
+          it('transforms `boolean` type schemas with `enum`', () => {
             const schema = {
               type: 'boolean',
               enum: [
@@ -21194,7 +21467,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `boolean` type schemas With `anyOf`', () => {
+          it('transforms `boolean` type schemas with `anyOf`', () => {
             const schema = {
               type: 'boolean',
               anyOf: [
@@ -21227,7 +21500,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `boolean` type schemas With `oneOf`', () => {
+          it('transforms `boolean` type schemas with `oneOf`', () => {
             const schema = {
               type: 'boolean',
               oneOf: [
@@ -21263,7 +21536,7 @@ describe('#transformer', () => {
           /*
              *  Input
              */
-          it('transforms `boolean` type schemas With `allOf`', () => {
+          it('transforms `boolean` type schemas with `allOf`', () => {
             const schema = {
               type: 'boolean',
               allOf: [
@@ -21285,7 +21558,7 @@ describe('#transformer', () => {
           /*
              *  Input
              */
-          it('transforms `boolean` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+          it('transforms `boolean` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
             const schema = {
               type: 'boolean'
             }
@@ -21302,7 +21575,7 @@ describe('#transformer', () => {
         })
 
         describe('Transforming `null` type schemas', () => {
-          it('transforms `null` type schemas With `enum`', () => {
+          it('transforms `null` type schemas with `enum`', () => {
             const schema = {
               type: 'null',
               enum: [
@@ -21327,7 +21600,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `null` type schemas With `anyOf`', () => {
+          it('transforms `null` type schemas with `anyOf`', () => {
             const schema = {
               type: 'null',
               anyOf: [
@@ -21353,7 +21626,7 @@ describe('#transformer', () => {
               })
           })
 
-          it('transforms `null` type schemas With `oneOf`', () => {
+          it('transforms `null` type schemas with `oneOf`', () => {
             const schema = {
               type: 'null',
               oneOf: [
@@ -21382,7 +21655,7 @@ describe('#transformer', () => {
           /*
            *  Input
            */
-          it('transforms `null` type schemas With `allOf`', () => {
+          it('transforms `null` type schemas with `allOf`', () => {
             const schema = {
               type: 'null',
               allOf: [
@@ -21404,7 +21677,7 @@ describe('#transformer', () => {
           /*
            *  Input
            */
-          it('transforms `null` type schemas Without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
+          it('transforms `null` type schemas without `enum` or `anyOf` or `oneOf` or `allOf`', () => {
             const schema = {
               type: 'null'
             }
