@@ -17,7 +17,7 @@
   },
   "license": "UNLICENSED",
   "engines": {
-    "node": ">=23.0.0"
+    "node": ">=22.11.0"
   },
   "repository": {
     "type": "git",
@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "debug": "^4.4.0",
-    "shinkansen-rails": "1.0.289",
-    "shinkansen-signals": "1.1.219",
-    "shinkansen-transmission": "2.4.0"
+    "shinkansen-rails": "1.0.292",
+    "shinkansen-signals": "1.1.221",
+    "shinkansen-transmission": "2.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.26.9",
