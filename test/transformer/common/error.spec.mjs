@@ -1,5 +1,3 @@
-import debug from 'debug'
-
 import {
   expect
 } from 'chai'
@@ -34,16 +32,6 @@ import {
 } from '@modernpoacher/zashiki-govuk-frontend/transformer/common/error'
 
 describe('#transformer/common/error', () => {
-  before(() => {
-    const {
-      env: {
-        DEBUG
-      }
-    } = process
-
-    if (DEBUG) debug.enable(DEBUG)
-  })
-
   describe('`getErrorTextForMaxItems`', () => {
     it('is a function', () => {
       return expect(getErrorTextForMaxItems)

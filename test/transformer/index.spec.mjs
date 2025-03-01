@@ -1,5 +1,3 @@
-import debug from 'debug'
-
 import {
   expect
 } from 'chai'
@@ -53,16 +51,6 @@ import transform, {
 } from '@modernpoacher/zashiki-govuk-frontend/transformer'
 
 describe('#transformer', () => {
-  before(() => {
-    const {
-      env: {
-        DEBUG
-      }
-    } = process
-
-    if (DEBUG) debug.enable(DEBUG)
-  })
-
   describe('`transformer`', () => {
     it('is a function', () => {
       expect(transform)
