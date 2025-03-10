@@ -55,8 +55,8 @@ export function getEnumSelectedItemsValue (items = [], selectedItems = []) {
 
   return (
     selectedItems.reduce((accumulator, selectedItem) => (
-      (Reflect.has(items, selectedItem))
-        ? accumulator.concat(`<p class="govuk-body">${Reflect.get(items, selectedItem)}</p>`)
+      (selectedItem in items)
+        ? accumulator.concat(`<p class="govuk-body">${items[selectedItem]}</p>`)
         : accumulator
     ), '') // || 'Not answered'
   )
@@ -66,8 +66,8 @@ export function getEnumSelectedItemValue (items = [], [selectedItem] = []) {
   log('getEnumSelectedItemValue')
 
   return (
-    Reflect.has(items, selectedItem)
-      ? String(Reflect.get(items, selectedItem))
+    selectedItem in items
+      ? String(items[selectedItem])
       : '' // 'Not answered'
   )
 }
@@ -77,8 +77,8 @@ export function getAnyOfSelectedItemsValue (items = [], selectedItems = []) {
 
   return (
     selectedItems.reduce((accumulator, selectedItem) => (
-      (Reflect.has(items, selectedItem))
-        ? accumulator.concat(`<p class="govuk-body">${toSummaryValue(Reflect.get(items, selectedItem))}</p>`)
+      (selectedItem in items)
+        ? accumulator.concat(`<p class="govuk-body">${toSummaryValue(items[selectedItem])}</p>`)
         : accumulator
     ), '') // || 'Not answered'
   )
@@ -87,8 +87,8 @@ export function getAnyOfSelectedItemsValue (items = [], selectedItems = []) {
 export function getAnyOfSelectedItemValue (items = [], [selectedItem] = []) {
   log('getAnyOfSelectedItemValue')
 
-  return (Reflect.has(items, selectedItem))
-    ? toSummaryValue(Reflect.get(items, selectedItem)) // || 'Not answered'
+  return (selectedItem in items)
+    ? toSummaryValue(items[selectedItem]) // || 'Not answered'
     : '' // 'Not answered'
 }
 
@@ -97,8 +97,8 @@ export function getOneOfSelectedItemsValue (items = [], selectedItems = []) {
 
   return (
     selectedItems.reduce((accumulator, selectedItem) => (
-      (Reflect.has(items, selectedItem))
-        ? accumulator.concat(`<p class="govuk-body">${toSummaryValue(Reflect.get(items, selectedItem))}</p>`)
+      (selectedItem in items)
+        ? accumulator.concat(`<p class="govuk-body">${toSummaryValue(items[selectedItem])}</p>`)
         : accumulator
     ), '') // || 'Not answered'
   )
@@ -107,8 +107,8 @@ export function getOneOfSelectedItemsValue (items = [], selectedItems = []) {
 export function getOneOfSelectedItemValue (items = [], [selectedItem] = []) {
   log('getOneOfSelectedItemValue')
 
-  return (Reflect.has(items, selectedItem))
-    ? toSummaryValue(Reflect.get(items, selectedItem)) // || 'Not answered'
+  return (selectedItem in items)
+    ? toSummaryValue(items[selectedItem]) // || 'Not answered'
     : '' // 'Not answered'
 }
 
