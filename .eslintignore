@@ -1,6 +1,0 @@
-.circleci
-.github
-node_modules
-lib
-components
-views
