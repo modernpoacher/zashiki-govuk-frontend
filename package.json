@@ -31,19 +31,19 @@
   },
   "dependencies": {
     "debug": "^4.4.0",
-    "shinkansen-rails": "1.1.27",
-    "shinkansen-signals": "1.2.26",
-    "shinkansen-transmission": "2.5.25"
+    "shinkansen-rails": "1.1.28",
+    "shinkansen-signals": "1.2.27",
+    "shinkansen-transmission": "2.5.26"
   },
   "devDependencies": {
-    "@sequencemedia/eslint-config-standard": "^0.2.50",
+    "@sequencemedia/eslint-config-standard": "^0.2.51",
     "chai": "^5.2.0",
     "cross-env": "^7.0.3",
     "eslint": "^9.25.1",
     "globals": "^16.0.0",
-    "govuk-frontend": "^5.9.0",
+    "govuk-frontend": "^5.10.0",
     "husky": "^9.1.7",
-    "mocha": "^11.1.0",
+    "mocha": "^11.2.2",
     "nunjucks": "^3.2.4"
   },
   "exports": {
