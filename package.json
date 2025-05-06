@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "debug": "^4.4.0",
-    "shinkansen-rails": "1.1.32",
-    "shinkansen-signals": "1.2.31",
-    "shinkansen-transmission": "2.5.29"
+    "shinkansen-rails": "1.1.33",
+    "shinkansen-signals": "1.2.32",
+    "shinkansen-transmission": "2.5.30"
   },
   "devDependencies": {
     "@sequencemedia/eslint-config-standard": "^0.2.54",
