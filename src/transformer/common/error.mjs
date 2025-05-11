@@ -1,4 +1,4 @@
-import debug from 'debug'
+import debug from '#zashiki-govuk-frontend/debug'
 
 const log = debug('zashiki/transformer/common/error')
 

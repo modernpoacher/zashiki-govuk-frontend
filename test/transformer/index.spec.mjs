@@ -2,6 +2,8 @@ import {
   expect
 } from 'chai'
 
+import '#zashiki-govuk-frontend/debug'
+
 import transform, {
   transformFieldToCheckboxes,
   transformFieldToDateInput,

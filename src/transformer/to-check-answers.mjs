@@ -1,4 +1,4 @@
-import debug from 'debug'
+import debug from '#zashiki-govuk-frontend/debug'
 
 import toZashiki from 'shinkansen-transmission/transmission/to-zashiki'
 import fromDocumentToHash from 'shinkansen-transmission/transmission/from-document-to-hash'

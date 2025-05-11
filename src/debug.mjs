@@ -7,3 +7,5 @@ const {
 } = process
 
 if (DEBUG) debug.enable(DEBUG)
+
+export default debug
