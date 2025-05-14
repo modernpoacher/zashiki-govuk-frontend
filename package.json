@@ -30,10 +30,10 @@
     "test": "cross-env NODE_ENV=test mocha test --recursive --verbose"
   },
   "dependencies": {
-    "debug": "^4.4.0",
-    "shinkansen-rails": "1.1.38",
-    "shinkansen-signals": "1.2.37",
-    "shinkansen-transmission": "2.5.35"
+    "debug": "^4.4.1",
+    "shinkansen-rails": "1.1.39",
+    "shinkansen-signals": "1.2.38",
+    "shinkansen-transmission": "2.5.36"
   },
   "devDependencies": {
     "@sequencemedia/eslint-config-standard": "^0.2.57",
