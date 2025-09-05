@@ -31,12 +31,12 @@
   },
   "dependencies": {
     "debug": "^4.4.1",
-    "shinkansen-rails": "1.1.91",
-    "shinkansen-signals": "1.2.90",
+    "shinkansen-rails": "1.1.92",
+    "shinkansen-signals": "1.2.91",
     "shinkansen-transmission": "2.5.59"
   },
   "devDependencies": {
-    "@sequencemedia/eslint-config-standard": "^0.2.78",
+    "@sequencemedia/eslint-config-standard": "^0.2.79",
     "chai": "^6.0.1",
     "cross-env": "^10.0.0",
     "eslint": "^9.34.0",
