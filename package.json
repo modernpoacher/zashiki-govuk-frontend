@@ -31,9 +31,9 @@
   },
   "dependencies": {
     "debug": "^4.4.3",
-    "shinkansen-rails": "1.1.130",
-    "shinkansen-signals": "1.2.129",
-    "shinkansen-transmission": "2.5.96"
+    "shinkansen-rails": "1.1.175",
+    "shinkansen-signals": "1.2.170",
+    "shinkansen-transmission": "2.5.143"
   },
   "devDependencies": {
     "@sequencemedia/eslint-config-standard": "^0.2.125",
@@ -41,9 +41,9 @@
     "cross-env": "^10.1.0",
     "eslint": "9.38.0",
     "globals": "^17.12.0",
-    "govuk-frontend": "^6.5.0",
+    "govuk-frontend": "^6.5.1",
     "husky": "^9.1.7",
-    "mocha": "^12.0.0",
+    "mocha": "^12.0.2",
     "nunjucks": "^3.2.4"
   },
   "imports": {
